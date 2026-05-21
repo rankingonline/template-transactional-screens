@@ -59,8 +59,29 @@
       justify-content: space-between;
       gap: var(--space-2);
     }
-    .client-card__name   { font-size: var(--fs-h4); font-weight: var(--fw-bold); }
+    .client-card__name   { font-size: var(--fs-h4); font-weight: var(--fw-bold); flex: 1; }
     .client-card__count  { font-size: var(--fs-caption); color: var(--color-text-muted); }
+    .client-card__link {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-md);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      transition: color var(--duration-base) var(--ease-out),
+                  background var(--duration-base) var(--ease-out),
+                  border-color var(--duration-base) var(--ease-out),
+                  transform var(--duration-base) var(--ease-out);
+    }
+    .client-card__link:hover {
+      color: var(--brand-600);
+      background: var(--brand-50);
+      border-color: var(--brand-200);
+      transform: translateY(-1px);
+    }
 
     .section-tags {
       display: flex;
@@ -390,7 +411,7 @@
           <div class="catalog-tabs__panel" data-panel="by-client">
       <div class="grid-clients">
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Sol-4</span><span class="client-card__count">5 / 5 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Sol-4</span><span class="client-card__count">5 / 5 listas</span><a class="client-card__link" href="https://rankingonline.github.io/sol-4-web/pages/home/index.html" target="_blank" rel="noopener" title="Ver web de Sol-4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S01-hero/sol4/index.html" target="_blank">S01 Hero ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S05-proceso/sol4/index.html" target="_blank">S05 Proceso ✓</a>
@@ -401,7 +422,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Christian Sánchez</span><span class="client-card__count">3 / 3 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Christian Sánchez</span><span class="client-card__count">3 / 3 listas</span><a class="client-card__link" href="https://rankingonline.github.io/christian-sanchez_web/screens/home/index.html" target="_blank" rel="noopener" title="Ver web de Christian Sánchez"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S01-hero/christian-sanchez/index.html" target="_blank">S01 Hero ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S08-cross-sell/christian-sanchez/index.html" target="_blank">S08 Cross-sell ✓</a>
@@ -410,7 +431,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Medalva</span><span class="client-card__count">5 / 5 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Medalva</span><span class="client-card__count">5 / 5 listas</span><a class="client-card__link" href="https://rankingonline.github.io/medalva-web/src/home/index.html" target="_blank" rel="noopener" title="Ver web de Medalva"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S01-hero/medalva/index.html" target="_blank">S01 Hero ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S03-para-quien/medalva/index.html" target="_blank">S03 Para quién ✓</a>
@@ -421,7 +442,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Ecom Advisory</span><span class="client-card__count">4 / 4 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Ecom Advisory</span><span class="client-card__count">4 / 4 listas</span><a class="client-card__link" href="https://rankingonline.github.io/ecom_advisory-landing/screen/home/index.html" target="_blank" rel="noopener" title="Ver web de Ecom Advisory"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S02-problematica/ecom-advisory/index.html" target="_blank">S02 Problemática ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S05-proceso/ecom-advisory/index.html" target="_blank">S05 Proceso ✓</a>
@@ -431,7 +452,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Romero Martínez</span><span class="client-card__count">2 / 2 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Romero Martínez</span><span class="client-card__count">2 / 2 listas</span><a class="client-card__link" href="https://rankingonline.github.io/Romero_Martinez/" target="_blank" rel="noopener" title="Ver web de Romero Martínez"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S02-problematica/romero-martinez/index.html" target="_blank">S02 Problemática ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S13-cta-final/romero-martinez/index.html" target="_blank">S13 CTA final ✓</a>
@@ -439,14 +460,14 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Gestiona Asesoría</span><span class="client-card__count">1 / 1 lista</span></div>
+          <div class="client-card__head"><span class="client-card__name">Gestiona Asesoría</span><span class="client-card__count">1 / 1 lista</span><a class="client-card__link" href="https://rankingonline.github.io/Gestiona_Asesoria/src/pages/home/index.html" target="_blank" rel="noopener" title="Ver web de Gestiona Asesoría"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S02-problematica/gestiona-asesoria/index.html" target="_blank">S02 Problemática ✓</a>
           </div>
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Aselegal Plaza Cuba</span><span class="client-card__count">4 / 4 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Aselegal Plaza Cuba</span><span class="client-card__count">4 / 4 listas</span><a class="client-card__link" href="https://rankingonline.github.io/aselegal-plaza_cuba-web/screen/home/home.html" target="_blank" rel="noopener" title="Ver web de Aselegal Plaza Cuba"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S03-para-quien/aselegal/index.html" target="_blank">S03 Para quién ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S09-contacto/aselegal/index.html" target="_blank">S09 Contacto ✓</a>
@@ -456,7 +477,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Tribulex</span><span class="client-card__count">5 / 5 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Tribulex</span><span class="client-card__count">5 / 5 listas</span><a class="client-card__link" href="https://rankingonline.github.io/triplex_web-site/pages/home/index.html" target="_blank" rel="noopener" title="Ver web de Tribulex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S03-para-quien/tribulex/index.html" target="_blank">S03 Para quién ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S04-que-incluye/tribulex/index.html" target="_blank">S04 Qué incluye ✓</a>
@@ -467,7 +488,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Consulting-F</span><span class="client-card__count">3 / 3 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Consulting-F</span><span class="client-card__count">3 / 3 listas</span><a class="client-card__link" href="https://rankingonline.github.io/Consulting-F/screen/home/index.html" target="_blank" rel="noopener" title="Ver web de Consulting-F"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S06-beneficios/consulting-f/index.html" target="_blank">S06 Beneficios ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S07-tabla-prob-sol/consulting-f/index.html" target="_blank">S07 Tabla Prob/Sol ✓</a>
@@ -476,7 +497,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Segu Web</span><span class="client-card__count">3 / 3 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Segu Web</span><span class="client-card__count">3 / 3 listas</span><a class="client-card__link" href="https://rankingonline.github.io/segu-web/screens/gestion-administrativa/gestion-administrativa.html" target="_blank" rel="noopener" title="Ver web de Segu Web"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S07-tabla-prob-sol/segu-web/index.html" target="_blank">S07 Tabla Prob/Sol ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S10-mapa/segu-web/index.html" target="_blank">S10 Mapa ✓</a>
@@ -485,7 +506,7 @@
         </article>
 
         <article class="client-card">
-          <div class="client-card__head"><span class="client-card__name">Barreda Díaz</span><span class="client-card__count">2 / 2 listas</span></div>
+          <div class="client-card__head"><span class="client-card__name">Barreda Díaz</span><span class="client-card__count">2 / 2 listas</span><a class="client-card__link" href="https://rankingonline.github.io/Barreda_Diaz/" target="_blank" rel="noopener" title="Ver web de Barreda Díaz"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
           <div class="section-tags">
             <a class="section-tag section-tag--done" href="./sections/S07-tabla-prob-sol/barreda-diaz/index.html" target="_blank">S07 Tabla Prob/Sol ✓</a>
             <a class="section-tag section-tag--done" href="./sections/S11-reviews/barreda-diaz/index.html" target="_blank">S11 Reviews ✓</a>
