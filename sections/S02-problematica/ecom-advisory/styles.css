@@ -1,0 +1,225 @@
+/* =========================================================================
+   S02 · PROBLEMÁTICA · Clarity & Control — Ecom Advisory
+   3 cols con título-pill flotando + card mitad gradient (problema)
+   mitad blanca (solución) unidas por flecha circular.
+   Tema: indigo · Set tipográfico: 4 (Space Grotesk + IBM Plex)
+   ========================================================================= */
+
+.clarity-eca {
+  --eca-accent: var(--teal-300);
+  background-color: var(--neutral-0);
+  padding-block: clamp(var(--space-16), 8vw, var(--space-24));
+}
+
+.clarity-eca__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.clarity-eca__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.clarity-eca__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  letter-spacing: -0.5px;
+  line-height: var(--lh-snug);
+  margin-bottom: 1.5rem;
+}
+
+.clarity-eca__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  color: var(--neutral-700);
+  line-height: 1.8;
+}
+
+.clarity-eca__highlight {
+  font-style: italic;
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  background: linear-gradient(120deg,
+    rgb(from var(--eca-accent) r g b / 0.3),
+    rgb(from var(--eca-accent) r g b / 0.3));
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 90%;
+}
+@supports not (color: rgb(from white r g b / 1)) {
+  .clarity-eca__highlight {
+    background: linear-gradient(120deg, rgba(98,191,221,0.3), rgba(98,191,221,0.3));
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 90%;
+  }
+}
+
+/* -------- Grid de 3 columnas ----------------------------------------- */
+.clarity-eca__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.solution-eca {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* -------- Pill (título flotando arriba) ----------------------------- */
+.solution-eca__pill {
+  align-self: center;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-500) 100%);
+  color: var(--color-text-invert);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--fw-bold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+/* -------- Card ------------------------------------------------------- */
+.solution-eca__card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-500) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              border-color 0.4s ease;
+}
+.solution-eca__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.solution-eca__card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(3, 4, 94, 0.25);
+  border-color: var(--eca-accent);
+}
+.solution-eca__card:hover::before { opacity: 1; }
+
+/* Problem (top, sobre gradient) */
+.solution-eca__problem {
+  padding: 2.5rem 2.5rem 1.5rem;
+  color: var(--color-text-invert);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.solution-eca__problem p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--lh-normal);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+/* Flecha circular */
+.solution-eca__arrow {
+  position: relative;
+  height: 1px;
+  z-index: 10;
+}
+.solution-eca__arrow::after {
+  content: '↓';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-0);
+  color: var(--brand-900);
+  border: 2px solid var(--brand-900);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: var(--fw-extra);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease,
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease;
+}
+.solution-eca__card:hover .solution-eca__arrow::after {
+  transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+  background: var(--eca-accent);
+  border-color: var(--neutral-0);
+  color: var(--brand-900);
+}
+
+/* Solución (bottom, fondo blanco) */
+.solution-eca__solution {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem 2.5rem;
+  background: var(--neutral-0);
+}
+
+.solution-eca__tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--brand-500);
+}
+.solution-eca__tag::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--eca-accent);
+  border-radius: var(--radius-full);
+}
+
+.solution-eca__solution p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--lh-normal);
+  color: var(--neutral-700);
+  margin-bottom: 1rem;
+}
+.solution-eca__solution p:last-child { margin-bottom: 0; }
+.solution-eca__solution strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-700);
+}
+
+/* -------- Responsive ------------------------------------------------ */
+@media (max-width: 768px) {
+  .clarity-eca__grid { grid-template-columns: 1fr; }
+}

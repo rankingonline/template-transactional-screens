@@ -1,0 +1,171 @@
+/* =========================================================================
+   S05 · PROCESO · Methodology — Ecom Advisory
+   Línea de progreso horizontal con 3 markers circulares + cards body abajo.
+   La línea está rellena con un gradient brand para mostrar avance.
+   ========================================================================= */
+
+.methodology-eca {
+  --eca-accent: var(--teal-300);
+  background-color: var(--neutral-0);
+  padding-block: clamp(var(--space-16), 8vw, var(--space-24));
+}
+
+.methodology-eca__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.methodology-eca__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.methodology-eca__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  letter-spacing: -0.5px;
+  line-height: var(--lh-snug);
+}
+
+/* -------- Wrapper con línea + grid ----------------------------------- */
+.methodology-eca__wrapper {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.methodology-eca__track {
+  position: absolute;
+  top: 23px;
+  left: 14%;
+  width: 72%;
+  height: 4px;
+  background: var(--neutral-200);
+  border-radius: var(--radius-sm);
+  z-index: 1;
+}
+.methodology-eca__fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-500) 100%);
+  border-radius: var(--radius-sm);
+  animation: methodology-eca-fill 1.5s var(--ease-out) forwards;
+  transform-origin: left;
+}
+@keyframes methodology-eca-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.methodology-eca__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  padding: 0;
+}
+
+/* -------- Step card -------------------------------------------------- */
+.step-eca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: step-eca-in 0.8s var(--ease-out) forwards;
+}
+.step-eca:nth-child(1) { animation-delay: 0.2s; }
+.step-eca:nth-child(2) { animation-delay: 0.4s; }
+.step-eca:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes step-eca-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-eca__marker {
+  position: relative;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  background: var(--eca-accent);
+  color: var(--brand-900);
+  border: 3px solid var(--eca-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: var(--fw-extra);
+  margin-bottom: 2rem;
+  box-shadow: 0 0 0 8px var(--neutral-0);
+  transition: background var(--duration-base) ease,
+              color var(--duration-base) ease,
+              border-color var(--duration-base) ease,
+              transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+.step-eca:hover .step-eca__marker {
+  background: var(--brand-900);
+  color: var(--color-text-invert);
+  border-color: var(--brand-900);
+  transform: scale(1.1);
+  box-shadow: 0 0 0 12px var(--neutral-0);
+}
+
+/* Body card */
+.step-eca__body {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1.5rem;
+  background: var(--neutral-0);
+  border: 1px solid var(--eca-accent);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform var(--duration-base) ease,
+              border-color var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+.step-eca:hover .step-eca__body {
+  transform: translateY(-5px);
+  border-color: var(--brand-900);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.step-eca__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  margin-bottom: 1rem;
+}
+
+.step-eca__content {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--neutral-700);
+  line-height: var(--lh-normal);
+}
+.step-eca__content p { margin-bottom: 0.75rem; }
+
+.step-eca__key {
+  margin-top: 1rem;
+  font-weight: var(--fw-extra);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--brand-500);
+}
+
+/* -------- Responsive ----------------------------------------------- */
+@media (max-width: 768px) {
+  .methodology-eca__track { display: none; }
+  .methodology-eca__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .step-eca__marker { box-shadow: 0 0 0 4px var(--neutral-0); }
+}

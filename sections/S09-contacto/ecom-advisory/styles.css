@@ -1,0 +1,245 @@
+/* =========================================================================
+   S09 · CONTACTO · Final Contact Split — Ecom Advisory
+   Caja con sombra grande: izq gradient brand (info+mapa+social),
+   der formulario sobre fondo blanco con submit pill.
+   ========================================================================= */
+
+.contact-eca {
+  --eca-accent: var(--teal-300);
+  background-color: var(--neutral-0);
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+}
+
+.contact-eca__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.contact-eca__box {
+  display: flex;
+  min-height: 600px;
+  background: var(--neutral-0);
+  border-radius: 30px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* -------- Visual (left) ---------------------------------------------- */
+.contact-eca__visual {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-500) 100%);
+  color: var(--color-text-invert);
+}
+
+.contact-eca__noise {
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.contact-eca__visual-inner {
+  position: relative;
+  z-index: 10;
+  padding: 4rem;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.contact-eca__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, #a5f3fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-eca__title .nowrap { white-space: nowrap; }
+
+.contact-eca__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: var(--lh-normal);
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.contact-eca__info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+.contact-eca__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.contact-eca__ico {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  color: var(--color-text-invert);
+}
+.contact-eca__row p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--color-text-invert);
+}
+
+.contact-eca__map {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.contact-eca__map iframe {
+  display: block;
+  border: 0;
+}
+
+.contact-eca__social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  color: var(--color-text-invert);
+}
+.contact-eca__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--duration-base) ease, transform var(--duration-base) ease;
+}
+.contact-eca__social a:hover {
+  color: var(--eca-accent);
+  transform: translateY(-2px);
+}
+
+/* -------- Form (right) ---------------------------------------------- */
+.contact-eca__form-side {
+  flex: 1;
+  padding: 4rem;
+  background: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-eca {
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.form-eca__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+.form-eca__group {
+  margin-bottom: 1.25rem;
+}
+.form-eca__group label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: var(--fw-medium);
+  color: var(--neutral-500);
+  margin-bottom: 0.5rem;
+}
+
+.form-eca__group input,
+.form-eca__group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: #fdfdfd;
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-text);
+  transition: border-color var(--duration-base) ease,
+              background var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+.form-eca__group input:focus,
+.form-eca__group textarea:focus {
+  outline: none;
+  background: var(--neutral-0);
+  border-color: var(--brand-900);
+  box-shadow: 0 0 0 3px rgba(3, 4, 94, 0.1);
+}
+
+.form-eca__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.form-eca__checkbox input[type="checkbox"] {
+  margin-top: 4px;
+  accent-color: var(--brand-900);
+}
+.form-eca__checkbox label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--neutral-500);
+  line-height: 1.5;
+}
+.form-eca__checkbox label a {
+  color: var(--brand-900);
+  text-decoration: underline;
+}
+
+.form-eca__submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--brand-900);
+  color: var(--color-text-invert);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--fw-semi);
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(3, 4, 94, 0.2);
+  transition: background var(--duration-base) ease,
+              transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+.form-eca__submit:hover {
+  background: var(--brand-700);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(3, 4, 94, 0.3);
+}
+
+/* -------- Responsive ----------------------------------------------- */
+@media (max-width: 968px) {
+  .contact-eca__box { flex-direction: column; min-height: 0; }
+  .contact-eca__visual-inner { padding: 3rem 2rem; max-width: 100%; }
+  .contact-eca__form-side { padding: 3rem 2rem; }
+}
