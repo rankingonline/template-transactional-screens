@@ -1,0 +1,125 @@
+/* =========================================================================
+   S05 · PROCESO (Valores) — Medalva
+   Header en flex con descripción a la derecha + grid auto-fit de cards.
+   Hover repinta título a brand y eleva la card.
+   ========================================================================= */
+
+.values-medalva {
+  background-color: var(--neutral-0);
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+  padding-inline: 5%;
+}
+
+.values-medalva__container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* -------- Header con título + descripción a la derecha ---------------- */
+.values-medalva__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.values-medalva__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--fw-extra);
+  color: var(--color-text);
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.values-medalva__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--neutral-500);
+  max-width: 320px;
+  line-height: var(--lh-normal);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* -------- Grid de cards ---------------------------------------------- */
+.values-medalva__list {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-medalva {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 2rem;
+  background-color: var(--neutral-0);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform var(--duration-slow) var(--ease-out),
+              box-shadow var(--duration-slow) var(--ease-out),
+              border-color var(--duration-slow) var(--ease-out);
+}
+
+.value-medalva:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(170, 23, 69, 0.08);
+  border-color: rgb(from var(--brand-500) r g b / 0.1);
+}
+@supports not (color: rgb(from white r g b / 1)) {
+  .value-medalva:hover { border-color: rgba(170, 23, 69, 0.1); }
+}
+
+.value-medalva__num {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-bold);
+  color: var(--brand-500);
+  letter-spacing: 2px;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+.value-medalva:hover .value-medalva__num { opacity: 1; }
+
+.value-medalva__title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: var(--fw-extra);
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  transition: color 0.25s ease;
+}
+.value-medalva:hover .value-medalva__title { color: var(--brand-500); }
+
+.value-medalva__desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--neutral-500);
+  line-height: var(--lh-normal);
+  transition: color 0.25s ease;
+}
+.value-medalva:hover .value-medalva__desc { color: var(--neutral-700); }
+
+/* -------- Responsive ------------------------------------------------- */
+@media (max-width: 968px) {
+  .values-medalva__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .values-medalva__desc {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .values-medalva__list { grid-template-columns: 1fr; }
+}

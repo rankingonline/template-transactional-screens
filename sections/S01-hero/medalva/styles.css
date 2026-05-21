@@ -1,0 +1,251 @@
+/* =========================================================================
+   S01 · HERO — Medalva
+   Hero VSL: gradient burgundy con orbs animados + texto a la izq.
+   y card de video a la derecha con play button glass.
+   Tema: crimson · Set tipográfico: 3 (Nunito Sans)
+   ========================================================================= */
+
+.hero-medalva {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  padding: clamp(6rem, 10vw, 9rem) 5% clamp(4rem, 8vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg,
+    var(--brand-500) 0%,
+    #7d0b2b 25%,
+    #5c0720 50%,
+    var(--brand-600) 75%,
+    var(--brand-500) 100%);
+  background-size: 300% 300%;
+  animation: hero-medalva-gradient 18s ease infinite;
+  color: var(--color-text-invert);
+}
+
+/* -------- Orbs decorativos -------------------------------------------- */
+.hero-medalva__orb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-medalva__orb--light {
+  top: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+  animation: hero-medalva-orb 25s infinite ease-in-out alternate;
+}
+.hero-medalva__orb--dark {
+  bottom: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.15), transparent 70%);
+  animation: hero-medalva-orb-rev 30s infinite ease-in-out alternate;
+}
+
+/* -------- Layout ------------------------------------------------------ */
+.hero-medalva__container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.hero-medalva__text {
+  flex: 1;
+  max-width: 650px;
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: hero-medalva-in-right 0.8s var(--ease-out) forwards;
+}
+
+.hero-medalva__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: var(--fw-extra);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  color: var(--color-text-invert);
+  margin-bottom: var(--space-5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-medalva__lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-normal);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-5);
+}
+.hero-medalva__lead strong {
+  color: var(--color-text-invert);
+  font-weight: var(--fw-extra);
+}
+
+.hero-medalva__ctas {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
+/* Botones específicos del hero (estilo invertido sobre fondo brand) */
+.hero-medalva__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: var(--fw-extra);
+  font-size: var(--fs-body);
+  text-decoration: none;
+  transition: transform var(--duration-slow) var(--ease-out),
+              background var(--duration-slow) var(--ease-out),
+              color var(--duration-slow) var(--ease-out),
+              box-shadow var(--duration-slow) var(--ease-out),
+              border-color var(--duration-slow) var(--ease-out);
+}
+.hero-medalva__btn--primary {
+  background-color: var(--neutral-0);
+  color: var(--brand-500);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.hero-medalva__btn--primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+.hero-medalva__btn--secondary {
+  background-color: transparent;
+  color: var(--color-text-invert);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  font-weight: var(--fw-bold);
+}
+.hero-medalva__btn--secondary:hover {
+  background-color: var(--neutral-0);
+  color: var(--brand-500);
+  border-color: var(--neutral-0);
+}
+
+/* -------- VSL --------------------------------------------------------- */
+.hero-medalva__vsl {
+  flex: 1.2;
+  position: relative;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: hero-medalva-in-left 0.8s var(--ease-out) forwards;
+}
+
+.hero-medalva__vsl-frame {
+  position: absolute;
+  inset: -20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  transform: rotate(3deg);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-medalva__video-wrap {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s ease;
+}
+.hero-medalva__video-wrap:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.hero-medalva__video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero-medalva__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+.hero-medalva__video:hover .hero-medalva__photo {
+  transform: scale(1.05);
+}
+
+.hero-medalva__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-full);
+  color: var(--color-text-invert);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s var(--ease-out),
+              background 0.4s var(--ease-out),
+              color 0.4s var(--ease-out),
+              border-color 0.4s var(--ease-out),
+              box-shadow 0.4s var(--ease-out);
+}
+.hero-medalva__play svg { width: 100%; height: 100%; }
+.hero-medalva__video:hover .hero-medalva__play {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: var(--neutral-0);
+  color: var(--brand-500);
+  border-color: var(--neutral-0);
+  box-shadow: 0 15px 40px rgba(170, 23, 69, 0.3);
+}
+
+/* -------- Animations ------------------------------------------------- */
+@keyframes hero-medalva-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes hero-medalva-orb {
+  0%   { transform: translate(0, 0)     scale(1); }
+  33%  { transform: translate(40px,-50px) scale(1.1); }
+  66%  { transform: translate(-30px,30px) scale(0.9); }
+  100% { transform: translate(0, 0)     scale(1); }
+}
+@keyframes hero-medalva-orb-rev {
+  0%   { transform: translate(0, 0)     scale(1); }
+  33%  { transform: translate(-50px,40px) scale(1.15); }
+  66%  { transform: translate(30px,-30px) scale(0.85); }
+  100% { transform: translate(0, 0)     scale(1); }
+}
+@keyframes hero-medalva-in-right { to { opacity: 1; transform: translateX(0); } }
+@keyframes hero-medalva-in-left  { to { opacity: 1; transform: translateX(0); } }
+
+/* -------- Responsive ------------------------------------------------ */
+@media (max-width: 968px) {
+  .hero-medalva__container { flex-direction: column; }
+  .hero-medalva__text { text-align: center; max-width: 100%; }
+  .hero-medalva__ctas { justify-content: center; }
+}

@@ -1,0 +1,171 @@
+/* =========================================================================
+   S08 · CROSS-SELL · Compromisos y reconocimientos — Medalva
+   Grid 2 cols: featured grande con gradient brand + stack vertical de 3.
+   ========================================================================= */
+
+.commitments-medalva {
+  background-color: var(--surface-cool);
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+  padding-inline: 5%;
+}
+
+.commitments-medalva__container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.commitments-medalva__header {
+  margin-bottom: 4rem;
+}
+
+.commitments-medalva__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--fw-extra);
+  color: var(--color-text);
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.commitments-medalva__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* -------- Featured (large) ------------------------------------------ */
+.commit-featured {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(135deg, var(--brand-500) 0%, #7d0b2b 100%);
+  border-radius: var(--radius-2xl);
+  color: var(--color-text-invert);
+  transition: transform 0.35s var(--ease-out);
+}
+.commit-featured:hover { transform: scale(1.02); }
+
+.commit-featured__deco {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+.commit-featured__deco::after {
+  content: '';
+  position: absolute;
+  inset: 40px -40px -40px 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.commit-featured__tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.35rem 1rem;
+  margin-bottom: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.commit-featured__title {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: var(--fw-extra);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--color-text-invert);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.commit-featured__desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: var(--lh-normal);
+  position: relative;
+  z-index: 1;
+}
+
+/* -------- Stack de 3 compactas -------------------------------------- */
+.commit-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.commit-compact {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  min-height: 108px;
+  background-color: var(--neutral-0);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commit-compact:hover {
+  transform: translateX(6px);
+  box-shadow: 0 8px 28px rgba(170, 23, 69, 0.08);
+}
+
+.commit-compact__bar {
+  flex-shrink: 0;
+  width: 5px;
+  background-color: var(--brand-500);
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+.commit-compact:hover .commit-compact__bar { opacity: 1; }
+
+.commit-compact__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.6rem 2rem;
+}
+
+.commit-compact__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: var(--fw-extra);
+  color: var(--color-text);
+  letter-spacing: -0.2px;
+  margin-bottom: 0.5rem;
+}
+
+.commit-compact__desc {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: var(--neutral-500);
+  line-height: 1.55;
+}
+
+/* -------- Responsive ----------------------------------------------- */
+@media (max-width: 968px) {
+  .commitments-medalva__grid { grid-template-columns: 1fr; }
+  .commit-featured { min-height: 280px; padding: 2.5rem; }
+}

@@ -1,0 +1,99 @@
+/* =========================================================================
+   S13 · CTA FINAL — Medalva
+   Block oscuro con gradient brand→negro de overlay sobre fondo texturizado.
+   Texto centrado con botón pill que invierte colores en hover.
+   ========================================================================= */
+
+.cta-medalva {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(var(--space-16), 10vw, var(--space-24));
+  padding-inline: 5%;
+  text-align: center;
+  color: var(--color-text-invert);
+
+  /* Fondo: gradient base + patrón sutil de puntos */
+  background-color: var(--brand-900);
+  background-image:
+    radial-gradient(ellipse at 30% 30%, rgb(from var(--brand-500) r g b / 0.4), transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgb(from var(--brand-700) r g b / 0.5), transparent 60%),
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+  background-size: auto, auto, 32px 32px;
+}
+@supports not (color: rgb(from white r g b / 1)) {
+  .cta-medalva {
+    background-image:
+      radial-gradient(ellipse at 30% 30%, rgba(170,23,69,0.4), transparent 60%),
+      radial-gradient(ellipse at 70% 70%, rgba(102,14,41,0.5), transparent 60%),
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0);
+  }
+}
+
+/* Overlay gradient brand→dark superpuesto */
+.cta-medalva__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(170, 23, 69, 0.85) 0%, rgba(17, 17, 17, 0.92) 100%);
+}
+
+.cta-medalva__container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.cta-medalva__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: var(--fw-extra);
+  color: var(--color-text-invert);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+}
+
+.cta-medalva__desc {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  line-height: var(--lh-normal);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+}
+.cta-medalva__desc strong {
+  color: var(--color-text-invert);
+  font-weight: var(--fw-extra);
+}
+
+.cta-medalva__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1.2rem 3rem;
+  background-color: var(--neutral-0);
+  color: var(--brand-500);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: background var(--duration-slow) var(--ease-out),
+              color var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out),
+              box-shadow var(--duration-slow) var(--ease-out);
+}
+.cta-medalva__btn:hover {
+  background: var(--neutral-900);
+  color: var(--color-text-invert);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta-medalva__btn svg {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.cta-medalva__btn:hover svg {
+  transform: translateX(4px);
+}

@@ -1,0 +1,147 @@
+/* =========================================================================
+   S03 · PARA QUIÉN / SERVICIOS — Medalva
+   Grid auto-fit de cards centradas con número grande outlined.
+   Una card destacada con gradient brand y texto invertido.
+   ========================================================================= */
+
+.services-medalva {
+  background-color: var(--neutral-0);
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+  padding-inline: 5%;
+  position: relative;
+}
+
+.services-medalva__container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* -------- Header centrado -------------------------------------------- */
+.services-medalva__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-medalva__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--fw-extra);
+  color: var(--color-text);
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: var(--space-6);
+}
+
+.services-medalva__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  color: var(--neutral-700);
+  line-height: var(--lh-loose);
+  max-width: 800px;
+  margin-inline: auto;
+}
+.services-medalva__desc strong {
+  color: var(--brand-500);
+  font-weight: var(--fw-extra);
+}
+
+/* -------- Grid de cards ---------------------------------------------- */
+.services-medalva__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* -------- Card base -------------------------------------------------- */
+.svc-medalva {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--neutral-0);
+  border: 1px solid rgba(170, 23, 69, 0.05);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: transform var(--duration-slow) var(--ease-out),
+              box-shadow var(--duration-slow) var(--ease-out),
+              border-color var(--duration-slow) var(--ease-out);
+}
+
+/* Barra top que escala al hover */
+.svc-medalva::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background-color: var(--brand-500);
+  transform: scaleX(0);
+  transition: transform var(--duration-slow) ease;
+}
+
+.svc-medalva:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(170, 23, 69, 0.1);
+  border-color: rgba(170, 23, 69, 0.15);
+}
+.svc-medalva:hover::before { transform: scaleX(1); }
+
+.svc-medalva__num {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  font-weight: var(--fw-extra);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(170, 23, 69, 0.15);
+  line-height: 1;
+  min-width: 80px;
+  transition: color var(--duration-slow) var(--ease-out),
+              -webkit-text-stroke var(--duration-slow) var(--ease-out);
+}
+.svc-medalva:hover .svc-medalva__num {
+  color: rgba(170, 23, 69, 0.05);
+  -webkit-text-stroke: 1px var(--brand-500);
+}
+
+.svc-medalva__body { flex: 1; }
+
+.svc-medalva__title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--fw-extra);
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.svc-medalva__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  color: var(--neutral-700);
+  line-height: var(--lh-normal);
+}
+
+/* -------- Highlighted variant --------------------------------------- */
+.svc-medalva--highlight {
+  background: linear-gradient(135deg, var(--brand-500) 0%, #5c0720 100%);
+  border: none;
+  box-shadow: 0 15px 35px rgba(170, 23, 69, 0.2);
+  color: var(--color-text-invert);
+}
+.svc-medalva--highlight::before { display: none; }
+
+.svc-medalva--highlight .svc-medalva__num {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+}
+.svc-medalva--highlight:hover .svc-medalva__num {
+  color: rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
+}
+.svc-medalva--highlight .svc-medalva__title,
+.svc-medalva--highlight .svc-medalva__desc {
+  color: var(--color-text-invert);
+}
+.svc-medalva--highlight .svc-medalva__desc { opacity: 0.9; }
