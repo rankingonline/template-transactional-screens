@@ -89,6 +89,183 @@
       color: var(--color-text-invert);
     }
 
+    /* ============== Tabs CSS-only ============== */
+    .catalog-tabs { position: relative; }
+    .catalog-tabs__input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .catalog-tabs__nav {
+      display: inline-flex;
+      gap: var(--space-1);
+      padding: var(--space-1);
+      margin-bottom: var(--space-8);
+      background: var(--neutral-100);
+      border-radius: var(--radius-pill);
+    }
+    .catalog-tabs__label {
+      padding: var(--space-2) var(--space-5);
+      font-family: var(--font-body);
+      font-size: var(--fs-body-sm);
+      font-weight: var(--fw-semi);
+      color: var(--color-text-muted);
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: background var(--duration-base) var(--ease-out),
+                  color var(--duration-base) var(--ease-out);
+    }
+    .catalog-tabs__label:hover { color: var(--color-text); }
+
+    /* Hide both panels by default */
+    .catalog-tabs__panel { display: none; }
+
+    /* Show panel matching checked radio */
+    #tab-by-client:checked ~ .catalog-tabs__panels [data-panel="by-client"],
+    #tab-by-section:checked ~ .catalog-tabs__panels [data-panel="by-section"] {
+      display: block;
+    }
+
+    /* Active label */
+    #tab-by-client:checked ~ .catalog-tabs__nav label[for="tab-by-client"],
+    #tab-by-section:checked ~ .catalog-tabs__nav label[for="tab-by-section"] {
+      background: var(--neutral-0);
+      color: var(--brand-700);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Focus visible */
+    .catalog-tabs__input:focus-visible + .catalog-tabs__nav,
+    .catalog-tabs__label:focus-visible {
+      outline: 2px solid var(--brand-400);
+      outline-offset: 2px;
+    }
+
+    /* ============== Legend ============== */
+    .legend-codes {
+      margin-bottom: var(--space-10);
+      padding: var(--space-5) var(--space-6);
+      background: var(--surface-warm);
+      border: 1px solid var(--color-divider);
+      border-radius: var(--radius-xl);
+    }
+    .legend-codes__head {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .legend-codes__head h3 {
+      font-size: var(--fs-body);
+      font-weight: var(--fw-semi);
+      color: var(--color-text);
+    }
+    .legend-codes__head small {
+      font-size: var(--fs-caption);
+      color: var(--color-text-muted);
+    }
+    .legend-codes__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--space-2);
+    }
+    .legend-code {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      background: var(--neutral-0);
+      border: 1px solid var(--color-divider);
+      border-radius: var(--radius-md);
+      font-size: var(--fs-caption);
+      transition: border-color var(--duration-base) var(--ease-out),
+                  transform var(--duration-base) var(--ease-out);
+    }
+    .legend-code:hover {
+      border-color: var(--brand-300);
+      transform: translateY(-1px);
+    }
+    .legend-code__id {
+      flex-shrink: 0;
+      font-family: var(--font-heading);
+      font-weight: var(--fw-bold);
+      color: var(--brand-700);
+      font-size: var(--fs-body-sm);
+      letter-spacing: -0.02em;
+    }
+    .legend-code__name {
+      color: var(--color-text);
+      line-height: 1.35;
+    }
+
+    /* ============== Grupos de sección (panel B) ============== */
+    .grid-groups {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+    .group-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: transform var(--duration-base) var(--ease-out),
+                  box-shadow var(--duration-base) var(--ease-out),
+                  border-color var(--duration-base) var(--ease-out);
+    }
+    .group-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--brand-200);
+    }
+    .group-card__head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+    }
+    .group-card__id {
+      font-family: var(--font-heading);
+      font-weight: var(--fw-bold);
+      color: var(--brand-500);
+      font-size: var(--fs-h4);
+      letter-spacing: -0.02em;
+    }
+    .group-card__name {
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-bold);
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+    .group-card__count {
+      margin-left: auto;
+      font-size: var(--fs-caption);
+      color: var(--color-text-muted);
+    }
+    .group-card__clients {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    .client-link {
+      padding: var(--space-1) var(--space-3);
+      background: var(--brand-50);
+      color: var(--brand-700);
+      border-radius: var(--radius-md);
+      font-size: var(--fs-micro);
+      font-weight: var(--fw-medium);
+      transition: background var(--duration-base) var(--ease-out),
+                  color var(--duration-base) var(--ease-out),
+                  transform var(--duration-base) var(--ease-out);
+    }
+    .client-link:hover {
+      background: var(--brand-500);
+      color: var(--color-text-invert);
+      transform: translateY(-1px);
+    }
+
     .palette-strip {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
@@ -270,10 +447,48 @@
     <div class="container">
       <span class="chip hero-index__eyebrow" style="margin-bottom: var(--space-3);">03 · Catálogo</span>
       <h2 class="t-h2" style="margin-bottom: var(--space-2);">Clientes y secciones</h2>
-      <p class="t-lead" style="margin-bottom: var(--space-10); max-width: 60ch;">
-        Mapa de qué se va a extraer de cada proyecto. Las secciones se rellenan a medida que se van construyendo.
+      <p class="t-lead" style="margin-bottom: var(--space-8); max-width: 60ch;">
+        Mapa de qué se va a extraer de cada proyecto. Cambiá la vista para ordenar por cliente o por grupo de sección.
       </p>
 
+      <!-- Leyenda de códigos de grupo -->
+      <div class="legend-codes">
+        <div class="legend-codes__head">
+          <h3>Códigos de grupo de sección</h3>
+          <small>13 grupos totales</small>
+        </div>
+        <div class="legend-codes__grid">
+          <div class="legend-code"><span class="legend-code__id">S01</span><span class="legend-code__name">Hero</span></div>
+          <div class="legend-code"><span class="legend-code__id">S02</span><span class="legend-code__name">Problemática</span></div>
+          <div class="legend-code"><span class="legend-code__id">S03</span><span class="legend-code__name">Para quién es este servicio</span></div>
+          <div class="legend-code"><span class="legend-code__id">S04</span><span class="legend-code__name">Qué incluye el servicio</span></div>
+          <div class="legend-code"><span class="legend-code__id">S05</span><span class="legend-code__name">Proceso de trabajo</span></div>
+          <div class="legend-code"><span class="legend-code__id">S06</span><span class="legend-code__name">Beneficios / Lo que consigues</span></div>
+          <div class="legend-code"><span class="legend-code__id">S07</span><span class="legend-code__name">Tabla comparativa Problema / Solución</span></div>
+          <div class="legend-code"><span class="legend-code__id">S08</span><span class="legend-code__name">Servicios relacionados / Cross-sell</span></div>
+          <div class="legend-code"><span class="legend-code__id">S09</span><span class="legend-code__name">Formulario de contacto</span></div>
+          <div class="legend-code"><span class="legend-code__id">S10</span><span class="legend-code__name">Mapa</span></div>
+          <div class="legend-code"><span class="legend-code__id">S11</span><span class="legend-code__name">Reviews</span></div>
+          <div class="legend-code"><span class="legend-code__id">S12</span><span class="legend-code__name">FAQs</span></div>
+          <div class="legend-code"><span class="legend-code__id">S13</span><span class="legend-code__name">Cierre / CTA Final</span></div>
+        </div>
+      </div>
+
+      <!-- Tabs CSS-only -->
+      <div class="catalog-tabs">
+
+        <input type="radio" name="catalog-view" id="tab-by-client" class="catalog-tabs__input" checked />
+        <input type="radio" name="catalog-view" id="tab-by-section" class="catalog-tabs__input" />
+
+        <div class="catalog-tabs__nav" role="tablist" aria-label="Ordenar catálogo">
+          <label for="tab-by-client" class="catalog-tabs__label">Por cliente</label>
+          <label for="tab-by-section" class="catalog-tabs__label">Por grupo de sección</label>
+        </div>
+
+        <div class="catalog-tabs__panels">
+
+          <!-- ===== PANEL A · Por cliente ===== -->
+          <div class="catalog-tabs__panel" data-panel="by-client">
       <div class="grid-clients">
         <article class="client-card">
           <div class="client-card__head"><span class="client-card__name">Sol-4</span><span class="client-card__count">5 / 5 listas</span></div>
@@ -378,6 +593,184 @@
           </div>
         </article>
       </div>
+          </div><!-- /panel by-client -->
+
+          <!-- ===== PANEL B · Por grupo de sección ===== -->
+          <div class="catalog-tabs__panel" data-panel="by-section">
+            <div class="grid-groups">
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S01</span>
+                  <h3 class="group-card__name">Hero</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S01-hero/sol4/index.html" target="_blank">Sol-4</a>
+                  <a class="client-link" href="./sections/S01-hero/christian-sanchez/index.html" target="_blank">Christian Sánchez</a>
+                  <a class="client-link" href="./sections/S01-hero/medalva/index.html" target="_blank">Medalva</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S02</span>
+                  <h3 class="group-card__name">Problemática</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S02-problematica/ecom-advisory/index.html" target="_blank">Ecom Advisory</a>
+                  <a class="client-link" href="./sections/S02-problematica/romero-martinez/index.html" target="_blank">Romero Martínez</a>
+                  <a class="client-link" href="./sections/S02-problematica/gestiona-asesoria/index.html" target="_blank">Gestiona Asesoría</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S03</span>
+                  <h3 class="group-card__name">Para quién es este servicio</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S03-para-quien/medalva/index.html" target="_blank">Medalva</a>
+                  <a class="client-link" href="./sections/S03-para-quien/aselegal/index.html" target="_blank">Aselegal Plaza Cuba</a>
+                  <a class="client-link" href="./sections/S03-para-quien/tribulex/index.html" target="_blank">Tribulex</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S04</span>
+                  <h3 class="group-card__name">Qué incluye el servicio</h3>
+                  <span class="group-card__count">1 variante</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S04-que-incluye/tribulex/index.html" target="_blank">Tribulex</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S05</span>
+                  <h3 class="group-card__name">Proceso de trabajo</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S05-proceso/sol4/index.html" target="_blank">Sol-4</a>
+                  <a class="client-link" href="./sections/S05-proceso/medalva/index.html" target="_blank">Medalva</a>
+                  <a class="client-link" href="./sections/S05-proceso/ecom-advisory/index.html" target="_blank">Ecom Advisory</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S06</span>
+                  <h3 class="group-card__name">Beneficios / Lo que consigues</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S06-beneficios/sol4/index.html" target="_blank">Sol-4</a>
+                  <a class="client-link" href="./sections/S06-beneficios/ecom-advisory/index.html" target="_blank">Ecom Advisory</a>
+                  <a class="client-link" href="./sections/S06-beneficios/consulting-f/index.html" target="_blank">Consulting-F</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S07</span>
+                  <h3 class="group-card__name">Tabla comparativa Problema / Solución</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S07-tabla-prob-sol/consulting-f/index.html" target="_blank">Consulting-F</a>
+                  <a class="client-link" href="./sections/S07-tabla-prob-sol/segu-web/index.html" target="_blank">Segu Web</a>
+                  <a class="client-link" href="./sections/S07-tabla-prob-sol/barreda-diaz/index.html" target="_blank">Barreda Díaz</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S08</span>
+                  <h3 class="group-card__name">Servicios relacionados / Cross-sell</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S08-cross-sell/sol4/index.html" target="_blank">Sol-4</a>
+                  <a class="client-link" href="./sections/S08-cross-sell/christian-sanchez/index.html" target="_blank">Christian Sánchez</a>
+                  <a class="client-link" href="./sections/S08-cross-sell/medalva/index.html" target="_blank">Medalva</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S09</span>
+                  <h3 class="group-card__name">Formulario de contacto</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S09-contacto/sol4/index.html" target="_blank">Sol-4</a>
+                  <a class="client-link" href="./sections/S09-contacto/ecom-advisory/index.html" target="_blank">Ecom Advisory</a>
+                  <a class="client-link" href="./sections/S09-contacto/aselegal/index.html" target="_blank">Aselegal Plaza Cuba</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S10</span>
+                  <h3 class="group-card__name">Mapa</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S10-mapa/tribulex/index.html" target="_blank">Tribulex</a>
+                  <a class="client-link" href="./sections/S10-mapa/consulting-f/index.html" target="_blank">Consulting-F</a>
+                  <a class="client-link" href="./sections/S10-mapa/segu-web/index.html" target="_blank">Segu Web</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S11</span>
+                  <h3 class="group-card__name">Reviews</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S11-reviews/aselegal/index.html" target="_blank">Aselegal Plaza Cuba</a>
+                  <a class="client-link" href="./sections/S11-reviews/tribulex/index.html" target="_blank">Tribulex</a>
+                  <a class="client-link" href="./sections/S11-reviews/barreda-diaz/index.html" target="_blank">Barreda Díaz</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S12</span>
+                  <h3 class="group-card__name">FAQs</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S12-faqs/christian-sanchez/index.html" target="_blank">Christian Sánchez</a>
+                  <a class="client-link" href="./sections/S12-faqs/aselegal/index.html" target="_blank">Aselegal Plaza Cuba</a>
+                  <a class="client-link" href="./sections/S12-faqs/segu-web/index.html" target="_blank">Segu Web</a>
+                </div>
+              </article>
+
+              <article class="group-card">
+                <div class="group-card__head">
+                  <span class="group-card__id">S13</span>
+                  <h3 class="group-card__name">Cierre / CTA Final</h3>
+                  <span class="group-card__count">3 variantes</span>
+                </div>
+                <div class="group-card__clients">
+                  <a class="client-link" href="./sections/S13-cta-final/medalva/index.html" target="_blank">Medalva</a>
+                  <a class="client-link" href="./sections/S13-cta-final/romero-martinez/index.html" target="_blank">Romero Martínez</a>
+                  <a class="client-link" href="./sections/S13-cta-final/tribulex/index.html" target="_blank">Tribulex</a>
+                </div>
+              </article>
+
+            </div>
+          </div><!-- /panel by-section -->
+
+        </div><!-- /panels -->
+      </div><!-- /tabs -->
     </div>
   </section>
 
