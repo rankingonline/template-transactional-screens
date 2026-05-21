@@ -1,0 +1,175 @@
+/* =========================================================================
+   S07 · PROBLEMA & SOLUCIÓN (Comparison Table) — Segu Web
+   Mobile: filas apiladas con border-left rojo/lime.
+   Desktop ≥768px: 2 cols por fila con borde divisor y col positiva en bg-lime.
+   ========================================================================= */
+
+.problems-sgu {
+  /* Accent lime único de Segu */
+  --sgu-lime:       #C1D789;
+  --sgu-lime-tint:  #F3F8E7;
+  --sgu-lime-deep:  #65703A;
+  --sgu-red:        #ef4444;
+  --sgu-green-ico:  #059669;
+
+  background-color: var(--neutral-0);
+  padding-block: 5rem;
+}
+
+.problems-sgu__container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.problems-sgu__intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.problems-sgu__title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-800);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.problems-sgu__lead {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--neutral-500);
+  line-height: 1.6;
+}
+
+.problems-sgu__highlight {
+  font-weight: var(--fw-bold);
+  color: var(--sgu-lime-deep);
+  background: linear-gradient(120deg, rgba(193, 215, 137, 0.3), rgba(193, 215, 137, 0.3));
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 90%;
+}
+
+/* -------- Tabla ---------------------------------------------------- */
+.problems-sgu__table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.problems-sgu__header { display: none; }
+
+.problems-sgu__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--neutral-100);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(1, 38, 61, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.problems-sgu__row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.problems-sgu__cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--neutral-0);
+}
+.problems-sgu__cell--bad   { border-left: 4px solid var(--sgu-red); }
+.problems-sgu__cell--good  { border-left: 4px solid var(--sgu-lime); }
+
+.problems-sgu__ico {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+}
+.problems-sgu__ico--bad {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--sgu-red);
+}
+.problems-sgu__ico--good {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--sgu-green-ico);
+}
+
+.problems-sgu__cell p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--neutral-600);
+}
+.problems-sgu__cell--good p {
+  color: var(--brand-700);
+  font-weight: var(--fw-medium);
+}
+
+/* -------- Desktop ≥768px -------------------------------------- */
+@media (min-width: 768px) {
+  .problems-sgu__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--neutral-100);
+  }
+  .problems-sgu__header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--brand-700);
+    text-align: center;
+    font-weight: var(--fw-bold);
+    margin: 0;
+  }
+
+  .problems-sgu__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: transparent;
+    box-shadow: none;
+    padding: 0.5rem;
+    border: 1px solid var(--neutral-100);
+    border-radius: 8px;
+  }
+  .problems-sgu__row:hover {
+    background: var(--neutral-0);
+    border-color: transparent;
+  }
+
+  .problems-sgu__cell {
+    background: transparent;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .problems-sgu__cell--bad {
+    border-left: none;
+    border-right: 1px solid var(--neutral-100);
+  }
+  .problems-sgu__cell--good {
+    border-left: none;
+    background-color: var(--neutral-50);
+  }
+  .problems-sgu__row:hover .problems-sgu__cell--good {
+    background-color: var(--sgu-lime-tint);
+  }
+}

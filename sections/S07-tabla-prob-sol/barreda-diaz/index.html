@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S07 · Problema + Solución — Barreda Díaz</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-1">
+
+  <!--
+    Dos secciones encadenadas:
+    1) Problem Section: bg neutro · barra gradient brand→green arriba · grid
+       4 cards blancas con icono rojo y border-left rojo al hover.
+    2) Solution Section: bg gradient brand→brand-dark · grid 4 glass cards
+       con icono verde acento; al hover el icono se rellena.
+  -->
+  <div class="bd-problem-solution">
+
+    <section class="problem-bd theme-indigo">
+      <div class="problem-bd__container">
+
+        <header class="bd-intro">
+          <h2 class="bd-intro__title">¿Te suena familiar alguna de estas situaciones?</h2>
+          <p class="bd-intro__text">
+            Sabemos que gestionar tu negocio ya es suficientemente complejo.
+            Estos son los problemas más comunes que enfrentan empresas y autónomos cada día.
+          </p>
+        </header>
+
+        <div class="problem-bd__grid">
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.29 3.86L1.82 18a2 2 0 002 3h16.94a2 2 0 002-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Normativa Fiscal Confusa</h3>
+            <p class="problem-bd__desc">Las leyes fiscales cambian constantemente y es difícil estar al día sin cometer errores que puedan costarte caro.</p>
+          </article>
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M12 7v5l4 2"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Falta de Tiempo</h3>
+            <p class="problem-bd__desc">Necesitas enfocarte en tu negocio, no en papeleo, facturas y trámites administrativos interminables.</p>
+          </article>
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Miedo a Inspecciones</h3>
+            <p class="problem-bd__desc">La incertidumbre de si todo está correctamente presentado genera estrés y te quita el sueño.</p>
+          </article>
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                <polyline points="16 7 22 7 22 13"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Pagos de Más en Impuestos</h3>
+            <p class="problem-bd__desc">Sin una planificación fiscal adecuada, podrías estar pagando más de lo necesario sin saberlo.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-bd theme-indigo">
+      <div class="solution-bd__container">
+
+        <header class="bd-intro bd-intro--invert">
+          <h2 class="bd-intro__title">En Barreda Díaz Asesores, transformamos tus preocupaciones en tranquilidad</h2>
+          <p class="bd-intro__text">
+            No solo gestionamos tu contabilidad, te acompañamos en cada paso con soluciones claras
+            y un equipo humano que entiende tu negocio.
+          </p>
+        </header>
+
+        <div class="solution-bd__grid">
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Cumplimiento Garantizado</h3>
+            <p class="solution-bd__desc">Nos anticipamos a los cambios normativos y te mantenemos siempre al día, sin sorpresas ni sanciones.</p>
+          </article>
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <circle cx="12" cy="16" r="3"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Delegación Total</h3>
+            <p class="solution-bd__desc">Libera tu agenda. Nosotros nos encargamos de toda la gestión administrativa mientras tú haces crecer tu negocio.</p>
+          </article>
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 18v-6a9 9 0 0118 0v6"/>
+                <path d="M21 19a2 2 0 01-2 2h-1v-7h3zM3 19a2 2 0 002 2h1v-7H3z"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Soporte Permanente</h3>
+            <p class="solution-bd__desc">Siempre hay alguien al otro lado del teléfono. Asesoramiento personalizado cuando lo necesites, sin esperas.</p>
+          </article>
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 17 9 11 13 15 21 7"/>
+                <polyline points="15 7 21 7 21 13"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Optimización Fiscal</h3>
+            <p class="solution-bd__desc">Trabajamos contigo para reducir tu carga tributaria de forma legal, maximizando tu rentabilidad.</p>
+          </article>
+
+        </div>
+
+        <div class="solution-bd__cta">
+          <a href="#contact" class="solution-bd__btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <polyline points="9 16 11 18 15 14"/>
+            </svg>
+            Agenda tu Consulta Gratuita
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

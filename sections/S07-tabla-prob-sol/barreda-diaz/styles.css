@@ -1,0 +1,251 @@
+/* =========================================================================
+   S07 · PROBLEMA + SOLUCIÓN — Barreda Díaz
+   Dos secciones encadenadas:
+   - Problema: bg gris claro, barra gradient brand→green arriba, 4 cards
+     blancas con icono rojo y border-left rojo al hover.
+   - Solución: bg gradient brand→brand-dark, 4 glass cards con icono green
+     que se rellena al hover; debajo CTA con accent green.
+   ========================================================================= */
+
+.bd-problem-solution {
+  --bd-green:       #8eb74d;
+  --bd-green-hover: #72943d;
+  --bd-red:         #e74c3c;
+}
+
+/* ============================ PROBLEM =================================== */
+.problem-bd {
+  position: relative;
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+.problem-bd::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-500) 0%, var(--bd-green) 100%);
+}
+
+.problem-bd__container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Intro reusable entre problema y solución */
+.bd-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+.bd-intro__title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-700);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.bd-intro__text {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  color: var(--neutral-500);
+  line-height: 1.7;
+}
+
+/* Grid */
+.problem-bd__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+@media (min-width: 1100px) {
+  .problem-bd__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.problem-bd__card {
+  position: relative;
+  padding: 35px 30px;
+  background: var(--neutral-0);
+  border-radius: 12px;
+  border-left: 4px solid transparent;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+}
+.problem-bd__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--bd-red);
+}
+
+.problem-bd__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--bd-red);
+  border-radius: var(--radius-full);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.problem-bd__card:hover .problem-bd__icon {
+  background: rgba(231, 76, 60, 0.15);
+  transform: scale(1.05);
+}
+
+.problem-bd__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-700);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.problem-bd__desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--neutral-500);
+  line-height: 1.6;
+}
+
+/* ============================ SOLUTION ================================== */
+.solution-bd {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-800) 100%);
+  color: var(--color-text-invert);
+}
+.solution-bd::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+}
+
+.solution-bd__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.bd-intro--invert .bd-intro__title,
+.bd-intro--invert .bd-intro__text {
+  color: var(--color-text-invert);
+}
+.bd-intro--invert .bd-intro__title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--bd-green);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.solution-bd__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+@media (min-width: 1100px) {
+  .solution-bd__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.solution-bd__card {
+  padding: 35px 30px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+.solution-bd__card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--bd-green);
+}
+
+.solution-bd__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: rgba(142, 183, 77, 0.2);
+  color: var(--bd-green);
+  border-radius: var(--radius-full);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.solution-bd__card:hover .solution-bd__icon {
+  background: var(--bd-green);
+  color: var(--color-text-invert);
+  transform: scale(1.05);
+}
+
+.solution-bd__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-invert);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.solution-bd__desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* CTA */
+.solution-bd__cta {
+  text-align: center;
+  margin-top: 50px;
+}
+.solution-bd__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 16px 40px;
+  background-color: var(--bd-green);
+  color: var(--color-text-invert);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: var(--fw-semi);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+.solution-bd__btn:hover {
+  background-color: var(--bd-green-hover);
+  transform: translateY(-2px);
+}
+
+/* -------- Responsive ---------------------------------------------- */
+@media (max-width: 768px) {
+  .bd-intro__title { font-size: 2rem; }
+  .problem-bd__grid, .solution-bd__grid { grid-template-columns: 1fr; }
+}

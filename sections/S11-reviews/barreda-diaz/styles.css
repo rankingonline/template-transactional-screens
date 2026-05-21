@@ -1,0 +1,144 @@
+/* =========================================================================
+   S11 · REVIEWS — Barreda Díaz
+   Track horizontal con scroll-snap (sin JS) — reemplaza el carrusel
+   original. Cada card es google-style con avatar coloreado custom
+   inyectado vía --av en el style del article.
+   ========================================================================= */
+
+.reviews-bd {
+  background-color: #f8f9fa;
+  padding-block: 5rem;
+}
+
+.reviews-bd__container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.reviews-bd__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.reviews-bd__title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-700);
+  line-height: 1.2;
+}
+
+/* -------- Carrusel scroll-snap (CSS-only) ------------------------ */
+.reviews-bd__carousel {
+  position: relative;
+}
+
+.reviews-bd__track {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1.5rem;
+  scrollbar-width: thin;
+}
+.reviews-bd__track::-webkit-scrollbar { height: 8px; }
+.reviews-bd__track::-webkit-scrollbar-track { background: var(--neutral-100); border-radius: 4px; }
+.reviews-bd__track::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: 4px;
+}
+.reviews-bd__track::-webkit-scrollbar-thumb:hover { background: var(--neutral-400); }
+
+.reviews-bd__hint {
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--neutral-400);
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+/* -------- Google Review card ------------------------------------ */
+.grev-bd {
+  position: relative;
+  flex: 0 0 320px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--neutral-0);
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+}
+
+.grev-bd__g {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: block;
+}
+
+.grev-bd__head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.grev-bd__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--av, var(--brand-500));
+  color: var(--color-text-invert);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
+}
+
+.grev-bd__user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.grev-bd__name {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: 0.95rem;
+  color: #202124;
+}
+.grev-bd__date {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: #70757a;
+}
+
+.grev-bd__stars {
+  margin-bottom: 10px;
+  color: #fbbc04;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.grev-bd__text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #4b4b4b;
+  line-height: 1.5;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
