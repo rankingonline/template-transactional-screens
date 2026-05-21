@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S11 · Reviews — Tribulex</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-4">
+
+  <!--
+    Header centrado + badge global de Google con score + grid 3-col de
+    rev-cards (avatar coloreado + meta + estrellas + texto).
+  -->
+  <section class="reviews-tbx theme-steel">
+    <div class="reviews-tbx__container">
+
+      <header class="reviews-tbx__head">
+        <h2 class="reviews-tbx__title text-balance">Lo que dicen nuestros clientes</h2>
+        <p class="reviews-tbx__sub">Más de 25 años acompañando a emprendedores y autónomos en Murcia.</p>
+      </header>
+
+      <!-- Resumen Google -->
+      <div class="reviews-tbx__summary">
+        <svg class="reviews-tbx__glogo" viewBox="0 0 24 24" width="36" height="36" aria-label="Google">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div class="reviews-tbx__score">4.9</div>
+        <div class="reviews-tbx__summary-right">
+          <div class="reviews-tbx__sum-stars">★★★★★</div>
+          <p class="reviews-tbx__count">Basado en <strong>+150 reseñas</strong> en Google</p>
+        </div>
+      </div>
+
+      <!-- Grid de reviews -->
+      <div class="reviews-tbx__grid">
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #4285F4;">MG</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">María García</p>
+              <p class="rev-tbx__when">hace 3 semanas</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Llevamos con Tribulex más de 3 años. El equipo es muy cercano y siempre están disponibles cuando los necesitas. Nos ayudaron con la capitalización del paro cuando emprendimos y fue todo un éxito. Muy recomendables.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #EA4335;">AM</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Antonio Martínez</p>
+              <p class="rev-tbx__when">hace 1 mes</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Me dieron de alta como autónomo con el Plan Emprendedor. Todo rapidísimo y sin complicaciones. Me explicaron las bonificaciones de la tarifa plana que ni sabía que existían. Un servicio excelente de principio a fin.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #34A853;">LS</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Laura Sánchez</p>
+              <p class="rev-tbx__when">hace 2 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Profesionales de verdad. Llevo una pequeña empresa y gestionan contabilidad, nóminas y asesoramiento jurídico bajo el mismo techo. No tener que ir a distintos sitios para cada gestión es una ventaja enorme.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #9C27B0;">CL</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Carlos López</p>
+              <p class="rev-tbx__when">hace 4 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Llevo años con otras gestorías y ninguna se había preocupado por mi negocio como Tribulex. Siempre con soluciones, nunca con excusas. El equipo de la oficina de Alhama es excelente.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #00BCD4;">IF</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Isabel Fernández</p>
+              <p class="rev-tbx__when">hace 5 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Nos ayudaron a solicitar subvenciones que desconocíamos totalmente. Muy claros en todo el proceso y sin cobrar de más. Totalmente recomendables para cualquier autónomo que empiece.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #F57C00;">JR</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Javier Ruiz</p>
+              <p class="rev-tbx__when">hace 6 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">El Bono Tecnológico de 250€ del Plan Emprendedor nos vino genial para montar la web y el correo profesional. Un detalle que marca la diferencia respecto a otras asesorías. 100% recomendado.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

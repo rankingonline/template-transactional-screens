@@ -1,0 +1,188 @@
+/* =========================================================================
+   S03 · ¿Cuál es tu situación? — Tribulex
+   Lista de filas con grid 3-col. Hover ilumina la fila con accent gold
+   y desplaza el contenido 3px a la derecha.
+   ========================================================================= */
+
+.situacion-tbx {
+  --tbx-gold: var(--gold-500);
+  --tbx-gold-soft: rgba(251, 199, 34, 0.15);
+  --tbx-border-soft: #F0F0F0;
+
+  background: var(--neutral-0);
+  padding-block: clamp(3rem, 5vw, 6rem);
+}
+
+.situacion-tbx__container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+/* -------- Head ----------------------------------------------------- */
+.situacion-tbx__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.situacion-tbx__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-500);
+  margin-bottom: 0.4rem;
+}
+
+.situacion-tbx__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  line-height: 1.2;
+}
+
+.situacion-tbx__sub {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--neutral-500);
+  max-width: 260px;
+  text-align: right;
+  line-height: 1.55;
+  flex-shrink: 0;
+}
+
+/* -------- Lista de filas ------------------------------------------ */
+.situacion-tbx__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sit-tbx {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid var(--tbx-border-soft);
+  border-left: 3px solid transparent;
+  color: inherit;
+  transition: background 0.25s ease,
+              border-left-color 0.25s ease,
+              padding-left 0.25s ease;
+}
+.sit-tbx:last-child { border-bottom: 1px solid var(--tbx-border-soft); }
+.sit-tbx:hover {
+  background: var(--surface-warm);
+  border-left-color: var(--tbx-gold);
+  padding-left: calc(1.5rem + 3px);
+}
+
+/* Left: número + icono */
+.sit-tbx__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sit-tbx__n {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: var(--fw-extra);
+  color: #E0ECF7;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transition: color 0.25s ease;
+}
+.sit-tbx:hover .sit-tbx__n { color: var(--tbx-gold); }
+
+.sit-tbx__ico {
+  width: 40px;
+  height: 40px;
+  background: #F0F6FB;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease;
+  overflow: hidden;
+}
+.sit-tbx__ico img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: filter 0.25s ease;
+}
+.sit-tbx:hover .sit-tbx__ico { background: var(--tbx-gold); }
+
+/* Center: copy */
+.sit-tbx__body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  margin-bottom: 0.35rem;
+}
+.sit-tbx__body p {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--neutral-500);
+  line-height: 1.65;
+}
+
+/* Right: tag + arrow */
+.sit-tbx__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.sit-tbx__tag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  transition: color 0.25s ease;
+}
+.sit-tbx:hover .sit-tbx__tag { color: var(--brand-500); }
+
+.sit-tbx__arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid #E0ECF7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neutral-500);
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              color 0.25s ease,
+              transform 0.25s ease;
+}
+.sit-tbx:hover .sit-tbx__arrow {
+  background: var(--tbx-gold);
+  border-color: var(--tbx-gold);
+  color: var(--brand-900);
+  transform: translateX(4px);
+}
+
+/* -------- Responsive ---------------------------------------------- */
+@media (max-width: 768px) {
+  .sit-tbx {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+  }
+  .sit-tbx__right { align-items: flex-start; flex-direction: row; }
+  .situacion-tbx__sub { text-align: left; max-width: 100%; }
+}

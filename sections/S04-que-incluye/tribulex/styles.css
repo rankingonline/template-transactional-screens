@@ -1,0 +1,89 @@
+/* =========================================================================
+   S04 · Qué incluye / Todos los servicios — Tribulex
+   Grid 3x2 de service cards con imagen ilustrativa, título y descripción.
+   Hover: borde brand + sombra + lift de -2px.
+   ========================================================================= */
+
+.services-tbx {
+  background: var(--neutral-0);
+  padding-block: clamp(3rem, 5vw, 6rem);
+}
+
+.services-tbx__container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.services-tbx__head {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.services-tbx__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.services-tbx__sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--neutral-500);
+  line-height: 1.65;
+}
+
+.services-tbx__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.svc-tbx {
+  padding: 2.5rem;
+  background: var(--neutral-0);
+  border: 1px solid #E0ECF7;
+  border-radius: 20px;
+  transition: border-color var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+.svc-tbx:hover {
+  border-color: var(--brand-400);
+  box-shadow: 0 6px 24px rgba(26, 60, 94, 0.10);
+  transform: translateY(-2px);
+}
+
+.svc-tbx__img {
+  width: 64px;
+  height: auto;
+  margin-bottom: 1.1rem;
+}
+
+.svc-tbx__title {
+  font-family: var(--font-heading);
+  font-size: 0.975rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  margin-bottom: 0.45rem;
+}
+
+.svc-tbx__desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--neutral-500);
+  line-height: 1.65;
+}
+
+/* -------- Responsive ---------------------------------------------- */
+@media (max-width: 968px) {
+  .services-tbx__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .services-tbx__grid { grid-template-columns: 1fr; }
+}

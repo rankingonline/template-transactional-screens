@@ -1,0 +1,168 @@
+/* =========================================================================
+   S11 · REVIEWS — Tribulex
+   Header centrado + summary badge (logo Google + score 4.9 + estrellas)
+   + grid 3-col de cards Google-style.
+   ========================================================================= */
+
+.reviews-tbx {
+  background: var(--neutral-0);
+  padding-block: clamp(3rem, 5vw, 6rem);
+}
+
+.reviews-tbx__container {
+  width: 90%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.reviews-tbx__head {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+.reviews-tbx__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+.reviews-tbx__sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--neutral-500);
+  line-height: 1.65;
+}
+
+/* -------- Summary badge ------------------------------------------ */
+.reviews-tbx__summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  max-width: 480px;
+  margin: 0 auto 4rem;
+  background: var(--surface-warm);
+  border: 1px solid #F0F0F0;
+  border-radius: 20px;
+}
+.reviews-tbx__glogo { flex-shrink: 0; display: block; }
+.reviews-tbx__score {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: var(--fw-extra);
+  color: var(--brand-900);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.reviews-tbx__sum-stars {
+  color: #FBBC05;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.reviews-tbx__count {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--neutral-500);
+}
+.reviews-tbx__count strong { color: var(--brand-900); }
+
+/* -------- Grid de cards ------------------------------------------ */
+.reviews-tbx__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.rev-tbx {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  background: var(--neutral-0);
+  border: 1px solid #F0F0F0;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.rev-tbx:hover {
+  box-shadow: 0 16px 48px rgba(26, 60, 94, 0.14);
+  transform: translateY(-2px);
+}
+
+.rev-tbx__top {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.rev-tbx__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--av, #4285F4);
+  color: var(--color-text-invert);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+.rev-tbx__user {
+  flex: 1;
+  min-width: 0;
+}
+.rev-tbx__name {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--fw-semi);
+  color: var(--brand-900);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rev-tbx__when {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--neutral-500);
+  margin-top: 0.1rem;
+}
+
+.rev-tbx__g {
+  flex-shrink: 0;
+  display: block;
+}
+
+.rev-tbx__stars {
+  color: #FBBC05;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.rev-tbx__text {
+  font-family: var(--font-body);
+  font-size: 0.855rem;
+  color: var(--neutral-700);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* -------- Responsive --------------------------------------------- */
+@media (max-width: 968px) {
+  .reviews-tbx__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .reviews-tbx__grid { grid-template-columns: 1fr; }
+  .reviews-tbx__summary { gap: 1rem; padding: 1.5rem; }
+}
