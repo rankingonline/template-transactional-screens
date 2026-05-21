@@ -1,0 +1,256 @@
+/* =========================================================================
+   DESIGN TOKENS — Ranking Online Component Library
+   Una paleta extensa con sub-escalas de marca tematizables.
+   Las secciones pueden sobreescribir las variables `--brand-*`
+   para adaptarse al cliente sin reescribir CSS.
+   ========================================================================= */
+
+:root {
+  /* ---------------------------------------------------------------------
+     1. NEUTRALS — escala base (siempre disponible)
+     --------------------------------------------------------------------- */
+  --neutral-0:    #FFFFFF;
+  --neutral-50:   #FAFAFB;
+  --neutral-100:  #F4F4F6;
+  --neutral-200:  #E6E6EB;
+  --neutral-300:  #D1D1D9;
+  --neutral-400:  #A8A8B4;
+  --neutral-500:  #7A7A8A;
+  --neutral-600:  #565666;
+  --neutral-700:  #3D3D4A;
+  --neutral-800:  #25252F;
+  --neutral-900:  #15151C;
+  --neutral-950:  #0A0A10;
+
+  /* Fondos cálidos / fríos para evitar el plano white puro */
+  --surface-warm:  #FAF8FC;
+  --surface-cool:  #F6F8FB;
+  --surface-cream: #FBF8F1;
+
+  /* ---------------------------------------------------------------------
+     2. PALETA EXTENDIDA — multi-hue para cubrir todas las marcas
+        Cada hue tiene escala 50–900. Sirve para temar secciones.
+     --------------------------------------------------------------------- */
+
+  /* Purple / Lila — Sol-4, Christian Sánchez */
+  --purple-50:  #F5F0FA;
+  --purple-100: #E8DDEF;
+  --purple-200: #D4C0E3;
+  --purple-300: #B898D4;
+  --purple-400: #9B6FC4;
+  --purple-500: #7E4DB3;
+  --purple-600: #6A3D9A;
+  --purple-700: #553180;
+  --purple-800: #3E2360;
+  --purple-900: #271540;
+
+  /* Crimson / Burgundy — Medalva */
+  --crimson-50:  #FBEAEE;
+  --crimson-100: #F4CADA;
+  --crimson-200: #EBA5BE;
+  --crimson-300: #DF7AA0;
+  --crimson-400: #D14F80;
+  --crimson-500: #AA1745;
+  --crimson-600: #881237;
+  --crimson-700: #660E29;
+  --crimson-800: #44091C;
+  --crimson-900: #22050E;
+
+  /* Indigo / Deep Blue — Consulting-F, Tribulex shell */
+  --indigo-50:  #EEF0FA;
+  --indigo-100: #D6DBF2;
+  --indigo-200: #B3BCE6;
+  --indigo-300: #8F9DDA;
+  --indigo-400: #6C7ECD;
+  --indigo-500: #3140B4;
+  --indigo-600: #2530A0;
+  --indigo-700: #19218C;
+  --indigo-800: #0D1680;
+  --indigo-900: #04127B;
+
+  /* Steel Blue — Tribulex, Aselegal */
+  --steel-50:  #EAF1F8;
+  --steel-100: #C8DFEF;
+  --steel-200: #9EC3DF;
+  --steel-300: #7EC8F4;
+  --steel-400: #2E75B6;
+  --steel-500: #1E4D7B;
+  --steel-600: #1A3C5E;
+  --steel-700: #162334;
+  --steel-800: #111C27;
+  --steel-900: #0A1219;
+
+  /* Gold / Amber — Tribulex acento, Romero/Barreda elegante */
+  --gold-50:  #FFF8E1;
+  --gold-100: #FFECB3;
+  --gold-200: #FFE082;
+  --gold-300: #FFD54F;
+  --gold-400: #FFCA28;
+  --gold-500: #FBC722;
+  --gold-600: #E6B41E;
+  --gold-700: #C9991A;
+  --gold-800: #A57D14;
+  --gold-900: #6F540A;
+
+  /* Teal / Cyan — Ecom Advisory, Gestiona */
+  --teal-50:  #E6FFFA;
+  --teal-100: #B2F5EA;
+  --teal-200: #81E6D9;
+  --teal-300: #4FD1C5;
+  --teal-400: #38B2AC;
+  --teal-500: #319795;
+  --teal-600: #2C7A7B;
+  --teal-700: #285E61;
+  --teal-800: #234E52;
+  --teal-900: #1D4044;
+
+  /* Forest / Emerald — Segu Web */
+  --forest-50:  #ECFDF5;
+  --forest-100: #D1FAE5;
+  --forest-200: #A7F3D0;
+  --forest-300: #6EE7B7;
+  --forest-400: #34D399;
+  --forest-500: #10B981;
+  --forest-600: #059669;
+  --forest-700: #047857;
+  --forest-800: #065F46;
+  --forest-900: #064E3B;
+
+  /* ---------------------------------------------------------------------
+     3. BRAND SLOTS — alias temáticos
+        Por defecto apuntan a la escala neutra/purple;
+        cada sección puede sobreescribir estas variables
+        sin tocar el resto del sistema.
+     --------------------------------------------------------------------- */
+  --brand-50:   var(--purple-50);
+  --brand-100:  var(--purple-100);
+  --brand-200:  var(--purple-200);
+  --brand-300:  var(--purple-300);
+  --brand-400:  var(--purple-400);
+  --brand-500:  var(--purple-500);
+  --brand-600:  var(--purple-600);
+  --brand-700:  var(--purple-700);
+  --brand-800:  var(--purple-800);
+  --brand-900:  var(--purple-900);
+
+  --accent-50:  var(--gold-50);
+  --accent-100: var(--gold-100);
+  --accent-300: var(--gold-300);
+  --accent-500: var(--gold-500);
+  --accent-700: var(--gold-700);
+  --accent-900: var(--gold-900);
+
+  /* ---------------------------------------------------------------------
+     4. SEMÁNTICOS
+     --------------------------------------------------------------------- */
+  --color-text:        var(--neutral-900);
+  --color-text-muted:  var(--neutral-600);
+  --color-text-soft:   var(--neutral-500);
+  --color-text-invert: var(--neutral-0);
+
+  --color-bg:          var(--neutral-0);
+  --color-bg-alt:      var(--surface-warm);
+  --color-bg-dark:     var(--neutral-900);
+  --color-surface:     var(--neutral-0);
+  --color-surface-2:   var(--neutral-50);
+
+  --color-border:      var(--neutral-200);
+  --color-border-strong: var(--neutral-300);
+  --color-divider:     var(--neutral-100);
+
+  --color-success: #2ECC71;
+  --color-error:   #E74C3C;
+  --color-warning: #F39C12;
+  --color-info:    #3498DB;
+  --color-whatsapp:#25D366;
+
+  /* ---------------------------------------------------------------------
+     5. ESPACIADO — base 4px
+     --------------------------------------------------------------------- */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-7:   28px;
+  --space-8:   32px;
+  --space-9:   36px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-14:  56px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-28: 112px;
+  --space-32: 128px;
+  --space-40: 160px;
+
+  /* ---------------------------------------------------------------------
+     6. RADIOS
+     --------------------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-3xl:  32px;
+  --radius-pill: 999px;
+  --radius-full: 50%;
+
+  /* ---------------------------------------------------------------------
+     7. SOMBRAS
+     --------------------------------------------------------------------- */
+  --shadow-xs:  0 1px 2px rgba(15, 15, 28, 0.04);
+  --shadow-sm:  0 2px 4px rgba(15, 15, 28, 0.06);
+  --shadow-md:  0 4px 12px rgba(15, 15, 28, 0.08);
+  --shadow-lg:  0 12px 28px rgba(15, 15, 28, 0.10);
+  --shadow-xl:  0 24px 48px rgba(15, 15, 28, 0.14);
+  --shadow-inner: inset 0 2px 4px rgba(15, 15, 28, 0.06);
+
+  /* ---------------------------------------------------------------------
+     8. LAYOUT
+     --------------------------------------------------------------------- */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1440px;
+  --container-pad: clamp(16px, 4vw, 32px);
+
+  /* ---------------------------------------------------------------------
+     9. MOTION
+     --------------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  /* ---------------------------------------------------------------------
+    10. Z-INDEX
+     --------------------------------------------------------------------- */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-header: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+}
+
+/* =========================================================================
+   THEMES — Atajos para tematizar bloques completos
+   Usá la clase `theme-*` en cualquier <section> para repintar
+   las variables brand sin reescribir CSS.
+   ========================================================================= */
+
+.theme-purple   { --brand-50:var(--purple-50);  --brand-100:var(--purple-100);  --brand-200:var(--purple-200);  --brand-300:var(--purple-300);  --brand-400:var(--purple-400);  --brand-500:var(--purple-500);  --brand-600:var(--purple-600);  --brand-700:var(--purple-700);  --brand-800:var(--purple-800);  --brand-900:var(--purple-900); }
+.theme-crimson  { --brand-50:var(--crimson-50); --brand-100:var(--crimson-100); --brand-200:var(--crimson-200); --brand-300:var(--crimson-300); --brand-400:var(--crimson-400); --brand-500:var(--crimson-500); --brand-600:var(--crimson-600); --brand-700:var(--crimson-700); --brand-800:var(--crimson-800); --brand-900:var(--crimson-900); }
+.theme-indigo   { --brand-50:var(--indigo-50);  --brand-100:var(--indigo-100);  --brand-200:var(--indigo-200);  --brand-300:var(--indigo-300);  --brand-400:var(--indigo-400);  --brand-500:var(--indigo-500);  --brand-600:var(--indigo-600);  --brand-700:var(--indigo-700);  --brand-800:var(--indigo-800);  --brand-900:var(--indigo-900); }
+.theme-steel    { --brand-50:var(--steel-50);   --brand-100:var(--steel-100);   --brand-200:var(--steel-200);   --brand-300:var(--steel-300);   --brand-400:var(--steel-400);   --brand-500:var(--steel-500);   --brand-600:var(--steel-600);   --brand-700:var(--steel-700);   --brand-800:var(--steel-800);   --brand-900:var(--steel-900); }
+.theme-gold     { --brand-50:var(--gold-50);    --brand-100:var(--gold-100);    --brand-200:var(--gold-200);    --brand-300:var(--gold-300);    --brand-400:var(--gold-400);    --brand-500:var(--gold-500);    --brand-600:var(--gold-600);    --brand-700:var(--gold-700);    --brand-800:var(--gold-800);    --brand-900:var(--gold-900); }
+.theme-teal     { --brand-50:var(--teal-50);    --brand-100:var(--teal-100);    --brand-200:var(--teal-200);    --brand-300:var(--teal-300);    --brand-400:var(--teal-400);    --brand-500:var(--teal-500);    --brand-600:var(--teal-600);    --brand-700:var(--teal-700);    --brand-800:var(--teal-800);    --brand-900:var(--teal-900); }
+.theme-forest   { --brand-50:var(--forest-50);  --brand-100:var(--forest-100);  --brand-200:var(--forest-200);  --brand-300:var(--forest-300);  --brand-400:var(--forest-400);  --brand-500:var(--forest-500);  --brand-600:var(--forest-600);  --brand-700:var(--forest-700);  --brand-800:var(--forest-800);  --brand-900:var(--forest-900); }

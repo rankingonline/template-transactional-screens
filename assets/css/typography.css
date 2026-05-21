@@ -1,0 +1,133 @@
+/* =========================================================================
+   TYPOGRAPHY — 4 variaciones tipográficas
+   Aplicables vía clase `font-set-{1..4}` a nivel <body>, sección o componente.
+   Cada set define una familia para titulares y otra para cuerpo.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700;800&family=Manrope:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------------------------------------------------------------------
+     STACKS — 4 sets cuidados para variar el tono del proyecto
+     --------------------------------------------------------------------- */
+  /* Set 1 — Moderno neutral (Sol-4 style: sobrio, profesional) */
+  --font-set-1-heading: 'DM Sans', 'Inter', system-ui, sans-serif;
+  --font-set-1-body:    'Inter', system-ui, sans-serif;
+
+  /* Set 2 — Elegante editorial (Romero, Barreda, Aselegal: autoridad legal) */
+  --font-set-2-heading: 'Playfair Display', Georgia, serif;
+  --font-set-2-body:    'Inter', system-ui, sans-serif;
+
+  /* Set 3 — Humanista cálido (Medalva, Christian Sánchez: cercano) */
+  --font-set-3-heading: 'Nunito Sans', 'Inter', system-ui, sans-serif;
+  --font-set-3-body:    'Nunito Sans', 'Inter', system-ui, sans-serif;
+
+  /* Set 4 — Display contemporáneo (Tribulex, Consulting-F: tech-forward) */
+  --font-set-4-heading: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  --font-set-4-body:    'IBM Plex Sans', 'Manrope', system-ui, sans-serif;
+
+  /* ---------------------------------------------------------------------
+     Defaults — apuntan al Set 1
+     --------------------------------------------------------------------- */
+  --font-heading: var(--font-set-1-heading);
+  --font-body:    var(--font-set-1-body);
+
+  /* ---------------------------------------------------------------------
+     ESCALA — fluida con clamp() para responsive sin media queries extra
+     --------------------------------------------------------------------- */
+  --fs-hero:    clamp(2.25rem, 4.2vw + 0.5rem, 3.75rem);   /* ~36–60px */
+  --fs-h1:      clamp(1.875rem, 3vw + 0.5rem, 2.75rem);    /* ~30–44px */
+  --fs-h2:      clamp(1.5rem, 2vw + 0.5rem, 2rem);         /* ~24–32px */
+  --fs-h3:      clamp(1.25rem, 1.2vw + 0.5rem, 1.5rem);    /* ~20–24px */
+  --fs-h4:      clamp(1.125rem, 0.8vw + 0.5rem, 1.25rem);  /* ~18–20px */
+  --fs-lead:    clamp(1.0625rem, 0.6vw + 0.6rem, 1.25rem); /* ~17–20px */
+  --fs-body:    1rem;     /* 16px */
+  --fs-body-lg: 1.0625rem;/* 17px */
+  --fs-body-sm: 0.9375rem;/* 15px */
+  --fs-caption: 0.8125rem;/* 13px */
+  --fs-micro:   0.75rem;  /* 12px */
+
+  /* ---------------------------------------------------------------------
+     LÍNEAS Y PESOS
+     --------------------------------------------------------------------- */
+  --lh-tight:  1.1;
+  --lh-snug:   1.25;
+  --lh-normal: 1.5;
+  --lh-loose:  1.7;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semi:    600;
+  --fw-bold:    700;
+  --fw-extra:   800;
+
+  /* ---------------------------------------------------------------------
+     TRACKING
+     --------------------------------------------------------------------- */
+  --tracking-tight: -0.02em;
+  --tracking-snug:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:  0.04em;
+  --tracking-caps:  0.08em;
+}
+
+/* =========================================================================
+   SELECTORES — aplicar un set tipográfico
+   ========================================================================= */
+.font-set-1 { --font-heading: var(--font-set-1-heading); --font-body: var(--font-set-1-body); }
+.font-set-2 { --font-heading: var(--font-set-2-heading); --font-body: var(--font-set-2-body); }
+.font-set-3 { --font-heading: var(--font-set-3-heading); --font-body: var(--font-set-3-body); }
+.font-set-4 { --font-heading: var(--font-set-4-heading); --font-body: var(--font-set-4-body); }
+
+/* =========================================================================
+   ELEMENTOS BASE
+   ========================================================================= */
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-snug);
+  margin: 0;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-body-lg); font-weight: var(--fw-semi); }
+h6 { font-size: var(--fs-body); font-weight: var(--fw-semi); }
+
+p { margin: 0; }
+
+/* =========================================================================
+   UTILIDADES TIPOGRÁFICAS
+   ========================================================================= */
+.t-hero     { font-family: var(--font-heading); font-size: var(--fs-hero); font-weight: var(--fw-bold); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); }
+.t-h1       { font-family: var(--font-heading); font-size: var(--fs-h1);   font-weight: var(--fw-bold); line-height: var(--lh-tight); }
+.t-h2       { font-family: var(--font-heading); font-size: var(--fs-h2);   font-weight: var(--fw-bold); line-height: var(--lh-snug); }
+.t-h3       { font-family: var(--font-heading); font-size: var(--fs-h3);   font-weight: var(--fw-bold); line-height: var(--lh-snug); }
+.t-h4       { font-family: var(--font-heading); font-size: var(--fs-h4);   font-weight: var(--fw-semi); line-height: var(--lh-snug); }
+.t-lead     { font-size: var(--fs-lead);    line-height: var(--lh-normal); color: var(--color-text-muted); }
+.t-body     { font-size: var(--fs-body);    line-height: var(--lh-normal); }
+.t-body-lg  { font-size: var(--fs-body-lg); line-height: var(--lh-loose); }
+.t-body-sm  { font-size: var(--fs-body-sm); line-height: var(--lh-normal); }
+.t-caption  { font-size: var(--fs-caption); line-height: var(--lh-normal); color: var(--color-text-muted); }
+.t-eyebrow  { font-size: var(--fs-caption); font-weight: var(--fw-semi); text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--brand-600); }
+.t-micro    { font-size: var(--fs-micro);   line-height: var(--lh-normal); color: var(--color-text-soft); }
+
+.t-mute     { color: var(--color-text-muted); }
+.t-soft     { color: var(--color-text-soft); }
+.t-invert   { color: var(--color-text-invert); }
+.t-brand    { color: var(--brand-500); }
+.t-accent   { color: var(--accent-500); }

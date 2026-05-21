@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S09 · Contacto — Sol-4</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-1">
+
+  <section class="contact-sol4 theme-purple" id="contact">
+    <div class="container">
+      <div class="contact-sol4__box">
+
+        <!-- Lado izquierdo: información + mapa -->
+        <aside class="contact-sol4__info">
+          <h2 class="contact-sol4__title">Tell us your case.</h2>
+          <p class="contact-sol4__lead">
+            We'll read it, we'll come back to you within 24 hours, and we'll tell
+            you honestly whether we're the right people to help. No pressure,
+            no commitment.
+          </p>
+
+          <ul class="contact-sol4__details">
+            <li class="detail-item">
+              <span class="detail-item__label">Email us</span>
+              <a href="mailto:info@sol-4gestion.com" class="detail-item__link">info@sol-4gestion.com</a>
+            </li>
+            <li class="detail-item">
+              <span class="detail-item__label">Call us</span>
+              <a href="tel:+34966715181" class="detail-item__link">+34 966 71 51 81</a>
+            </li>
+            <li class="detail-item">
+              <span class="detail-item__label">Visit us</span>
+              <span class="detail-item__text">C/ Aneto 1, Local 3 · Box 52<br>Benimar I, Benijófar, Spain</span>
+            </li>
+          </ul>
+
+          <div class="contact-sol4__map">
+            <iframe
+              title="Mapa Sol-4"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.43346452296!2d-0.7358482!3d38.0835338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6398f6d7d5d5d5%3A0x6b8f7d5d5d5d5d5!2sCalle%20Aneto%2C%201%2C%2003178%20Benij%C3%B3far%2C%20Alicante!5e0!3m2!1sen!2ses!4v1715095000000!5m2!1sen!2ses"
+              width="100%"
+              height="200"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </aside>
+
+        <!-- Lado derecho: formulario -->
+        <div class="contact-sol4__form-side">
+          <form class="form-sol4" action="#" method="POST">
+
+            <div class="form-sol4__row">
+              <div class="field">
+                <input type="text" id="name" name="name" required placeholder=" " />
+                <label for="name">Your name</label>
+              </div>
+              <div class="field">
+                <input type="email" id="email" name="email" required placeholder=" " />
+                <label for="email">Email address</label>
+              </div>
+            </div>
+
+            <div class="field field--select">
+              <select id="language" name="language" required>
+                <option value="" disabled selected hidden></option>
+                <option value="en">English</option>
+                <option value="es">Spanish / Español</option>
+                <option value="de">German / Deutsch</option>
+              </select>
+              <label for="language">Preferred language</label>
+              <span class="field__arrow" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+
+            <div class="field field--select">
+              <select id="service" name="service" required>
+                <option value="" disabled selected hidden></option>
+                <option value="buy">Buying a property</option>
+                <option value="sell">Selling a property</option>
+                <option value="inherit">Inheritance in Spain</option>
+                <option value="will">Spanish will</option>
+                <option value="business">Business Advisory</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="service">What do you need help with?</label>
+              <span class="field__arrow" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+
+            <div class="field">
+              <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+              <label for="message">Describe your situation briefly…</label>
+            </div>
+
+            <button type="submit" class="form-sol4__submit">
+              Send My Case
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+
+            <p class="form-sol4__micro">
+              We reply within 24 hours, Monday to Friday. Your information stays
+              with the two partners who'll handle your case — never shared, never
+              used for marketing.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

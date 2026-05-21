@@ -1,0 +1,121 @@
+/* =========================================================================
+   S06 · BENEFICIOS — Sol-4
+   Grid de 4 service cards (subset del ECOSYSTEM original).
+   ========================================================================= */
+
+.benefits-sol4 {
+  background-color: var(--brand-50);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-sol4::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgb(from var(--brand-500) r g b / 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+@supports not (color: rgb(from white r g b / 1)) {
+  .benefits-sol4::before { background: radial-gradient(circle, rgba(126,77,179,0.07) 0%, transparent 70%); }
+}
+
+.benefits-sol4__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.benefits-sol4__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  position: relative;
+}
+
+.benefit-card {
+  background-color: var(--neutral-0);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.benefit-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-50);
+  color: var(--brand-500);
+  border: 1px solid var(--brand-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--duration-base) var(--ease-out),
+              color var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}
+.benefit-card:hover .benefit-card__icon {
+  background: var(--brand-500);
+  color: var(--color-text-invert);
+  border-color: var(--brand-500);
+}
+
+.benefit-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  line-height: var(--lh-snug);
+}
+
+.benefit-card__text {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-loose);
+  color: var(--color-text-muted);
+  flex-grow: 1;
+}
+
+.benefit-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semi);
+  color: var(--brand-600);
+  margin-top: auto;
+  transition: color var(--duration-base) var(--ease-out),
+              gap var(--duration-base) var(--ease-out);
+}
+.benefit-card__link span { transition: transform var(--duration-base) var(--ease-out); }
+.benefit-card__link:hover {
+  color: var(--brand-800);
+  gap: var(--space-3);
+}
+.benefit-card__link:hover span { transform: translateX(4px); }
+
+@media (max-width: 1024px) {
+  .benefits-sol4__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .benefits-sol4__grid { grid-template-columns: 1fr; }
+}

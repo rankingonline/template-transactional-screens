@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S08 · Cross-sell — Sol-4</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-1">
+
+  <!--
+    Bento completo del ECOSYSTEM:
+    1× hero card grande (servicio principal con stats)
+    4× service cards (subservicios)
+    1× pills card full-width (servicios complementarios en tags)
+  -->
+  <section class="ecosystem-sol4 theme-purple section" id="ecosystem">
+    <div class="container">
+
+      <header class="ecosystem-sol4__heading">
+        <span class="chip">Full Ecosystem</span>
+        <h2 class="t-h1 text-balance">Beyond property law.</h2>
+        <p class="t-lead t-mute text-pretty">One team. Every aspect of life and business in Spain. No juggling multiple agencies.</p>
+      </header>
+
+      <div class="ecosystem-sol4__bento">
+
+        <!-- HERO CARD — service principal, span 2 columnas -->
+        <article class="eco-card eco-card--hero">
+          <div class="eco-card__bg" aria-hidden="true"></div>
+          <div class="eco-card__main">
+            <div class="eco-card__icon-ring">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="eco-card__tag">Business Advisory</div>
+            <h3 class="eco-card__title">Business &amp; tax advisory — for companies and self-employed in&nbsp;Spain.</h3>
+            <p class="eco-card__body">
+              Running a business or working as self-employed in Spain means a constant
+              stream of tax deadlines, quarterly filings and labour obligations. We handle
+              all of it for around 100 active companies and self-employed professionals
+              across the Costa Blanca — so they can focus on the work, not the paperwork.
+            </p>
+            <div class="eco-card__actions">
+              <a href="#" class="btn btn-primary">Learn more</a>
+              <a href="#" class="eco-card__text-cta">Access Biloop client portal <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="eco-card__stats">
+            <div class="eco-stat">
+              <span class="eco-stat__num">100<sup>+</sup></span>
+              <span class="eco-stat__label">Active companies</span>
+            </div>
+            <div class="eco-stat">
+              <span class="eco-stat__num">25</span>
+              <span class="eco-stat__label">Years of expertise</span>
+            </div>
+            <div class="eco-stat">
+              <span class="eco-stat__num">3</span>
+              <span class="eco-stat__label">Languages</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- SERVICE CARDS -->
+        <article class="eco-card eco-card--service">
+          <div class="eco-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M7 15s.5-4 5-4 5 4 5 4"/>
+              <circle cx="12" cy="8" r="2"/>
+            </svg>
+          </div>
+          <h4 class="eco-card__sub-title">NIE &amp; TIE</h4>
+          <p class="eco-card__sub-text">Identification numbers and residence cards for EU and non-EU clients. Fast-tracked with full representation.</p>
+          <a href="#" class="eco-card__link">Get yours <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="eco-card eco-card--service">
+          <div class="eco-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h4 class="eco-card__sub-title">Non-Resident Tax</h4>
+          <p class="eco-card__sub-text">Annual declarations (Modelo 210) for non-residents owning property in Spain. Handled end-to-end.</p>
+          <a href="#" class="eco-card__link">Learn more <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="eco-card eco-card--service">
+          <div class="eco-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h4 class="eco-card__sub-title">Mortgages</h4>
+          <p class="eco-card__sub-text">Spanish mortgage advice and representation at signing. We coordinate with lenders and the notary so you don't have&nbsp;to.</p>
+          <a href="#" class="eco-card__link">Find out more <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="eco-card eco-card--service">
+          <div class="eco-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <path d="M9 22V12h6v10"/>
+              <circle cx="17" cy="5" r="3"/>
+              <path d="M17 8v8"/>
+            </svg>
+          </div>
+          <h4 class="eco-card__sub-title">Tourist Licenses</h4>
+          <p class="eco-card__sub-text">Application, registration and compliance for holiday rental properties on the Costa Blanca.</p>
+          <a href="#" class="eco-card__link">Get licensed <span aria-hidden="true">→</span></a>
+        </article>
+
+        <!-- PILLS CARD — full width -->
+        <article class="eco-card eco-card--pills">
+          <div class="eco-pills__intro">
+            <div class="eco-pills__head">
+              <div class="eco-card__icon-ring eco-card__icon-ring--sm">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="8" x2="12" y2="16"/>
+                  <line x1="8" y1="12" x2="16" y2="12"/>
+                </svg>
+              </div>
+              <h4 class="eco-card__sub-title">Complementary Services</h4>
+            </div>
+            <p class="eco-pills__subtitle">Everything else you need when you own property or live in Spain.</p>
+          </div>
+
+          <div class="eco-pills__right">
+            <div class="eco-pills__tags">
+              <span class="eco-pill">NIE (non-EU, incl. British post-Brexit)</span>
+              <span class="eco-pill">TIE – Foreigners' Identity Card</span>
+              <span class="eco-pill">EU Residency Certificate</span>
+              <span class="eco-pill">Non-resident tax – Form 210</span>
+              <span class="eco-pill">Resident income tax – Form 100</span>
+              <span class="eco-pill">Property taxes (IBI)</span>
+              <span class="eco-pill">Powers of attorney</span>
+              <span class="eco-pill">Utility transfers</span>
+              <span class="eco-pill">Mortgages</span>
+              <span class="eco-pill">Tourist licences</span>
+              <span class="eco-pill">New build declarations</span>
+              <span class="eco-pill">Condominium dissolution</span>
+              <span class="eco-pill">Company formation</span>
+              <span class="eco-pill">Donations</span>
+            </div>
+            <a href="#" class="eco-card__link">See all services <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

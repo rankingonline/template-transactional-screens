@@ -1,0 +1,213 @@
+/* =========================================================================
+   S08 · CROSS-SELL · About intro — Christian Sánchez
+   Split 50/50: texto editorial + bento 5-col asimétrico.
+   Fondo brand-500 oscuro con glow azul difuso detrás del bento.
+   ========================================================================= */
+
+.about-cs {
+  --about-cs-cream:  #EEF2FA;
+  --about-cs-accent: var(--teal-400);
+
+  background-color: var(--brand-500);
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(255,255,255,0.04), transparent 60%),
+    radial-gradient(ellipse at 100% 100%, rgba(34,211,238,0.06), transparent 60%);
+  color: var(--about-cs-cream);
+  padding-block: clamp(var(--space-16), 10vw, var(--space-24));
+}
+
+.about-cs__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* -------- Texto ------------------------------------------------------- */
+.about-cs__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1.08;
+  color: var(--about-cs-cream);
+  margin-bottom: var(--space-6);
+  letter-spacing: var(--tracking-snug);
+}
+
+.about-cs__lead {
+  color: rgba(238, 242, 250, 0.78);
+  margin-bottom: var(--space-5);
+  max-width: 50ch;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-loose);
+}
+
+.about-cs__btn {
+  margin-top: var(--space-3);
+  background-color: transparent;
+  color: var(--about-cs-cream);
+  box-shadow: inset 0 0 0 1.5px rgba(238, 242, 250, 0.35);
+}
+.about-cs__btn:hover {
+  background-color: rgba(238, 242, 250, 0.08);
+  box-shadow: inset 0 0 0 1.5px var(--about-cs-cream);
+}
+
+/* -------- Bento ------------------------------------------------------- */
+.about-cs__bento {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 1.125rem;
+  position: relative;
+}
+.about-cs__bento::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(11, 96, 205, 0.18) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.bento-cs {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  transition: transform var(--duration-base) var(--ease-out),
+              background-color var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}
+
+.bento-cs:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Span pattern */
+.bento-cs--lead  { grid-column: span 3; justify-content: space-between; }
+.bento-cs--years { grid-column: span 2; }
+.bento-cs--team  { grid-column: span 2; justify-content: space-between; }
+.bento-cs--focus { grid-column: span 3; justify-content: space-between; }
+
+/* Inner pieces */
+.bento-cs__monogram {
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: rgba(34, 211, 238, 0.12);
+  color: var(--about-cs-accent);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-7);
+}
+
+.bento-cs__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--about-cs-cream);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-7);
+}
+
+.bento-cs__avatars {
+  display: flex;
+  margin-bottom: var(--space-7);
+}
+
+.bento-cs__avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--brand-500);
+  border: 2px solid var(--brand-700);
+  color: var(--about-cs-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: var(--fw-semi);
+  margin-left: -0.75rem;
+}
+.bento-cs__avatar:first-child {
+  margin-left: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bento-cs__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: 1.25rem;
+  color: var(--about-cs-cream);
+  margin-bottom: 0.25rem;
+}
+
+.bento-cs__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: 1.45;
+  color: rgba(238, 242, 250, 0.65);
+}
+
+/* Years card — gradient highlight */
+.bento-cs--years {
+  background: linear-gradient(135deg, var(--brand-400), var(--brand-700));
+  border-color: transparent;
+  color: var(--color-text-invert);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.bento-cs--years:hover {
+  background: linear-gradient(135deg, var(--brand-300), var(--brand-600));
+  border-color: transparent;
+}
+.bento-cs--years .bento-cs__desc { color: rgba(255, 255, 255, 0.95); }
+
+.bento-cs__big-number {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+/* -------- Responsive ------------------------------------------------- */
+@media (max-width: 1024px) {
+  .about-cs__inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 768px) {
+  .about-cs__bento { grid-template-columns: repeat(2, 1fr); }
+  .bento-cs--lead,
+  .bento-cs--years,
+  .bento-cs--team,
+  .bento-cs--focus { grid-column: span 2; }
+}
+@media (max-width: 480px) {
+  .about-cs__bento { grid-template-columns: 1fr; }
+  .bento-cs--lead,
+  .bento-cs--years,
+  .bento-cs--team,
+  .bento-cs--focus { grid-column: span 1; }
+}

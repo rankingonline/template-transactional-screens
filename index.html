@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranking Online · Component Library</title>
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <style>
+    /* ----- Layout del índice ----------------------------------------- */
+    .hero-index {
+      padding-block: var(--space-20) var(--space-12);
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(126,77,179,0.06), transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(43,179,179,0.04), transparent 50%),
+        var(--surface-warm);
+      border-bottom: 1px solid var(--color-divider);
+    }
+
+    .hero-index__eyebrow { margin-bottom: var(--space-4); }
+    .hero-index__title   { margin-bottom: var(--space-4); max-width: 22ch; }
+    .hero-index__lead    { max-width: 60ch; margin-bottom: var(--space-8); }
+
+    .meta-row {
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      color: var(--color-text-muted);
+      font-size: var(--fs-body-sm);
+    }
+    .meta-row strong { color: var(--color-text); font-weight: var(--fw-semi); }
+
+    .grid-clients {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .client-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: transform var(--duration-base) var(--ease-out),
+                  box-shadow var(--duration-base) var(--ease-out),
+                  border-color var(--duration-base) var(--ease-out);
+    }
+    .client-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--brand-200);
+    }
+
+    .client-card__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+    }
+    .client-card__name   { font-size: var(--fs-h4); font-weight: var(--fw-bold); }
+    .client-card__count  { font-size: var(--fs-caption); color: var(--color-text-muted); }
+
+    .section-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    .section-tag {
+      padding: var(--space-1) var(--space-3);
+      background: var(--neutral-100);
+      color: var(--neutral-700);
+      border-radius: var(--radius-md);
+      font-size: var(--fs-micro);
+      font-weight: var(--fw-medium);
+      transition: background var(--duration-base) var(--ease-out),
+                  color var(--duration-base) var(--ease-out),
+                  transform var(--duration-base) var(--ease-out);
+    }
+    a.section-tag { cursor: pointer; }
+    a.section-tag:hover { transform: translateY(-1px); }
+    .section-tag--done {
+      background: var(--brand-100);
+      color: var(--brand-700);
+    }
+    .section-tag--done:hover {
+      background: var(--brand-500);
+      color: var(--color-text-invert);
+    }
+
+    .palette-strip {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: var(--space-1);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 24px;
+    }
+    .palette-strip > span { display: block; }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-4);
+    }
+    .palette-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+    .palette-card__swatches {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      height: 56px;
+    }
+    .palette-card__swatches > span { display: block; }
+    .palette-card__label {
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--fs-body-sm);
+      font-weight: var(--fw-semi);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .palette-card__label small { color: var(--color-text-muted); font-weight: var(--fw-regular); font-size: var(--fs-micro); }
+
+    .type-sample {
+      padding: var(--space-6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background: var(--color-surface);
+    }
+    .type-sample__label { color: var(--color-text-muted); font-size: var(--fs-caption); margin-bottom: var(--space-2); letter-spacing: var(--tracking-caps); text-transform: uppercase; }
+    .type-sample__title { font-size: var(--fs-h2); margin-bottom: var(--space-2); }
+    .type-sample__body  { color: var(--color-text-muted); font-size: var(--fs-body-sm); }
+
+    .grid-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-4);
+    }
+  </style>
+</head>
+<body class="font-set-1">
+
+  <!-- ====== HERO ÍNDICE ====== -->
+  <header class="hero-index">
+    <div class="container">
+      <span class="chip chip-dot hero-index__eyebrow">Component Library v0.1</span>
+      <h1 class="t-hero hero-index__title text-balance">Ranking Online · Sistema de secciones, componentes y screens</h1>
+      <p class="t-lead hero-index__lead text-pretty">
+        Librería HTML/CSS unificada. Las secciones de cada cliente se extraen
+        del repositorio de referencia y se refactorizan sobre un único sistema
+        de tokens, paleta y tipografía adaptable.
+      </p>
+      <div class="meta-row">
+        <span><strong>11</strong> clientes</span>
+        <span><strong>13</strong> grupos de sección</span>
+        <span><strong>7</strong> temas de color</span>
+        <span><strong>4</strong> variaciones tipográficas</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== PALETA ====== -->
+  <section class="section">
+    <div class="container">
+      <span class="chip hero-index__eyebrow" style="margin-bottom: var(--space-3);">01 · Paleta</span>
+      <h2 class="t-h2" style="margin-bottom: var(--space-2);">Una paleta, siete temas</h2>
+      <p class="t-lead" style="margin-bottom: var(--space-10); max-width: 60ch;">
+        Cada hue tiene escala 50–900. Las secciones aplican un tema con la clase
+        <code>theme-{nombre}</code> y reciben automáticamente la sub-escala correcta.
+      </p>
+
+      <div class="palette-grid">
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--purple-50)"></span><span style="background:var(--purple-100)"></span><span style="background:var(--purple-200)"></span><span style="background:var(--purple-300)"></span><span style="background:var(--purple-400)"></span><span style="background:var(--purple-500)"></span><span style="background:var(--purple-600)"></span><span style="background:var(--purple-700)"></span><span style="background:var(--purple-800)"></span><span style="background:var(--purple-900)"></span>
+          </div>
+          <div class="palette-card__label">Purple <small>theme-purple</small></div>
+        </article>
+
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--crimson-50)"></span><span style="background:var(--crimson-100)"></span><span style="background:var(--crimson-200)"></span><span style="background:var(--crimson-300)"></span><span style="background:var(--crimson-400)"></span><span style="background:var(--crimson-500)"></span><span style="background:var(--crimson-600)"></span><span style="background:var(--crimson-700)"></span><span style="background:var(--crimson-800)"></span><span style="background:var(--crimson-900)"></span>
+          </div>
+          <div class="palette-card__label">Crimson <small>theme-crimson</small></div>
+        </article>
+
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--indigo-50)"></span><span style="background:var(--indigo-100)"></span><span style="background:var(--indigo-200)"></span><span style="background:var(--indigo-300)"></span><span style="background:var(--indigo-400)"></span><span style="background:var(--indigo-500)"></span><span style="background:var(--indigo-600)"></span><span style="background:var(--indigo-700)"></span><span style="background:var(--indigo-800)"></span><span style="background:var(--indigo-900)"></span>
+          </div>
+          <div class="palette-card__label">Indigo <small>theme-indigo</small></div>
+        </article>
+
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--steel-50)"></span><span style="background:var(--steel-100)"></span><span style="background:var(--steel-200)"></span><span style="background:var(--steel-300)"></span><span style="background:var(--steel-400)"></span><span style="background:var(--steel-500)"></span><span style="background:var(--steel-600)"></span><span style="background:var(--steel-700)"></span><span style="background:var(--steel-800)"></span><span style="background:var(--steel-900)"></span>
+          </div>
+          <div class="palette-card__label">Steel <small>theme-steel</small></div>
+        </article>
+
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--gold-50)"></span><span style="background:var(--gold-100)"></span><span style="background:var(--gold-200)"></span><span style="background:var(--gold-300)"></span><span style="background:var(--gold-400)"></span><span style="background:var(--gold-500)"></span><span style="background:var(--gold-600)"></span><span style="background:var(--gold-700)"></span><span style="background:var(--gold-800)"></span><span style="background:var(--gold-900)"></span>
+          </div>
+          <div class="palette-card__label">Gold <small>theme-gold</small></div>
+        </article>
+
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--teal-50)"></span><span style="background:var(--teal-100)"></span><span style="background:var(--teal-200)"></span><span style="background:var(--teal-300)"></span><span style="background:var(--teal-400)"></span><span style="background:var(--teal-500)"></span><span style="background:var(--teal-600)"></span><span style="background:var(--teal-700)"></span><span style="background:var(--teal-800)"></span><span style="background:var(--teal-900)"></span>
+          </div>
+          <div class="palette-card__label">Teal <small>theme-teal</small></div>
+        </article>
+
+        <article class="palette-card">
+          <div class="palette-card__swatches">
+            <span style="background:var(--forest-50)"></span><span style="background:var(--forest-100)"></span><span style="background:var(--forest-200)"></span><span style="background:var(--forest-300)"></span><span style="background:var(--forest-400)"></span><span style="background:var(--forest-500)"></span><span style="background:var(--forest-600)"></span><span style="background:var(--forest-700)"></span><span style="background:var(--forest-800)"></span><span style="background:var(--forest-900)"></span>
+          </div>
+          <div class="palette-card__label">Forest <small>theme-forest</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TIPOGRAFÍA ====== -->
+  <section class="section bg-warm">
+    <div class="container">
+      <span class="chip hero-index__eyebrow" style="margin-bottom: var(--space-3);">02 · Tipografía</span>
+      <h2 class="t-h2" style="margin-bottom: var(--space-2);">Cuatro sets tipográficos</h2>
+      <p class="t-lead" style="margin-bottom: var(--space-10); max-width: 60ch;">
+        Aplicá <code>font-set-1</code> a <code>font-set-4</code> en
+        <code>&lt;body&gt;</code> o en una <code>&lt;section&gt;</code>.
+      </p>
+
+      <div class="grid-types">
+        <article class="type-sample font-set-1">
+          <div class="type-sample__label">Set 01 · Moderno neutral</div>
+          <h3 class="type-sample__title">DM Sans + Inter</h3>
+          <p class="type-sample__body">Sobrio y profesional. Para tech / consultoría como Sol-4 o Consulting-F.</p>
+        </article>
+
+        <article class="type-sample font-set-2">
+          <div class="type-sample__label">Set 02 · Elegante editorial</div>
+          <h3 class="type-sample__title">Playfair + Inter</h3>
+          <p class="type-sample__body">Autoridad legal. Para Romero Martínez, Barreda Díaz o Aselegal.</p>
+        </article>
+
+        <article class="type-sample font-set-3">
+          <div class="type-sample__label">Set 03 · Humanista cálido</div>
+          <h3 class="type-sample__title">Nunito Sans</h3>
+          <p class="type-sample__body">Cercano y empático. Para Medalva o Christian Sánchez.</p>
+        </article>
+
+        <article class="type-sample font-set-4">
+          <div class="type-sample__label">Set 04 · Display contemporáneo</div>
+          <h3 class="type-sample__title">Space Grotesk + IBM Plex</h3>
+          <p class="type-sample__body">Tech-forward. Para Tribulex, Ecom Advisory o Segu Web.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CLIENTES & SECCIONES ====== -->
+  <section class="section">
+    <div class="container">
+      <span class="chip hero-index__eyebrow" style="margin-bottom: var(--space-3);">03 · Catálogo</span>
+      <h2 class="t-h2" style="margin-bottom: var(--space-2);">Clientes y secciones</h2>
+      <p class="t-lead" style="margin-bottom: var(--space-10); max-width: 60ch;">
+        Mapa de qué se va a extraer de cada proyecto. Las secciones se rellenan a medida que se van construyendo.
+      </p>
+
+      <div class="grid-clients">
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Sol-4</span><span class="client-card__count">5 / 5 listas</span></div>
+          <div class="section-tags">
+            <a class="section-tag section-tag--done" href="./sections/S01-hero/sol4/index.html" target="_blank">S01 Hero ✓</a>
+            <a class="section-tag section-tag--done" href="./sections/S05-proceso/sol4/index.html" target="_blank">S05 Proceso ✓</a>
+            <a class="section-tag section-tag--done" href="./sections/S06-beneficios/sol4/index.html" target="_blank">S06 Beneficios ✓</a>
+            <a class="section-tag section-tag--done" href="./sections/S08-cross-sell/sol4/index.html" target="_blank">S08 Cross-sell ✓</a>
+            <a class="section-tag section-tag--done" href="./sections/S09-contacto/sol4/index.html" target="_blank">S09 Contacto ✓</a>
+          </div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Christian Sánchez</span><span class="client-card__count">3 / 3 listas</span></div>
+          <div class="section-tags">
+            <a class="section-tag section-tag--done" href="./sections/S01-hero/christian-sanchez/index.html" target="_blank">S01 Hero ✓</a>
+            <a class="section-tag section-tag--done" href="./sections/S08-cross-sell/christian-sanchez/index.html" target="_blank">S08 Cross-sell ✓</a>
+            <a class="section-tag section-tag--done" href="./sections/S12-faqs/christian-sanchez/index.html" target="_blank">S12 FAQs ✓</a>
+          </div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Medalva</span><span class="client-card__count">5 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S01 Hero</span><span class="section-tag">S03 Para quién</span><span class="section-tag">S05 Proceso</span><span class="section-tag">S08 Cross-sell</span><span class="section-tag">S13 CTA final</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Ecom Advisory</span><span class="client-card__count">4 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S02 Problemática</span><span class="section-tag">S05 Proceso</span><span class="section-tag">S06 Beneficios</span><span class="section-tag">S09 Contacto</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Romero Martínez</span><span class="client-card__count">2 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S02 Problemática</span><span class="section-tag">S13 CTA final</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Gestiona Asesoría</span><span class="client-card__count">1 sección</span></div>
+          <div class="section-tags"><span class="section-tag">S02 Problemática</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Aselegal Plaza Cuba</span><span class="client-card__count">4 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S03 Para quién</span><span class="section-tag">S09 Contacto</span><span class="section-tag">S11 Reviews</span><span class="section-tag">S12 FAQs</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Triplex</span><span class="client-card__count">5 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S03 Para quién</span><span class="section-tag">S04 Qué incluye</span><span class="section-tag">S10 Mapa</span><span class="section-tag">S11 Reviews</span><span class="section-tag">S13 CTA final</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Consulting-F</span><span class="client-card__count">3 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S06 Beneficios</span><span class="section-tag">S07 Tabla Prob/Sol</span><span class="section-tag">S10 Mapa</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Segu Web</span><span class="client-card__count">3 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S07 Tabla Prob/Sol</span><span class="section-tag">S10 Mapa</span><span class="section-tag">S12 FAQs</span></div>
+        </article>
+
+        <article class="client-card">
+          <div class="client-card__head"><span class="client-card__name">Barreda Díaz</span><span class="client-card__count">2 secciones</span></div>
+          <div class="section-tags"><span class="section-tag">S07 Tabla Prob/Sol</span><span class="section-tag">S11 Reviews</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+/* =========================================================================
+   BASE — punto único de import del sistema
+   Importá únicamente este archivo en cada sección/screen:
+     <link rel="stylesheet" href="/assets/css/base.css">
+   ========================================================================= */
+
+@import url('./tokens.css');
+@import url('./typography.css');
+@import url('./reset.css');
+@import url('./utilities.css');

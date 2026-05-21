@@ -1,0 +1,290 @@
+/* =========================================================================
+   S01 · HERO — Christian Sánchez
+   Editorial split: tipografía masiva con animación stroke→fill cyan + console
+   glassmorphism a la derecha sobre gradient radial brand.
+   Tema: indigo · Set tipográfico: 2 (Playfair Display + Inter)
+   Accent local: cyan (--teal-400) para el texto destacado.
+   ========================================================================= */
+
+.hero-cs {
+  /* Override local del accent — cyan brillante para los efectos editoriales */
+  --hero-cs-accent: var(--teal-400);
+  --hero-cs-accent-rgb: 56, 178, 172; /* fallback */
+
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: radial-gradient(ellipse at top left, var(--brand-500) -20%, var(--brand-800) 45%, #0B091D 100%);
+  padding-top: 5.5rem;
+  color: var(--color-text-invert);
+  isolation: isolate;
+}
+
+/* -------- Fondos ------------------------------------------------------- */
+.hero-cs__grid {
+  position: absolute;
+  inset: 0;
+  background-size: 60px 60px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 80%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero-cs__ambient {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 60vw;
+  height: 60vw;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.15) 0%, transparent 60%);
+  filter: blur(80px);
+  border-radius: var(--radius-full);
+  animation: hero-cs-pulse 12s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes hero-cs-pulse {
+  0%   { transform: translateY(-50%) scale(1);   opacity: 0.6; }
+  100% { transform: translateY(-50%) scale(1.1); opacity: 1; }
+}
+
+/* -------- Layout interior --------------------------------------------- */
+.hero-cs__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  padding-block: clamp(4rem, 8vw, 8rem);
+  position: relative;
+  z-index: 10;
+  flex: 1;
+}
+
+/* -------- Tipografía masiva ------------------------------------------- */
+.hero-cs__typo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-cs__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(3.2rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text-invert);
+  text-align: left;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: hero-cs-reveal 1s var(--ease-out) 0.15s forwards;
+}
+
+/* Italic outlined + fill animado cyan */
+.hero-cs__italic {
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+  position: relative;
+  display: inline-block;
+  padding-right: 0.1em;
+}
+
+.hero-cs__italic::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  color: var(--hero-cs-accent);
+  -webkit-text-stroke: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+  animation: hero-cs-fill 1.5s cubic-bezier(0.7, 0, 0.3, 1) 0.8s forwards;
+}
+
+@keyframes hero-cs-fill {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* -------- Console glassmorphism --------------------------------------- */
+.hero-cs__console {
+  position: relative;
+  width: 100%;
+}
+
+.hero-cs__flare {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 70%);
+  filter: blur(30px);
+  border-radius: var(--radius-full);
+  z-index: 0;
+}
+
+.hero-cs__glass {
+  position: relative;
+  z-index: 2;
+  background: rgba(20, 22, 35, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: hero-cs-slide 1s var(--ease-out) 0.4s forwards;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
+}
+
+.hero-cs__glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero-cs__console-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+}
+
+.hero-cs__dots {
+  display: flex;
+  gap: 6px;
+}
+.hero-cs__dots span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.hero-cs__tag {
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-cs__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1.0625rem, 1.4vw, 1.15rem);
+  line-height: var(--lh-normal);
+  color: rgba(255, 255, 255, 0.75);
+  text-wrap: pretty;
+  max-width: none;
+}
+.hero-cs__subtitle strong {
+  color: var(--color-text-invert);
+  font-weight: var(--fw-medium);
+}
+
+.hero-cs__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Override del btn-primary local: usar accent cyan brillante */
+.hero-cs .btn-primary {
+  background-color: var(--hero-cs-accent);
+  color: var(--brand-900);
+  box-shadow: 0 6px 16px -6px rgba(34, 211, 238, 0.5);
+}
+.hero-cs .btn-primary:hover {
+  background-color: var(--teal-300);
+  box-shadow: 0 10px 22px -8px rgba(34, 211, 238, 0.6);
+}
+
+.hero-cs__btn-icon { justify-content: space-between; }
+
+.hero-cs__btn-ghost {
+  background-color: transparent;
+  color: var(--color-text-invert);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  justify-content: center;
+}
+.hero-cs__btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+/* -------- Scroll line ------------------------------------------------- */
+.hero-cs__scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: clamp(1.25rem, 5vw, 2.5rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: hero-cs-fade 1s ease 1.2s forwards;
+  z-index: 10;
+}
+
+.hero-cs__scroll-text {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-cs__scroll-bar {
+  width: 60px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cs__scroll-progress {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 30%;
+  background-color: var(--hero-cs-accent);
+  animation: hero-cs-scroll 2s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+}
+
+@keyframes hero-cs-scroll {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+@keyframes hero-cs-reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-cs-slide {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-cs-fade {
+  to { opacity: 1; }
+}
+
+/* -------- Responsive -------------------------------------------------- */
+@media (max-width: 960px) {
+  .hero-cs__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-cs__title { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+}

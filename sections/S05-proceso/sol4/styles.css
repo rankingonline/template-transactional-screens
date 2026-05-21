@@ -1,0 +1,89 @@
+/* =========================================================================
+   S05 · PROCESO DE TRABAJO — Sol-4
+   4 pasos en fila con número grande + línea conectora que crece al hover.
+   ========================================================================= */
+
+.process-sol4 {
+  background-color: var(--brand-50);
+}
+
+.process-sol4__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-8);
+}
+
+.process-sol4__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  list-style: none;
+  padding: 0;
+}
+
+.process-sol4__step {
+  position: relative;
+}
+
+.process-sol4__step-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-5);
+}
+
+.process-sol4__idx {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: var(--fw-extra);
+  color: var(--brand-200);
+  margin-right: var(--space-4);
+  min-width: 44px;
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+.process-sol4__line {
+  flex-grow: 1;
+  height: 2px;
+  background: var(--neutral-200);
+  position: relative;
+  transition: background var(--duration-base) var(--ease-out);
+}
+
+.process-sol4__line::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: var(--brand-600);
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+.process-sol4__step:hover .process-sol4__idx {
+  color: var(--brand-500);
+}
+.process-sol4__step:hover .process-sol4__line::after {
+  width: 100%;
+}
+
+.process-sol4__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+  line-height: var(--lh-snug);
+}
+
+.process-sol4__text {
+  color: var(--color-text-muted);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-loose);
+}
+
+@media (max-width: 1024px) {
+  .process-sol4__row { grid-template-columns: repeat(2, 1fr); gap: var(--space-8); }
+}
+@media (max-width: 640px) {
+  .process-sol4__row { grid-template-columns: 1fr; }
+}

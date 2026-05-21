@@ -1,0 +1,98 @@
+/* =========================================================================
+   S12 · FAQs — Christian Sánchez
+   Lista vertical con <details>/<summary>. Chevron cyan que rota 180º al abrir.
+   Estilo editorial limpio: tipografía serif en pregunta + cuerpo neutro.
+   ========================================================================= */
+
+.faq-cs {
+  --faq-cs-accent: var(--teal-400);
+  background-color: var(--neutral-0);
+}
+
+.faq-cs__inner {
+  max-width: 780px;
+}
+
+.faq-cs__header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.faq-cs__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  color: var(--brand-500);
+  letter-spacing: var(--tracking-snug);
+}
+
+.faq-cs__list {
+  margin-bottom: 2.75rem;
+}
+
+.faq-cs__item {
+  border-bottom: 1px solid var(--color-border);
+}
+.faq-cs__item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq-cs__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  padding-block: 1.375rem;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: 1.125rem;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--duration-base) var(--ease-out);
+}
+.faq-cs__question::-webkit-details-marker { display: none; }
+
+.faq-cs__question::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2338B2AC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.faq-cs__item[open] > .faq-cs__question::after {
+  transform: rotate(180deg);
+}
+
+.faq-cs__item[open] > .faq-cs__question {
+  color: var(--brand-500);
+}
+
+.faq-cs__answer {
+  padding-bottom: 1.375rem;
+  max-width: 65ch;
+}
+.faq-cs__answer p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--color-text-muted);
+  line-height: var(--lh-loose);
+}
+
+.faq-cs__cta {
+  text-align: center;
+}
+
+/* Animación opcional de apertura */
+.faq-cs__item[open] .faq-cs__answer {
+  animation: faq-cs-open 0.4s var(--ease-out);
+}
+@keyframes faq-cs-open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
