@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S09 · Contacto — Aselegal</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-2">
+
+  <!--
+    Layout split brand: izq título + canales (tel, WhatsApp, email, dirección)
+    sobre fondo accent; der form en card cream con labels uppercase.
+  -->
+  <section class="contact-asg theme-steel" id="contacto">
+
+    <div class="contact-asg__glow" aria-hidden="true"></div>
+
+    <div class="contact-asg__wrap">
+
+      <!-- Lado izquierdo: intro + canales -->
+      <div class="contact-asg__intro">
+        <span class="contact-asg__eyebrow">Escríbenos</span>
+        <h2 class="contact-asg__title">Cuéntanos<br />tu caso.</h2>
+        <p class="contact-asg__lead">
+          Te respondemos en menos de 24 horas laborables. Sin compromiso, sin formulismos.
+        </p>
+
+        <ul class="contact-asg__details">
+
+          <li>
+            <a href="tel:+34954000000" class="detail-asg">
+              <span class="detail-asg__icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14 10.5c-1.2 0-2.3-.2-3.4-.5-.3-.1-.7 0-.9.3l-1.5 1.8A11.1 11.1 0 013.9 7.8L5.7 6.3c.3-.2.4-.6.3-.9A10.7 10.7 0 015.5 2c0-.6-.4-1-.9-1H2C1.4 1 1 1.4 1 2a13 13 0 0013 13c.6 0 1-.4 1-1v-2.5c0-.6-.4-1-1-1z" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+              <div>
+                <span class="detail-asg__label">Teléfono</span>
+                <span class="detail-asg__val">+34 954 00 00 00</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://wa.me/34600000000" rel="noopener" class="detail-asg detail-asg--wa">
+              <span class="detail-asg__icon detail-asg__icon--wa">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a7 7 0 00-6 10.5L1 15l3.6-1A7 7 0 108 1z" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 5.5c.1.3.6 1.3.7 1.4 0 .2 0 .3-.1.4l-.4.5c-.1.1-.1.3 0 .4.3.5.7 1 1.1 1.4.5.4 1 .8 1.5 1 .2 0 .3 0 .4-.1l.5-.6c.1-.1.2-.1.4 0 .3.2 1.1.6 1.4.7.2 0 .3.2.3.3v1c0 .3-.3.6-.6.6-3 .2-5.8-2.6-5.6-5.6 0-.3.3-.5.6-.6h1c.1 0 .3.1.3.3z" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+              <div>
+                <span class="detail-asg__label">WhatsApp</span>
+                <span class="detail-asg__val">Escríbenos ahora</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:hola@aselegal.com" class="detail-asg">
+              <span class="detail-asg__icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1" y="3" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M1 4l7 5 7-5" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+              <div>
+                <span class="detail-asg__label">Email</span>
+                <span class="detail-asg__val">hola@aselegal.com</span>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="detail-asg detail-asg--addr">
+              <span class="detail-asg__icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1a5 5 0 00-5 5c0 3.5 5 9 5 9s5-5.5 5-9a5 5 0 00-5-5z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/></svg>
+              </span>
+              <div>
+                <span class="detail-asg__label">Dirección</span>
+                <span class="detail-asg__val">Calle Plaza de Cuba, Sevilla</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Lado derecho: form en card cream -->
+      <div class="contact-asg__form-wrap">
+        <form class="form-asg" action="#" method="post" novalidate>
+
+          <div class="form-asg__row">
+            <div class="field-asg">
+              <label class="field-asg__label" for="asg-name">Nombre</label>
+              <input class="field-asg__input" type="text" id="asg-name" name="name" autocomplete="name" required />
+            </div>
+            <div class="field-asg">
+              <label class="field-asg__label" for="asg-email">Email</label>
+              <input class="field-asg__input" type="email" id="asg-email" name="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-asg__row">
+            <div class="field-asg">
+              <label class="field-asg__label" for="asg-phone">Teléfono (opcional)</label>
+              <input class="field-asg__input" type="tel" id="asg-phone" name="phone" autocomplete="tel" />
+            </div>
+            <div class="field-asg">
+              <label class="field-asg__label" for="asg-subject">Área de consulta</label>
+              <select class="field-asg__input field-asg__select" id="asg-subject" name="subject" required>
+                <option value="">Selecciona</option>
+                <option>Particulares — Asesoría</option>
+                <option>Autónomos — Asesoría integral</option>
+                <option>Empresas — Asesoría completa</option>
+                <option>Plaza de Cuba — Asesoría jurídica</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-asg">
+            <label class="field-asg__label" for="asg-msg">Cuéntanos tu situación</label>
+            <textarea class="field-asg__input field-asg__textarea" id="asg-msg" name="message" rows="5" placeholder="Cuantos más detalles nos des, mejor podemos orientarte desde el primer contacto."></textarea>
+          </div>
+
+          <label class="check-asg">
+            <input type="checkbox" required />
+            <span>He leído y acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos para responder a esta consulta.</span>
+          </label>
+
+          <div class="form-asg__footer">
+            <button type="submit" class="form-asg__submit">
+              Enviar consulta
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="square"/>
+              </svg>
+            </button>
+            <span class="form-asg__note">Respuesta en &lt; 24 h laborables</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

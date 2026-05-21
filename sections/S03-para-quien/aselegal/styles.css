@@ -1,0 +1,159 @@
+/* =========================================================================
+   S03 · PARA QUIÉN / Servicios — Aselegal
+   Filas editoriales con número grande accent, título serif + pre-label
+   uppercase y pills "blandos" con borde cream.
+   Tema: steel · Set tipográfico: 2 (Playfair + Inter)
+   ========================================================================= */
+
+.services-asg {
+  --asg-cream: #FAFAF7;
+  --asg-rule:  #D7D3CA;
+
+  background-color: var(--asg-cream);
+  padding-block: clamp(3rem, 1.5rem + 7vw, 8rem);
+}
+
+.services-asg__wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+/* -------- Head: título + lead a la derecha --------------------------- */
+.services-asg__head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: clamp(3.5rem, 2.6rem + 4vw, 6rem);
+}
+
+.services-asg__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+}
+.services-asg__eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--brand-700);
+  display: inline-block;
+}
+
+.services-asg__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(1.75rem, 1rem + 2.8vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--brand-900);
+  margin-top: 1rem;
+}
+
+.services-asg__lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.0625rem, 0.95rem + 0.55vw, 1.3125rem);
+  line-height: 1.5;
+  color: var(--neutral-700);
+  max-width: 60ch;
+}
+
+@media (min-width: 900px) {
+  .services-asg__head {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: end;
+    gap: 3rem;
+  }
+}
+
+/* -------- Service row ----------------------------------------------- */
+.service-asg {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 2rem;
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  border-top: 1px solid var(--asg-rule);
+  align-items: start;
+}
+.service-asg:last-of-type { border-bottom: 1px solid var(--asg-rule); }
+
+.service-asg__num {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--brand-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.service-asg__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(1.75rem, 1rem + 2.8vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--brand-900);
+}
+.service-asg__title small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  margin-bottom: 0.5rem;
+}
+
+.service-asg__desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--lh-normal);
+  color: var(--neutral-700);
+  max-width: 58ch;
+  margin-top: 1rem;
+}
+
+/* -------- Pills --------------------------------------------------- */
+.pills-asg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pill-asg {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--neutral-0);
+  color: var(--neutral-700);
+  border: 1px solid var(--asg-rule);
+  border-radius: var(--radius-pill);
+  cursor: default;
+  transition: color 280ms var(--ease-out),
+              border-color 280ms var(--ease-out),
+              transform 360ms var(--ease-out);
+}
+.pill-asg:hover {
+  color: var(--brand-900);
+  border-color: var(--brand-900);
+  transform: translateY(-1px);
+}
+
+/* -------- Layout 3-col en desktop -------------------------------- */
+@media (min-width: 900px) {
+  .service-asg {
+    grid-template-columns: 90px 1fr 1.2fr;
+    gap: 2.5rem;
+  }
+}

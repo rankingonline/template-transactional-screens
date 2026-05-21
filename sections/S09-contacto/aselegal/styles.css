@@ -1,0 +1,288 @@
+/* =========================================================================
+   S09 · CONTACTO — Aselegal
+   Sección sobre fondo brand-500 con glow radial brand-900 arriba derecha.
+   Izquierda: título cream + canales de contacto en lista con separadores.
+   Derecha: card cream con form de underline-inputs y submit pill ink.
+   ========================================================================= */
+
+.contact-asg {
+  --asg-cream:   #FAFAF7;
+  --asg-cream-2: #F4F0E6;
+
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--brand-500);
+  color: var(--asg-cream);
+  padding-block: clamp(3rem, 1.5rem + 7vw, 8rem);
+}
+
+/* Glow brand-900 radial decorativo */
+.contact-asg__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 55% 60% at 90% 10%,
+    rgb(from var(--brand-900) r g b / 0.4) 0%,
+    transparent 100%);
+}
+@supports not (color: rgb(from white r g b / 1)) {
+  .contact-asg__glow { background: radial-gradient(ellipse 55% 60% at 90% 10%, rgba(17, 28, 39, 0.4), transparent 100%); }
+}
+
+.contact-asg__wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.25rem, 1.8rem + 2.4vw, 3.75rem);
+}
+@media (min-width: 900px) {
+  .contact-asg__wrap { grid-template-columns: 5fr 7fr; align-items: start; }
+  .contact-asg__intro { position: sticky; top: 6rem; }
+}
+
+/* -------- Intro lateral -------------------------------------------- */
+.contact-asg__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--asg-cream);
+}
+.contact-asg__eyebrow::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+}
+
+.contact-asg__title {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: clamp(1.75rem, 1rem + 2.8vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--asg-cream);
+  margin-top: 1rem;
+}
+
+.contact-asg__lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.0625rem, 0.95rem + 0.55vw, 1.3125rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 44ch;
+  margin-top: 1.5rem;
+}
+
+/* -------- Lista de canales --------------------------------------- */
+.contact-asg__details {
+  list-style: none;
+  padding: 0;
+  margin-top: clamp(2.25rem, 1.8rem + 2.4vw, 3.75rem);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.detail-asg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.92);
+  transition: color 240ms var(--ease-out);
+}
+.detail-asg:hover { color: var(--asg-cream); }
+.detail-asg--wa { color: #6EE7B7; }
+.detail-asg--wa:hover { color: #A7F3D0; }
+.detail-asg--addr { cursor: default; }
+
+.detail-asg__icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--asg-cream);
+  flex-shrink: 0;
+}
+.detail-asg__icon--wa {
+  color: #6EE7B7;
+  border-color: rgba(110, 231, 183, 0.5);
+}
+
+.detail-asg__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1px;
+}
+.detail-asg__val {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-medium);
+}
+
+/* -------- Form card ---------------------------------------------- */
+.contact-asg__form-wrap {
+  background: var(--asg-cream);
+  padding: clamp(1.5rem, 1.2rem + 1.4vw, 2.5rem);
+  border-radius: 2px;
+}
+
+.form-asg {
+  display: grid;
+  gap: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+}
+
+.form-asg__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+}
+@media (min-width: 600px) {
+  .form-asg__row { grid-template-columns: 1fr 1fr; }
+}
+
+.field-asg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-asg__label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+}
+
+.field-asg__input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--brand-900);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--neutral-300);
+  padding: 0.5rem 0;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color var(--duration-base) var(--ease-out);
+}
+.field-asg__input:focus {
+  outline: none;
+  border-bottom-color: var(--brand-700);
+}
+
+.field-asg__select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23565666' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  padding-right: 1.5rem;
+}
+
+.field-asg__textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+/* Check */
+.check-asg {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--neutral-700);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.check-asg input[type="checkbox"] {
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 1px solid var(--brand-900);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--duration-base) var(--ease-out);
+}
+.check-asg input[type="checkbox"]:checked { background: var(--brand-900); }
+.check-asg input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  inset: 3px 5px 5px 3px;
+  border: 2px solid var(--asg-cream);
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+  width: 4px;
+  height: 8px;
+  top: 1px;
+  left: 5px;
+  bottom: auto;
+  right: auto;
+}
+.check-asg a {
+  text-decoration: underline;
+  text-decoration-color: var(--neutral-300);
+  text-underline-offset: 3px;
+  color: inherit;
+}
+
+/* Submit */
+.form-asg__footer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.form-asg__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  background-color: var(--brand-900);
+  color: var(--asg-cream);
+  border: 1px solid var(--brand-900);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+.form-asg__submit:hover {
+  background: var(--brand-800);
+  transform: translateY(-1px);
+}
+.form-asg__note {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--neutral-500);
+}
