@@ -1,0 +1,264 @@
+/* =========================================================================
+   S01 · HERO + FORM lateral — Medalva (variante para Templates A y C)
+   Reutiliza el gradient burgundy + orbs de Medalva original, pero la
+   columna derecha es un formulario glass de captura corta.
+   Tema: crimson · Set tipográfico: 3 (Nunito Sans)
+   ========================================================================= */
+
+.herof-medalva {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: clamp(6rem, 10vw, 9rem) 5% clamp(4rem, 8vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg,
+    var(--brand-500) 0%,
+    #7d0b2b 25%,
+    #5c0720 50%,
+    var(--brand-600) 75%,
+    var(--brand-500) 100%);
+  background-size: 300% 300%;
+  animation: herof-medalva-grad 18s ease infinite;
+  color: var(--color-text-invert);
+}
+
+/* -------- Orbs decorativos -------------------------------------------- */
+.herof-medalva__orb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  z-index: 0;
+}
+.herof-medalva__orb--light {
+  top: -20%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+  animation: herof-medalva-orb 25s infinite ease-in-out alternate;
+}
+.herof-medalva__orb--dark {
+  bottom: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.15), transparent 70%);
+  animation: herof-medalva-orb-rev 30s infinite ease-in-out alternate;
+}
+
+/* -------- Layout ------------------------------------------------------ */
+.herof-medalva__container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+/* ============== Texto (izquierda) ============== */
+.herof-medalva__text {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation: herof-medalva-in-right 0.8s var(--ease-out) forwards;
+}
+
+.herof-medalva__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: var(--fw-extra);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--color-text-invert);
+  margin-bottom: var(--space-5);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.herof-medalva__lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-normal);
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: var(--space-6);
+}
+.herof-medalva__lead strong {
+  color: var(--color-text-invert);
+  font-weight: var(--fw-extra);
+}
+
+.herof-medalva__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.herof-medalva__bullets li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semi);
+  color: var(--color-text-invert);
+}
+.herof-medalva__bullets svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ============== Form (derecha) ============== */
+.herof-medalva__form-wrap {
+  position: relative;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: herof-medalva-in-left 0.8s 0.15s var(--ease-out) forwards;
+}
+
+.herof-medalva__form-frame {
+  position: absolute;
+  inset: -20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  transform: rotate(2deg);
+  z-index: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.herof-medalva__form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  color: var(--neutral-900);
+}
+
+.herof-medalva__form-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-caps);
+  color: var(--brand-500);
+  margin: 0;
+}
+
+.herof-medalva__form-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: var(--fw-extra);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--neutral-900);
+  margin: 0 0 var(--space-2);
+}
+
+.herof-medalva__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.herof-medalva__field span {
+  font-family: var(--font-body);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  color: var(--neutral-700);
+}
+.herof-medalva__field input {
+  padding: 0.85rem 1rem;
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  color: var(--neutral-900);
+  transition: border-color var(--duration-base) var(--ease-out),
+              background var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+.herof-medalva__field input::placeholder { color: var(--neutral-400); }
+.herof-medalva__field input:focus {
+  outline: none;
+  background: var(--neutral-0);
+  border-color: var(--brand-400);
+  box-shadow: 0 0 0 3px rgba(170, 23, 69, 0.15);
+}
+
+.herof-medalva__submit {
+  margin-top: var(--space-2);
+  padding: 1rem 1.5rem;
+  background: var(--brand-500);
+  color: var(--color-text-invert);
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-extra);
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(170, 23, 69, 0.35);
+  transition: transform var(--duration-base) var(--ease-out),
+              background var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+.herof-medalva__submit:hover {
+  transform: translateY(-3px);
+  background: var(--brand-600);
+  box-shadow: 0 15px 35px rgba(170, 23, 69, 0.45);
+}
+
+.herof-medalva__fineprint {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  color: var(--neutral-500);
+  text-align: center;
+}
+
+/* -------- Animations ------------------------------------------------- */
+@keyframes herof-medalva-grad {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes herof-medalva-orb {
+  0%   { transform: translate(0, 0)     scale(1); }
+  33%  { transform: translate(40px,-50px) scale(1.1); }
+  66%  { transform: translate(-30px,30px) scale(0.9); }
+  100% { transform: translate(0, 0)     scale(1); }
+}
+@keyframes herof-medalva-orb-rev {
+  0%   { transform: translate(0, 0)     scale(1); }
+  33%  { transform: translate(-50px,40px) scale(1.15); }
+  66%  { transform: translate(30px,-30px) scale(0.85); }
+  100% { transform: translate(0, 0)     scale(1); }
+}
+@keyframes herof-medalva-in-right { to { opacity: 1; transform: translateX(0); } }
+@keyframes herof-medalva-in-left  { to { opacity: 1; transform: translateX(0); } }
+
+/* -------- Responsive ------------------------------------------------ */
+@media (max-width: 968px) {
+  .herof-medalva__container {
+    grid-template-columns: 1fr;
+  }
+  .herof-medalva__text { text-align: center; }
+  .herof-medalva__bullets { align-items: center; }
+}

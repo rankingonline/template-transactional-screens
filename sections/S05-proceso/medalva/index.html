@@ -6,6 +6,7 @@
   <title>S05 · Proceso (Valores) — Medalva</title>
   <link rel="stylesheet" href="../../../assets/css/base.css" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="../../../assets/css/info-panel.css" />
 </head>
 <body class="font-set-3">
 
@@ -56,6 +57,69 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ================== INFO PANEL ================== -->
+  <input type="checkbox" id="ip-toggle" class="ip-toggle" aria-label="Información de la sección" />
+  <label for="ip-toggle" class="ip-fab" title="Info de esta sección"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></label>
+  <label for="ip-toggle" class="ip-backdrop" aria-hidden="true"></label>
+  <aside class="ip-panel" role="dialog" aria-labelledby="ip-title">
+    <header class="ip-header">
+      <div class="ip-header__main">
+        <span class="ip-badge">S05 · Proceso de trabajo · Medalva</span>
+        <h2 id="ip-title" class="ip-title">Sobre esta sección</h2>
+      </div>
+      <label for="ip-toggle" class="ip-close" title="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></label>
+    </header>
+
+    <div class="ip-body">
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Cuándo usar esta sección</h3>
+        <p>Reduce ansiedad mostrando paso a paso cómo se trabaja. Imprescindible en servicios donde el cliente no sabe qué esperar (legales, fiscales).</p>
+        <p style="margin-top:8px;color:#6b7280;font-size:13px;">
+          <strong>Variante:</strong> Medalva · asesoría humanista.
+        </p>
+      </section>
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="10" cy="20" r="2.5"/></svg> Qué se puede personalizar</h3>
+        <ul>
+          <li>Tema de color cambiando <code>theme-crimson</code> por otro <code>theme-*</code> en la <code>&lt;section&gt;</code>.</li>
+          <li>Tipografía cambiando <code>font-set-3</code> en el <code>&lt;body&gt;</code> o en una sección puntual.</li>
+          <li>Copy: todos los textos están inline en el HTML (sin fetch, sin i18n). Editá H1, leads, CTAs y bullets directamente.</li>
+          <li>Imágenes / vídeos: rutas en <code>./assets/images/</code> y <code>./assets/video/</code>. Reemplazá manteniendo aspect ratio.</li>
+          <li>Iconos: SVG inline. Reemplazá el <code>&lt;path&gt;</code> manteniendo el viewBox y stroke-width.</li>
+          <li>Espaciado y radios: tokens globales <code>--space-*</code> y <code>--radius-*</code> en <code>assets/css/tokens.css</code>.</li>
+        </ul>
+      </section>
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 10a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Compatibilidades</h3>
+        <p style="margin-bottom:10px;">Esta sección combina especialmente bien con:</p>
+        <div class="ip-compat"><span class="ip-compat__pill">S04 Qué incluye</span><span class="ip-compat__pill">S06 Beneficios</span><span class="ip-compat__pill">S09 Formulario</span></div>
+        <p style="margin-top:10px;font-size:12px;color:#6b7280;">
+          Compatible con cualquier tema y set tipográfico — las clases <code>.s05*</code> están scopeadas.
+        </p>
+      </section>
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Stats técnicas</h3>
+        <dl class="ip-stats">
+          <dt>Grupo</dt><dd>S05 · Proceso de trabajo</dd>
+          <dt>Variante</dt><dd>medalva</dd>
+          <dt>Tema</dt><dd><code>theme-crimson</code> · Asesoría, humanista, cálido</dd>
+          <dt>Tipografía</dt><dd><code>font-set-3</code></dd>
+          <dt>&nbsp;</dt><dd style="color:#6b7280;font-size:12px;">Nunito Sans — humanista cálido</dd>
+          <dt>Assets</dt><dd>Sin assets externos</dd>
+          <dt>Responsive</dt><dd>Breakpoints: 968px, 600px</dd>
+          <dt>JS</dt><dd>Cero (CSS-only)</dd>
+        </dl>
+      </section>
+
+    </div>
+  </aside>
+  <!-- ================ /INFO PANEL ================ -->
 
 </body>
 </html>

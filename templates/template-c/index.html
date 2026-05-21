@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template C · Landing de campaña (cold traffic)</title>
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../sections/S01-hero/medalva-form/styles.css" />  <!-- 01 · HERO + Form rápido -->
+  <link rel="stylesheet" href="../../sections/S02-problematica/gestiona-asesoria/styles.css" />  <!-- 02 · Problemática breve -->
+  <link rel="stylesheet" href="../../sections/S06-beneficios/ecom-advisory/styles.css" />  <!-- 03 · Beneficios -->
+  <link rel="stylesheet" href="../../sections/S07-tabla-prob-sol/barreda-diaz/styles.css" />  <!-- 04 · Tabla Problema / Solución -->
+  <link rel="stylesheet" href="../../sections/S11-reviews/aselegal/styles.css" />  <!-- 05 · Reviews cortas -->
+  <link rel="stylesheet" href="../../sections/S12-faqs/christian-sanchez/styles.css" />  <!-- 06 · FAQs reducidas -->
+  <link rel="stylesheet" href="../../sections/S13-cta-final/medalva/styles.css" />  <!-- 07 · Cierre / CTA final -->
+</head>
+<body class="font-set-1">
+
+  <!-- ================== 01 · HERO + Form rápido ================== -->
+<!--
+    Variante del hero Medalva pensada para Templates con formulario rápido en
+    paralelo (bloque 02 del Template A). Mantiene gradient + orbs + texto a la
+    izquierda. La derecha pasa a ser un form glass de captura corta:
+    nombre / teléfono / email / CTA.
+  -->
+  <section class="herof-medalva theme-crimson">
+
+    <div class="herof-medalva__orb herof-medalva__orb--light" aria-hidden="true"></div>
+    <div class="herof-medalva__orb herof-medalva__orb--dark" aria-hidden="true"></div>
+
+    <div class="herof-medalva__container">
+
+      <div class="herof-medalva__text">
+        <h1 class="herof-medalva__title text-balance">
+          Asesoría fiscal y contable en Sevilla para autónomos y pymes
+        </h1>
+        <p class="herof-medalva__lead">
+          Documentación en <strong>orden, criterios claros y una forma de
+          trabajar que se entiende</strong>. Cuando hay un trámite urgente o un
+          imprevisto, respondemos.
+        </p>
+        <ul class="herof-medalva__bullets" role="list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Primera consulta sin coste
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Respuesta en menos de 24 h
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Equipo dedicado a tu cuenta
+          </li>
+        </ul>
+      </div>
+
+      <aside class="herof-medalva__form-wrap">
+        <div class="herof-medalva__form-frame" aria-hidden="true"></div>
+
+        <form class="herof-medalva__form" novalidate>
+          <p class="herof-medalva__form-eyebrow">Hablamos sin compromiso</p>
+          <h2 class="herof-medalva__form-title">Te llamamos en menos de 24 h</h2>
+
+          <label class="herof-medalva__field">
+            <span>Nombre</span>
+            <input type="text" name="nombre" required placeholder="Tu nombre" />
+          </label>
+
+          <label class="herof-medalva__field">
+            <span>Teléfono</span>
+            <input type="tel" name="telefono" required placeholder="600 000 000" />
+          </label>
+
+          <label class="herof-medalva__field">
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="tu@email.com" />
+          </label>
+
+          <button type="submit" class="herof-medalva__submit">Que me llamen</button>
+
+          <p class="herof-medalva__fineprint">
+            Sin compromiso. Tus datos están protegidos.
+          </p>
+        </form>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ================== 02 · Problemática breve ================== -->
+<!--
+    Variante "Problemática / Para quién es":
+    Header centrado + grid 4-cols de service cards con icono coloreado.
+    La última card está "highlighted" con borde naranja y gradient sutil.
+  -->
+  <section class="services-gest" id="services">
+    <div class="services-gest__container">
+
+      <header class="services-gest__header">
+        <h2 class="services-gest__title text-balance">
+          Nuestros servicios de <span class="services-gest__highlight">asesoría en Huelva</span>
+        </h2>
+        <p class="services-gest__subtitle text-pretty">
+          Te acompañamos de forma directa, sin intermediarios, con un equipo
+          profesional y cercano que ya trabaja con más de 100 empresas.
+        </p>
+      </header>
+
+      <div class="services-gest__grid">
+
+        <!-- Fiscal -->
+        <article class="svc-gest">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/><path d="M7 14v3"/><path d="M11 10v7"/><path d="M15 12v5"/><path d="M19 8v9"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría Fiscal</h3>
+          <p class="svc-gest__desc">Planificación, modelos y defensa ante requerimientos.</p>
+          <a href="#fiscal" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Contable -->
+        <article class="svc-gest">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría Contable</h3>
+          <p class="svc-gest__desc">Registros, balances e informes para tomar decisiones.</p>
+          <a href="#contable" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Laboral -->
+        <article class="svc-gest">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría Laboral</h3>
+          <p class="svc-gest__desc">Contratación, Seguridad Social y relaciones laborales claras.</p>
+          <a href="#laboral" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Empresas Agrícolas — Highlighted -->
+        <article class="svc-gest svc-gest--highlight">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 4h9l1 2h6l-1 5h-2"/><path d="M9 9h7"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría para empresas agrícolas</h3>
+          <p class="svc-gest__desc">Especialistas en cultivos como fresa y arándano.</p>
+          <a href="#agricola" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 03 · Beneficios ================== -->
+<!--
+    Beneficios / Why us: layout split.
+    Izq: storytelling sobre fondo gradient + caja highlight cyan.
+    Der: grid 2x2 de glass cards con imagen + texto.
+  -->
+  <section class="specialists-eca theme-indigo">
+
+    <!-- Capas decorativas -->
+    <div class="specialists-eca__bg" aria-hidden="true"></div>
+    <div class="specialists-eca__overlay" aria-hidden="true"></div>
+
+    <div class="specialists-eca__container">
+
+      <!-- Columna izquierda: texto -->
+      <div class="specialists-eca__content">
+        <h2 class="specialists-eca__title text-balance">
+          No somos una asesoría generalista: somos especialistas en
+          <span class="nowrap">e-commerce</span>
+          y empresas de stock
+        </h2>
+        <div class="specialists-eca__intro">
+          <p class="specialists-eca__big">La mayoría de asesorías solo registran datos.</p>
+          <p>En <strong>ECOM Advisory</strong> entendemos lo que hay detrás de cada número: inventario, logística, plataformas, impuestos y márgenes.</p>
+          <div class="specialists-eca__highlight">
+            <p>Identificamos <strong>fugas de margen y riesgos fiscales</strong> ocultos en e-commerce en menos de 30 días.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: grid 2x2 de glass cards -->
+      <div class="specialists-eca__grid">
+
+        <article class="feature-eca">
+          <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=500&q=80" alt="Logística" class="feature-eca__img" />
+          <div class="feature-eca__text">
+            <h3 class="feature-eca__title">Especialización real</h3>
+            <p class="feature-eca__desc">Más de 15 años resolviendo problemas de stock, IVA internacional y sistemas.</p>
+          </div>
+        </article>
+
+        <article class="feature-eca">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Integración" class="feature-eca__img" />
+          <div class="feature-eca__text">
+            <h3 class="feature-eca__title">Integración total</h3>
+            <p class="feature-eca__desc">Ventas, almacén y contabilidad conectados. Sin Excel infinitos ni suposiciones.</p>
+          </div>
+        </article>
+
+        <article class="feature-eca">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=500&q=80" alt="Margen" class="feature-eca__img" />
+          <div class="feature-eca__text">
+            <h3 class="feature-eca__title">Enfoque en margen</h3>
+            <p class="feature-eca__desc">Porque vender mucho no sirve de nada si no ganas dinero.</p>
+          </div>
+        </article>
+
+        <article class="feature-eca">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=500&q=80" alt="Consultoría" class="feature-eca__img" />
+          <div class="feature-eca__text">
+            <h3 class="feature-eca__title">Asesoría + consultoría</h3>
+            <p class="feature-eca__desc">No solo cumplimos, mejoramos tu negocio.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 04 · Tabla Problema / Solución ================== -->
+<!--
+    Dos secciones encadenadas:
+    1) Problem Section: bg neutro · barra gradient brand→green arriba · grid
+       4 cards blancas con icono rojo y border-left rojo al hover.
+    2) Solution Section: bg gradient brand→brand-dark · grid 4 glass cards
+       con icono verde acento; al hover el icono se rellena.
+  -->
+  <div class="bd-problem-solution">
+
+    <section class="problem-bd theme-indigo">
+      <div class="problem-bd__container">
+
+        <header class="bd-intro">
+          <h2 class="bd-intro__title">¿Te suena familiar alguna de estas situaciones?</h2>
+          <p class="bd-intro__text">
+            Sabemos que gestionar tu negocio ya es suficientemente complejo.
+            Estos son los problemas más comunes que enfrentan empresas y autónomos cada día.
+          </p>
+        </header>
+
+        <div class="problem-bd__grid">
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10.29 3.86L1.82 18a2 2 0 002 3h16.94a2 2 0 002-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Normativa Fiscal Confusa</h3>
+            <p class="problem-bd__desc">Las leyes fiscales cambian constantemente y es difícil estar al día sin cometer errores que puedan costarte caro.</p>
+          </article>
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+                <path d="M12 7v5l4 2"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Falta de Tiempo</h3>
+            <p class="problem-bd__desc">Necesitas enfocarte en tu negocio, no en papeleo, facturas y trámites administrativos interminables.</p>
+          </article>
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <line x1="8" y1="11" x2="14" y2="11"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Miedo a Inspecciones</h3>
+            <p class="problem-bd__desc">La incertidumbre de si todo está correctamente presentado genera estrés y te quita el sueño.</p>
+          </article>
+
+          <article class="problem-bd__card">
+            <div class="problem-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                <polyline points="16 7 22 7 22 13"/>
+              </svg>
+            </div>
+            <h3 class="problem-bd__title">Pagos de Más en Impuestos</h3>
+            <p class="problem-bd__desc">Sin una planificación fiscal adecuada, podrías estar pagando más de lo necesario sin saberlo.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-bd theme-indigo">
+      <div class="solution-bd__container">
+
+        <header class="bd-intro bd-intro--invert">
+          <h2 class="bd-intro__title">En Barreda Díaz Asesores, transformamos tus preocupaciones en tranquilidad</h2>
+          <p class="bd-intro__text">
+            No solo gestionamos tu contabilidad, te acompañamos en cada paso con soluciones claras
+            y un equipo humano que entiende tu negocio.
+          </p>
+        </header>
+
+        <div class="solution-bd__grid">
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Cumplimiento Garantizado</h3>
+            <p class="solution-bd__desc">Nos anticipamos a los cambios normativos y te mantenemos siempre al día, sin sorpresas ni sanciones.</p>
+          </article>
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <circle cx="12" cy="16" r="3"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Delegación Total</h3>
+            <p class="solution-bd__desc">Libera tu agenda. Nosotros nos encargamos de toda la gestión administrativa mientras tú haces crecer tu negocio.</p>
+          </article>
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 18v-6a9 9 0 0118 0v6"/>
+                <path d="M21 19a2 2 0 01-2 2h-1v-7h3zM3 19a2 2 0 002 2h1v-7H3z"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Soporte Permanente</h3>
+            <p class="solution-bd__desc">Siempre hay alguien al otro lado del teléfono. Asesoramiento personalizado cuando lo necesites, sin esperas.</p>
+          </article>
+
+          <article class="solution-bd__card">
+            <div class="solution-bd__icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 17 9 11 13 15 21 7"/>
+                <polyline points="15 7 21 7 21 13"/>
+              </svg>
+            </div>
+            <h3 class="solution-bd__title">Optimización Fiscal</h3>
+            <p class="solution-bd__desc">Trabajamos contigo para reducir tu carga tributaria de forma legal, maximizando tu rentabilidad.</p>
+          </article>
+
+        </div>
+
+        <div class="solution-bd__cta">
+          <a href="#contact" class="solution-bd__btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+              <polyline points="9 16 11 18 15 14"/>
+            </svg>
+            Agenda tu Consulta Gratuita
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ================== 05 · Reviews cortas ================== -->
+<!--
+    Testimonios estilo Google Reviews:
+    Header con título + rating badge (logo Google + score + 5 estrellas).
+    Grid de 3 cards: avatar coloreado + nombre + estrellas + G-logo + texto + fecha.
+  -->
+  <section class="reviews-asg theme-steel" id="testimonios">
+    <div class="reviews-asg__wrap">
+
+      <header class="reviews-asg__head">
+        <div>
+          <span class="reviews-asg__eyebrow">Satisfacción y confianza</span>
+          <h2 class="reviews-asg__title">Lo que dicen<br />nuestros clientes.</h2>
+        </div>
+
+        <div class="reviews-asg__rating">
+          <svg class="reviews-asg__rating-logo" width="56" height="20" viewBox="0 0 56 20" fill="none" aria-label="Google">
+            <text x="0" y="15" font-family="Arial,sans-serif" font-size="14" font-weight="700">
+              <tspan fill="#4285F4">G</tspan><tspan fill="#EA4335">o</tspan><tspan fill="#FBBC05">o</tspan><tspan fill="#4285F4">g</tspan><tspan fill="#34A853">l</tspan><tspan fill="#EA4335">e</tspan>
+            </text>
+          </svg>
+          <span class="reviews-asg__rating-score">5.0</span>
+          <span class="reviews-asg__rating-stars" aria-label="5 estrellas">★★★★★</span>
+          <span class="reviews-asg__rating-label">en Google Reseñas</span>
+        </div>
+      </header>
+
+      <div class="reviews-asg__cards">
+
+        <article class="gcard-asg">
+          <header class="gcard-asg__head">
+            <div class="gcard-asg__avatar" style="--av: #B14A22;">M</div>
+            <div class="gcard-asg__meta">
+              <p class="gcard-asg__name">María García</p>
+              <span class="gcard-asg__stars" aria-label="5 estrellas">★★★★★</span>
+            </div>
+            <svg class="gcard-asg__glogo" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M19.6 10.23c0-.68-.06-1.36-.18-2H10v3.77h5.39a4.6 4.6 0 01-2 3.02v2.5h3.22c1.89-1.74 2.99-4.3 2.99-7.29z" fill="#4285F4"/>
+              <path d="M10 20c2.7 0 4.96-.9 6.61-2.43l-3.22-2.5c-.9.6-2.04.96-3.39.96-2.6 0-4.81-1.76-5.6-4.12H1.08v2.58A10 10 0 0010 20z" fill="#34A853"/>
+              <path d="M4.4 11.91A6.02 6.02 0 014.09 10c0-.66.12-1.3.31-1.91V5.51H1.08A10 10 0 000 10c0 1.61.39 3.14 1.08 4.49l3.32-2.58z" fill="#FBBC05"/>
+              <path d="M10 3.98a5.4 5.4 0 013.82 1.49l2.87-2.87A9.6 9.6 0 0010 0 10 10 0 001.08 5.51l3.32 2.58C5.19 5.73 7.4 3.98 10 3.98z" fill="#EA4335"/>
+            </svg>
+          </header>
+          <p class="gcard-asg__text">Llevamos más de tres años con Aselegal y no podríamos estar más satisfechos. Gestionan todo: nóminas, impuestos y cuando tuvimos un problema laboral serio, Plaza de Cuba lo resolvió sin que tuviéramos que cambiar de despacho. Así se trabaja.</p>
+          <time class="gcard-asg__date">Hace 1 mes</time>
+        </article>
+
+        <article class="gcard-asg">
+          <header class="gcard-asg__head">
+            <div class="gcard-asg__avatar" style="--av: #1F5DC4;">C</div>
+            <div class="gcard-asg__meta">
+              <p class="gcard-asg__name">Carlos Romero</p>
+              <span class="gcard-asg__stars" aria-label="5 estrellas">★★★★★</span>
+            </div>
+            <svg class="gcard-asg__glogo" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M19.6 10.23c0-.68-.06-1.36-.18-2H10v3.77h5.39a4.6 4.6 0 01-2 3.02v2.5h3.22c1.89-1.74 2.99-4.3 2.99-7.29z" fill="#4285F4"/>
+              <path d="M10 20c2.7 0 4.96-.9 6.61-2.43l-3.22-2.5c-.9.6-2.04.96-3.39.96-2.6 0-4.81-1.76-5.6-4.12H1.08v2.58A10 10 0 0010 20z" fill="#34A853"/>
+              <path d="M4.4 11.91A6.02 6.02 0 014.09 10c0-.66.12-1.3.31-1.91V5.51H1.08A10 10 0 000 10c0 1.61.39 3.14 1.08 4.49l3.32-2.58z" fill="#FBBC05"/>
+              <path d="M10 3.98a5.4 5.4 0 013.82 1.49l2.87-2.87A9.6 9.6 0 0010 0 10 10 0 001.08 5.51l3.32 2.58C5.19 5.73 7.4 3.98 10 3.98z" fill="#EA4335"/>
+            </svg>
+          </header>
+          <p class="gcard-asg__text">Como autónomo siempre tuve miedo a los impuestos. Desde que estoy con Aselegal duermo tranquilo. Me explican todo con claridad, responden rápido y siento que realmente les importa mi negocio. Muy recomendables.</p>
+          <time class="gcard-asg__date">Hace 3 semanas</time>
+        </article>
+
+        <article class="gcard-asg">
+          <header class="gcard-asg__head">
+            <div class="gcard-asg__avatar" style="--av: #2E7D5B;">L</div>
+            <div class="gcard-asg__meta">
+              <p class="gcard-asg__name">Laura Montero</p>
+              <span class="gcard-asg__stars" aria-label="5 estrellas">★★★★★</span>
+            </div>
+            <svg class="gcard-asg__glogo" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M19.6 10.23c0-.68-.06-1.36-.18-2H10v3.77h5.39a4.6 4.6 0 01-2 3.02v2.5h3.22c1.89-1.74 2.99-4.3 2.99-7.29z" fill="#4285F4"/>
+              <path d="M10 20c2.7 0 4.96-.9 6.61-2.43l-3.22-2.5c-.9.6-2.04.96-3.39.96-2.6 0-4.81-1.76-5.6-4.12H1.08v2.58A10 10 0 0010 20z" fill="#34A853"/>
+              <path d="M4.4 11.91A6.02 6.02 0 014.09 10c0-.66.12-1.3.31-1.91V5.51H1.08A10 10 0 000 10c0 1.61.39 3.14 1.08 4.49l3.32-2.58z" fill="#FBBC05"/>
+              <path d="M10 3.98a5.4 5.4 0 013.82 1.49l2.87-2.87A9.6 9.6 0 0010 0 10 10 0 001.08 5.51l3.32 2.58C5.19 5.73 7.4 3.98 10 3.98z" fill="#EA4335"/>
+            </svg>
+          </header>
+          <p class="gcard-asg__text">Pasamos por una inspección de Hacienda y la tranquilidad que nos dieron fue total. Lo tenían todo preparado, conocían nuestra empresa al detalle y el resultado fue el mejor posible. No cambiaría de asesoría por nada.</p>
+          <time class="gcard-asg__date">Hace 2 meses</time>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 06 · FAQs reducidas ================== -->
+<section class="faq-cs theme-indigo section" aria-labelledby="faq-heading">
+    <div class="container faq-cs__inner">
+
+      <header class="faq-cs__header">
+        <h2 id="faq-heading" class="faq-cs__title">Preguntas frecuentes</h2>
+      </header>
+
+      <div class="faq-cs__list">
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Qué trámites gestiona la Gestoría Christian Sánchez?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Gestionamos herencias y cancelaciones de usufructo, transferencias de vehículos, estudios y tramitación de pensiones de jubilación, y toda la gestión fiscal y administrativa para autónomos. Son los servicios en los que llevamos más años trabajando y donde más podemos ayudarte.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Dónde estáis ubicados? ¿Solo atendéis a gente de Marratxí?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Estamos en Marratxí, pero atendemos a personas de toda la zona de Palma y Mallorca. Tenemos clientes que vienen de otras localidades para trámites concretos, especialmente herencias y transferencias. Si tienes dudas sobre si podemos ayudarte desde donde estás, escríbenos y te lo aclaramos.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Hace falta pedir cita o puedo pasarme directamente?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Lo mejor es pedir cita para asegurarte de que te podemos atender con tiempo y sin esperas. Puedes hacerlo desde la web, por WhatsApp o llamando directamente. Para consultas rápidas de transferencias u otros trámites sencillos, a veces es posible atenderte en el momento, pero depende del día.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Cuánto cuesta un trámite?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Depende del tipo de trámite. Las transferencias de vehículos tienen un coste más o menos estándar, pero las herencias, los estudios de pensión o la gestión para autónomos varían según cada caso. Siempre te informamos del precio antes de empezar, sin letra pequeña.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Trabajáis con empresas o solo con particulares?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Trabajamos principalmente con particulares y autónomos. Si tienes una SL o una empresa y necesitas asesoramiento fiscal o algún trámite puntual, consúltanos y te decimos si podemos ayudarte o si conviene derivarte a otro perfil de asesoría.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Podéis gestionar trámites aunque yo no sea de Mallorca?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Sí. Muchos trámites de herencias o transferencias requieren gestiones en Mallorca aunque el heredero o comprador viva en otra comunidad. En esos casos gestionamos todo desde aquí y te mantenemos informado en cada paso.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="faq-cs__cta">
+        <a href="#contact" class="btn btn-primary">Ver todas las preguntas</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== 07 · Cierre / CTA final ================== -->
+<section class="cta-medalva theme-crimson">
+    <div class="cta-medalva__overlay" aria-hidden="true"></div>
+    <div class="cta-medalva__container">
+      <h2 class="cta-medalva__title text-balance">Empecemos por el siguiente paso</h2>
+      <p class="cta-medalva__desc text-pretty">
+        Si buscas una <strong>asesoría en Sevilla</strong> para llevar tus
+        gestiones con seriedad y trato directo, en Medalva te atendemos.
+        <br><br>
+        Cuéntanos tu caso y te indicamos el siguiente paso.
+      </p>
+      <a href="#contact" class="cta-medalva__btn">
+        Contacta con nosotros
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

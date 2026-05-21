@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S14 · Enfoque diferencial + form — Standard</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="../../../assets/css/info-panel.css" />
+</head>
+<body class="font-set-2">
+
+  <!--
+    Bloque pensado para Templates corporativos (Template B · bloque 04).
+    Dos columnas equilibradas:
+    - Izquierda: prosa institucional describiendo el enfoque de la firma
+      (sin lista, en tono consultivo).
+    - Derecha: formulario corto con frase de transición que hereda el
+      contexto. Captura para "Solicita una primera reunión".
+  -->
+  <section class="enfoque theme-indigo">
+    <div class="enfoque__container">
+
+      <article class="enfoque__column enfoque__column--text">
+        <span class="enfoque__eyebrow">Nuestro enfoque</span>
+        <h2 class="enfoque__title">
+          Acompañamos a empresas que valoran rigor técnico y criterio
+        </h2>
+        <p class="enfoque__prose">
+          Trabajamos con compañías que necesitan algo más que cumplimiento:
+          buscan un equipo que entienda su sector, que se anticipe a los
+          movimientos normativos y que les permita tomar decisiones con
+          tranquilidad. Cada mandato se asigna a un socio responsable y a un
+          equipo dedicado, no a un pool genérico.
+        </p>
+        <p class="enfoque__prose">
+          Nuestra forma de trabajar combina la disciplina de una firma
+          tradicional con la cercanía de una boutique especializada. Eso se
+          traduce en respuestas rápidas, documentación clara y un único
+          interlocutor que conoce tu historia desde el primer día.
+        </p>
+
+        <ul class="enfoque__pillars" role="list">
+          <li>
+            <strong>Socio responsable</strong>
+            <span>Una persona dedicada a tu cuenta de extremo a extremo.</span>
+          </li>
+          <li>
+            <strong>Visión integral</strong>
+            <span>Fiscal, contable y laboral coordinados bajo una misma estrategia.</span>
+          </li>
+          <li>
+            <strong>Confidencialidad</strong>
+            <span>Procesos auditados y comunicaciones cifradas por defecto.</span>
+          </li>
+        </ul>
+      </article>
+
+      <aside class="enfoque__column enfoque__column--form">
+        <p class="enfoque__transition">
+          Si ese es el tipo de relación que buscas, hablamos.
+        </p>
+
+        <form class="enfoque__form" novalidate>
+          <h3 class="enfoque__form-title">Solicita una primera reunión</h3>
+
+          <label class="enfoque__field">
+            <span>Nombre y apellidos</span>
+            <input type="text" name="nombre" required placeholder="Tu nombre" />
+          </label>
+
+          <label class="enfoque__field">
+            <span>Empresa</span>
+            <input type="text" name="empresa" required placeholder="Razón social" />
+          </label>
+
+          <label class="enfoque__field">
+            <span>Email corporativo</span>
+            <input type="email" name="email" required placeholder="tu@empresa.com" />
+          </label>
+
+          <label class="enfoque__field">
+            <span>Teléfono</span>
+            <input type="tel" name="telefono" placeholder="Opcional" />
+          </label>
+
+          <label class="enfoque__field enfoque__field--select">
+            <span>¿Qué servicio te interesa?</span>
+            <select name="servicio">
+              <option value="">Selecciona una opción</option>
+              <option>Asesoría fiscal estratégica</option>
+              <option>Asesoría jurídica corporativa</option>
+              <option>Compliance y consultoría</option>
+              <option>Otro</option>
+            </select>
+          </label>
+
+          <button type="submit" class="enfoque__submit">Solicitar reunión</button>
+
+          <p class="enfoque__fineprint">
+            Respondemos en menos de 24 h laborables. Tus datos están protegidos por nuestra
+            política de privacidad.
+          </p>
+        </form>
+      </aside>
+
+    </div>
+  </section>
+
+
+  <!-- ================== INFO PANEL ================== -->
+  <input type="checkbox" id="ip-toggle" class="ip-toggle" aria-label="Información de la sección" />
+  <label for="ip-toggle" class="ip-fab" title="Info de esta sección"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></label>
+  <label for="ip-toggle" class="ip-backdrop" aria-hidden="true"></label>
+  <aside class="ip-panel" role="dialog" aria-labelledby="ip-title">
+    <header class="ip-header">
+      <div class="ip-header__main">
+        <span class="ip-badge">S14 · Enfoque diferencial + form · Standard (genérico)</span>
+        <h2 id="ip-title" class="ip-title">Sobre esta sección</h2>
+      </div>
+      <label for="ip-toggle" class="ip-close" title="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></label>
+    </header>
+
+    <div class="ip-body">
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Cuándo usar esta sección</h3>
+        <p>Páginas corporativas (Template B) donde la captura sucede mostrando el enfoque de la firma. Prosa institucional + form como continuación natural.</p>
+        <p style="margin-top:8px;color:#6b7280;font-size:13px;">
+          <strong>Variante:</strong> Standard (genérico) · institucional.
+        </p>
+      </section>
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="10" cy="20" r="2.5"/></svg> Qué se puede personalizar</h3>
+        <ul>
+          <li>Tema de color cambiando <code>theme-indigo</code> por otro <code>theme-*</code> en la <code>&lt;section&gt;</code>.</li>
+          <li>Tipografía cambiando <code>font-set-2</code> en el <code>&lt;body&gt;</code> o en una sección puntual.</li>
+          <li>Copy: todos los textos están inline en el HTML (sin fetch, sin i18n). Editá H1, leads, CTAs y bullets directamente.</li>
+          <li>Imágenes / vídeos: rutas en <code>./assets/images/</code> y <code>./assets/video/</code>. Reemplazá manteniendo aspect ratio.</li>
+          <li>Iconos: SVG inline. Reemplazá el <code>&lt;path&gt;</code> manteniendo el viewBox y stroke-width.</li>
+          <li>Espaciado y radios: tokens globales <code>--space-*</code> y <code>--radius-*</code> en <code>assets/css/tokens.css</code>.</li>
+        </ul>
+      </section>
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><path d="M10 14a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 10a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Compatibilidades</h3>
+        <p style="margin-bottom:10px;">Esta sección combina especialmente bien con:</p>
+        <div class="ip-compat"><span class="ip-compat__pill">S03 Para quién</span><span class="ip-compat__pill">S05 Proceso</span><span class="ip-compat__pill">S11 Reviews</span></div>
+        <p style="margin-top:10px;font-size:12px;color:#6b7280;">
+          Compatible con cualquier tema y set tipográfico — las clases <code>.s14*</code> están scopeadas.
+        </p>
+      </section>
+
+      <section class="ip-section">
+        <h3><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Stats técnicas</h3>
+        <dl class="ip-stats">
+          <dt>Grupo</dt><dd>S14 · Enfoque diferencial + form</dd>
+          <dt>Variante</dt><dd>standard</dd>
+          <dt>Tema</dt><dd><code>theme-indigo</code> · Corporate, autoridad, legal</dd>
+          <dt>Tipografía</dt><dd><code>font-set-2</code></dd>
+          <dt>&nbsp;</dt><dd style="color:#6b7280;font-size:12px;">Playfair + Inter — editorial / autoridad</dd>
+          <dt>Assets</dt><dd>Sin assets externos</dd>
+          <dt>Responsive</dt><dd>Breakpoints: 968px</dd>
+          <dt>JS</dt><dd>Cero (CSS-only)</dd>
+        </dl>
+      </section>
+
+    </div>
+  </aside>
+  <!-- ================ /INFO PANEL ================ -->
+
+</body>
+</html>

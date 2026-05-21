@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template A · Página de servicio comercial (conversión)</title>
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../sections/S01-hero/medalva-form/styles.css" />  <!-- 01 · HERO + Form rápido -->
+  <link rel="stylesheet" href="../../sections/S02-problematica/ecom-advisory/styles.css" />  <!-- 03 · Problemática -->
+  <link rel="stylesheet" href="../../sections/S03-para-quien/medalva/styles.css" />  <!-- 04 · Para quién es este servicio -->
+  <link rel="stylesheet" href="../../sections/S04-que-incluye/tribulex/styles.css" />  <!-- 05 · Qué incluye el servicio -->
+  <link rel="stylesheet" href="../../sections/S05-proceso/ecom-advisory/styles.css" />  <!-- 06 · Proceso de trabajo -->
+  <link rel="stylesheet" href="../../sections/S06-beneficios/sol4/styles.css" />  <!-- 07 · Beneficios / Lo que consigues -->
+  <link rel="stylesheet" href="../../sections/S07-tabla-prob-sol/segu-web/styles.css" />  <!-- 08 · Tabla comparativa Problema / Solución -->
+  <link rel="stylesheet" href="../../sections/S08-cross-sell/medalva/styles.css" />  <!-- 09 · Servicios relacionados / Cross-sell -->
+  <link rel="stylesheet" href="../../sections/S09-contacto/sol4/styles.css" />  <!-- 10 · Formulario de contacto -->
+  <link rel="stylesheet" href="../../sections/S10-mapa/tribulex/styles.css" />  <!-- 11 · Mapa -->
+  <link rel="stylesheet" href="../../sections/S11-reviews/tribulex/styles.css" />  <!-- 12 · Reviews -->
+  <link rel="stylesheet" href="../../sections/S12-faqs/christian-sanchez/styles.css" />  <!-- 13 · FAQs -->
+</head>
+<body class="font-set-3">
+
+  <!-- ================== 01 · HERO + Form rápido ================== -->
+<!--
+    Variante del hero Medalva pensada para Templates con formulario rápido en
+    paralelo (bloque 02 del Template A). Mantiene gradient + orbs + texto a la
+    izquierda. La derecha pasa a ser un form glass de captura corta:
+    nombre / teléfono / email / CTA.
+  -->
+  <section class="herof-medalva theme-crimson">
+
+    <div class="herof-medalva__orb herof-medalva__orb--light" aria-hidden="true"></div>
+    <div class="herof-medalva__orb herof-medalva__orb--dark" aria-hidden="true"></div>
+
+    <div class="herof-medalva__container">
+
+      <div class="herof-medalva__text">
+        <h1 class="herof-medalva__title text-balance">
+          Asesoría fiscal y contable en Sevilla para autónomos y pymes
+        </h1>
+        <p class="herof-medalva__lead">
+          Documentación en <strong>orden, criterios claros y una forma de
+          trabajar que se entiende</strong>. Cuando hay un trámite urgente o un
+          imprevisto, respondemos.
+        </p>
+        <ul class="herof-medalva__bullets" role="list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Primera consulta sin coste
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Respuesta en menos de 24 h
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Equipo dedicado a tu cuenta
+          </li>
+        </ul>
+      </div>
+
+      <aside class="herof-medalva__form-wrap">
+        <div class="herof-medalva__form-frame" aria-hidden="true"></div>
+
+        <form class="herof-medalva__form" novalidate>
+          <p class="herof-medalva__form-eyebrow">Hablamos sin compromiso</p>
+          <h2 class="herof-medalva__form-title">Te llamamos en menos de 24 h</h2>
+
+          <label class="herof-medalva__field">
+            <span>Nombre</span>
+            <input type="text" name="nombre" required placeholder="Tu nombre" />
+          </label>
+
+          <label class="herof-medalva__field">
+            <span>Teléfono</span>
+            <input type="tel" name="telefono" required placeholder="600 000 000" />
+          </label>
+
+          <label class="herof-medalva__field">
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="tu@email.com" />
+          </label>
+
+          <button type="submit" class="herof-medalva__submit">Que me llamen</button>
+
+          <p class="herof-medalva__fineprint">
+            Sin compromiso. Tus datos están protegidos.
+          </p>
+        </form>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ================== 03 · Problemática ================== -->
+<!--
+    Estructura "Problema → Solución" en 3 columnas:
+    - Pill (título de columna) flotando arriba
+    - Card con dos zonas: problem (gradient brand) + solution (white)
+      separadas por una flecha circular blanca/brand
+  -->
+  <section class="clarity-eca theme-indigo">
+    <div class="clarity-eca__container">
+
+      <header class="clarity-eca__header">
+        <h2 class="clarity-eca__title text-balance">¿Sientes que no tienes total claridad y control de tu e-commerce?</h2>
+        <p class="clarity-eca__desc text-pretty">
+          La mayoría de tiendas online o empresas de stock no tienen un problema de ventas.
+          Tienen un problema de
+          <span class="clarity-eca__highlight">desorden fiscal, contable y operativo</span>
+          que solo se nota cuando ya es demasiado tarde.
+        </p>
+      </header>
+
+      <div class="clarity-eca__grid">
+
+        <!-- Col 1: Stock y sistemas -->
+        <div class="solution-eca">
+          <h3 class="solution-eca__pill">Stock y sistemas</h3>
+          <article class="solution-eca__card">
+            <div class="solution-eca__problem">
+              <p>Shopify, Amazon, ERP y almacén no hablan el mismo idioma. El stock cuadra en el sistema, pero no en la cuenta de resultados.</p>
+            </div>
+            <div class="solution-eca__arrow" aria-hidden="true"></div>
+            <div class="solution-eca__solution">
+              <h4 class="solution-eca__tag">Solución ECOM Advisory</h4>
+              <p><strong>Integración real.</strong> Ventas, stock y contabilidad trabajando como un solo sistema.</p>
+              <p>Controlamos cada movimiento que afecta a margen, inventario y fiscalidad.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Col 2: Margen y rentabilidad -->
+        <div class="solution-eca">
+          <h3 class="solution-eca__pill">Margen y rentabilidad</h3>
+          <article class="solution-eca__card">
+            <div class="solution-eca__problem">
+              <p>El ROAS es alto, pero los costes ocultos de logística, devoluciones, comisiones e impuestos se comen tu margen.</p>
+            </div>
+            <div class="solution-eca__arrow" aria-hidden="true"></div>
+            <div class="solution-eca__solution">
+              <h4 class="solution-eca__tag">Solución ECOM Advisory</h4>
+              <p><strong>Margen real por SKU, sin autoengaños.</strong> Calculamos el beneficio real de cada producto incluyendo logística, impuestos, devoluciones y comisiones.</p>
+              <p>Decisiones basadas en datos reales, no en intuición.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Col 3: IVA y riesgo fiscal -->
+        <div class="solution-eca">
+          <h3 class="solution-eca__pill">IVA y riesgo fiscal</h3>
+          <article class="solution-eca__card">
+            <div class="solution-eca__problem">
+              <p>No tienes claro dónde ni cómo tributar tu IVA. OSS, ventas en la UE y Amazon FBA convierten cualquier error en un riesgo futuro.</p>
+            </div>
+            <div class="solution-eca__arrow" aria-hidden="true"></div>
+            <div class="solution-eca__solution">
+              <h4 class="solution-eca__tag">Solución ECOM Advisory</h4>
+              <p><strong>Blindaje fiscal especializado en e-commerce.</strong> Diseñamos y aplicamos la estructura correcta de IVA para ventas nacionales, UE y marketplaces.</p>
+              <p>Crecimiento sin riesgos ocultos ni sustos futuros.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 04 · Para quién es este servicio ================== -->
+<!--
+    Variante "Para quién / Servicios" de Medalva:
+    Grid auto-fit de 5 cards. La última (especialistas transporte) está
+    destacada con fondo gradient brand y texto invertido.
+  -->
+  <section class="services-medalva theme-crimson">
+    <div class="services-medalva__container">
+
+      <header class="services-medalva__header">
+        <h2 class="services-medalva__title text-balance">Servicios de asesoría en Sevilla con responsables por área</h2>
+        <p class="services-medalva__desc">
+          Cada servicio se trabaja con un método simple:
+          <strong>revisar, pedir lo necesario y dejar cada gestión bien presentada.</strong>
+        </p>
+      </header>
+
+      <div class="services-medalva__grid">
+
+        <article class="svc-medalva">
+          <div class="svc-medalva__num">01</div>
+          <div class="svc-medalva__body">
+            <h3 class="svc-medalva__title">Asesoría Fiscal</h3>
+            <p class="svc-medalva__desc">Impuestos, presentaciones y planificación tributaria con revisión previa.</p>
+          </div>
+        </article>
+
+        <article class="svc-medalva">
+          <div class="svc-medalva__num">02</div>
+          <div class="svc-medalva__body">
+            <h3 class="svc-medalva__title">Asesoría Contable</h3>
+            <p class="svc-medalva__desc">Contabilidad al día, cierres y consistencia de la información.</p>
+          </div>
+        </article>
+
+        <article class="svc-medalva">
+          <div class="svc-medalva__num">03</div>
+          <div class="svc-medalva__body">
+            <h3 class="svc-medalva__title">Asesoramiento Laboral</h3>
+            <p class="svc-medalva__desc">Contratación, nóminas, Seguros Sociales y gestiones con la Seguridad Social.</p>
+          </div>
+        </article>
+
+        <article class="svc-medalva">
+          <div class="svc-medalva__num">04</div>
+          <div class="svc-medalva__body">
+            <h3 class="svc-medalva__title">Asesoría Jurídica</h3>
+            <p class="svc-medalva__desc">Apoyo en cumplimiento normativo y gestión de situaciones que requieren criterio legal.</p>
+          </div>
+        </article>
+
+        <article class="svc-medalva svc-medalva--highlight">
+          <div class="svc-medalva__num">05</div>
+          <div class="svc-medalva__body">
+            <h3 class="svc-medalva__title">Especialistas en transporte</h3>
+            <p class="svc-medalva__desc">Gestiones administrativas del sector con revisión de requisitos y control de plazos.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 05 · Qué incluye el servicio ================== -->
+<section class="services-tbx theme-steel" id="servicios">
+    <div class="services-tbx__container">
+
+      <header class="services-tbx__head">
+        <h2 class="services-tbx__title text-balance">Asesoramiento para cada situación</h2>
+        <p class="services-tbx__sub">Cubrimos todas las áreas que tu actividad puede necesitar.</p>
+      </header>
+
+      <div class="services-tbx__grid">
+
+        <article class="svc-tbx">
+          <img src="../../../assets/images/tribulex/all-services_fiscal.png" alt="" class="svc-tbx__img" />
+          <h3 class="svc-tbx__title">Asesoría fiscal</h3>
+          <p class="svc-tbx__desc">Planificación y gestión tributaria para autónomos y empresas.</p>
+        </article>
+
+        <article class="svc-tbx">
+          <img src="../../../assets/images/tribulex/all-services_laboral.png" alt="" class="svc-tbx__img" />
+          <h3 class="svc-tbx__title">Asesoría laboral</h3>
+          <p class="svc-tbx__desc">Nóminas, contratos y cumplimiento normativo.</p>
+        </article>
+
+        <article class="svc-tbx">
+          <img src="../../../assets/images/tribulex/all-services_contable.png" alt="" class="svc-tbx__img" />
+          <h3 class="svc-tbx__title">Asesoría contable</h3>
+          <p class="svc-tbx__desc">Control contable preciso para una toma de decisiones informada.</p>
+        </article>
+
+        <article class="svc-tbx">
+          <img src="../../../assets/images/tribulex/all-services_juridico-mercantil.png" alt="" class="svc-tbx__img" />
+          <h3 class="svc-tbx__title">Asesoría jurídico-mercantil</h3>
+          <p class="svc-tbx__desc">Contratos, sociedades y operaciones mercantiles.</p>
+        </article>
+
+        <article class="svc-tbx">
+          <img src="../../../assets/images/tribulex/all-services_propietarios.png" alt="" class="svc-tbx__img" />
+          <h3 class="svc-tbx__title">Comunidades de propietarios</h3>
+          <p class="svc-tbx__desc">Gestión integral con transparencia y eficacia.</p>
+        </article>
+
+        <article class="svc-tbx">
+          <img src="../../../assets/images/tribulex/all-services_abogados.png" alt="" class="svc-tbx__img" />
+          <h3 class="svc-tbx__title">Abogados</h3>
+          <p class="svc-tbx__desc">Familia, civil, penal, tráfico, extranjería y más.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 06 · Proceso de trabajo ================== -->
+<!--
+    Methodology: 3 fases conectadas por una línea horizontal de progreso.
+    Cada paso: marcador circular (cyan→brand al hover) + card de body con animación fade-in.
+  -->
+  <section class="methodology-eca theme-indigo">
+    <div class="methodology-eca__container">
+
+      <header class="methodology-eca__header">
+        <h2 class="methodology-eca__title text-balance">Nuestra metodología en 3 fases para e-commerce con stock</h2>
+      </header>
+
+      <div class="methodology-eca__wrapper">
+
+        <!-- Línea de progreso -->
+        <div class="methodology-eca__track" aria-hidden="true">
+          <div class="methodology-eca__fill"></div>
+        </div>
+
+        <ol class="methodology-eca__grid">
+
+          <li class="step-eca">
+            <div class="step-eca__marker">1</div>
+            <div class="step-eca__body">
+              <h3 class="step-eca__title">Fase 1: Diagnóstico profundo</h3>
+              <div class="step-eca__content">
+                <p>Analizamos tu situación real: fiscalidad, contabilidad, stock y sistemas.</p>
+                <p>Sacamos a la luz los errores invisibles que hoy te están costando dinero.</p>
+                <p class="step-eca__key">Claridad inmediata.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-eca">
+            <div class="step-eca__marker">2</div>
+            <div class="step-eca__body">
+              <h3 class="step-eca__title">Fase 2: Orden y control</h3>
+              <div class="step-eca__content">
+                <p>Corregimos IVA, procesos contables y flujos de stock.</p>
+                <p>Creamos una estructura sólida para que tus números reflejen la realidad.</p>
+                <p class="step-eca__key">Control del negocio.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-eca">
+            <div class="step-eca__marker">3</div>
+            <div class="step-eca__body">
+              <h3 class="step-eca__title">Fase 3: Optimización y crecimiento</h3>
+              <div class="step-eca__content">
+                <p>Te acompañamos a escalar con control total de tu negocio.</p>
+                <p>Mejores márgenes y decisiones basadas en datos. Cero improvisación.</p>
+                <p class="step-eca__key">Libertad para crecer.</p>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 07 · Beneficios / Lo que consigues ================== -->
+<!--
+    Variante "Beneficios" del ECOSYSTEM de Sol-4.
+    Se queda con las 4 service-cards (que comunican lo que conseguís)
+    sin la card hero ni los pills. Para la versión completa (cross-sell)
+    ver S08-cross-sell/sol4.
+  -->
+  <section class="benefits-sol4 theme-purple section" id="benefits">
+    <div class="container">
+
+      <header class="benefits-sol4__header">
+        <span class="chip">Lo que consigues</span>
+        <h2 class="t-h1 text-balance">Servicios complementarios que cubren tu día a día en España.</h2>
+        <p class="t-lead t-mute">Un único equipo coordina identidad, impuestos, hipotecas y licencias. Sin malabares entre gestorías.</p>
+      </header>
+
+      <div class="benefits-sol4__grid">
+
+        <article class="benefit-card">
+          <div class="benefit-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M7 15s.5-4 5-4 5 4 5 4"/>
+              <circle cx="12" cy="8" r="2"/>
+            </svg>
+          </div>
+          <h4 class="benefit-card__title">NIE &amp; TIE</h4>
+          <p class="benefit-card__text">Números de identificación y tarjetas de residencia para clientes UE y no-UE. Tramitados con representación completa.</p>
+          <a href="#" class="benefit-card__link">Obtener el tuyo <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h4 class="benefit-card__title">Impuesto No Residentes</h4>
+          <p class="benefit-card__text">Declaraciones anuales (Modelo 210) para no residentes con propiedad en España. Gestionado de extremo a extremo.</p>
+          <a href="#" class="benefit-card__link">Más info <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h4 class="benefit-card__title">Hipotecas</h4>
+          <p class="benefit-card__text">Asesoría hipotecaria y representación en la firma. Coordinamos con bancos y notaría para que no tengas que estar pendiente.</p>
+          <a href="#" class="benefit-card__link">Saber más <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <path d="M9 22V12h6v10"/>
+              <circle cx="17" cy="5" r="3"/>
+              <path d="M17 8v8"/>
+            </svg>
+          </div>
+          <h4 class="benefit-card__title">Licencias turísticas</h4>
+          <p class="benefit-card__text">Solicitud, registro y cumplimiento para propiedades de alquiler vacacional en la Costa Blanca.</p>
+          <a href="#" class="benefit-card__link">Tramitar licencia <span aria-hidden="true">→</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 08 · Tabla comparativa Problema / Solución ================== -->
+<!--
+    Tabla comparativa Situación frecuente / Cómo lo resolvemos.
+    En mobile cada par se apila vertical (cards con border-left rojo/lime).
+    En desktop ≥768px: 2 cols con divisor + fondo lime sutil en la col positiva.
+  -->
+  <section class="problems-sgu theme-steel">
+    <div class="problems-sgu__container">
+
+      <header class="problems-sgu__intro">
+        <h2 class="problems-sgu__title text-balance">
+          Lo que puede salir mal si no cuenta con una gestoría administrativa en Barcelona
+        </h2>
+        <p class="problems-sgu__lead">
+          La <strong class="problems-sgu__highlight">gestión administrativa no suele verse hasta que aparece un problema</strong>:
+          una notificación que vence, un certificado digital caducado o un trámite que se bloquea por
+          documentación incompleta. En empresas y despachos, estas incidencias suelen traducirse en
+          retrasos, plazos perdidos y tiempo invertido en "apagar fuegos".
+        </p>
+      </header>
+
+      <div class="problems-sgu__table">
+
+        <!-- Header desktop -->
+        <div class="problems-sgu__header">
+          <div><h3>Situaciones frecuentes</h3></div>
+          <div><h3>Cómo lo resolvemos desde Segú Assessors</h3></div>
+        </div>
+
+        <!-- Filas -->
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Notificaciones electrónicas que se revisan tarde y vencen los plazos</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Consulta periódica y registro de plazos, con avisos y preparación de respuesta a tiempo</p>
+          </div>
+        </div>
+
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Certificados digitales caducados o con incidencias de uso</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Obtención, renovación y control de caducidad, con verificación de acceso y firma</p>
+          </div>
+        </div>
+
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Trámites que se paralizan por documentación incompleta</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Checklist documental previo y seguimiento del expediente hasta su resolución</p>
+          </div>
+        </div>
+
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Falta de control sobre autorizaciones, licencias o registros necesarios</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Planificación del trámite, presentación en sede y control de renovaciones y vencimientos</p>
+          </div>
+        </div>
+
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Apoderamientos inexistentes o desactualizados para actuar ante la Administración</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Tramitación de apoderamientos oficiales de representación y control de vigencia</p>
+          </div>
+        </div>
+
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Días de cortesía AEAT sin configurar, generando notificaciones en fechas sensibles</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Solicitud y control de días de cortesía AEAT para planificar notificaciones</p>
+          </div>
+        </div>
+
+        <div class="problems-sgu__row">
+          <div class="problems-sgu__cell problems-sgu__cell--bad">
+            <div class="problems-sgu__ico problems-sgu__ico--bad">✕</div>
+            <p>Fianzas de alquiler sin depositar o con devoluciones que se retrasan</p>
+          </div>
+          <div class="problems-sgu__cell problems-sgu__cell--good">
+            <div class="problems-sgu__ico problems-sgu__ico--good">✓</div>
+            <p>Depósito y devolución de fianzas de alquiler con control de plazos y justificantes</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 09 · Servicios relacionados / Cross-sell ================== -->
+<!--
+    Cross-sell vía "Compromisos y reconocimientos":
+    1 card grande gradient + 3 cards compactas con barra lateral animada.
+  -->
+  <section class="commitments-medalva theme-crimson">
+    <div class="commitments-medalva__container">
+
+      <header class="commitments-medalva__header">
+        <h2 class="commitments-medalva__title">Compromisos y reconocimientos</h2>
+      </header>
+
+      <div class="commitments-medalva__grid">
+
+        <!-- Featured: FSE (large) -->
+        <article class="commit-featured">
+          <span class="commit-featured__tag">Reconocimiento</span>
+          <h3 class="commit-featured__title">Beneficiaria del FSE</h3>
+          <p class="commit-featured__desc">
+            Apoyo a contratación de jóvenes (Garantía Juvenil) con PICE
+            (Cámara de Comercio de Sevilla).
+          </p>
+          <div class="commit-featured__deco" aria-hidden="true"></div>
+        </article>
+
+        <!-- Stack: 3 cards compactas -->
+        <div class="commit-stack">
+
+          <article class="commit-compact">
+            <div class="commit-compact__bar" aria-hidden="true"></div>
+            <div class="commit-compact__body">
+              <h3 class="commit-compact__title">Programa Emplea-T</h3>
+              <p class="commit-compact__desc">Fomento de contratación indefinida en Andalucía para autónomos y pymes.</p>
+            </div>
+          </article>
+
+          <article class="commit-compact">
+            <div class="commit-compact__bar" aria-hidden="true"></div>
+            <div class="commit-compact__body">
+              <h3 class="commit-compact__title">Canal de Denuncias</h3>
+              <p class="commit-compact__desc">Canal confidencial conforme a la Ley 2/2023 para promover la máxima transparencia.</p>
+            </div>
+          </article>
+
+          <article class="commit-compact">
+            <div class="commit-compact__bar" aria-hidden="true"></div>
+            <div class="commit-compact__body">
+              <h3 class="commit-compact__title">Economistas acreditados</h3>
+              <p class="commit-compact__desc">Perfiles titulados y especialización asegurada de forma rigurosa por áreas.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 10 · Formulario de contacto ================== -->
+<section class="contact-sol4 theme-purple" id="contact">
+    <div class="container">
+      <div class="contact-sol4__box">
+
+        <!-- Lado izquierdo: información + mapa -->
+        <aside class="contact-sol4__info">
+          <h2 class="contact-sol4__title">Tell us your case.</h2>
+          <p class="contact-sol4__lead">
+            We'll read it, we'll come back to you within 24 hours, and we'll tell
+            you honestly whether we're the right people to help. No pressure,
+            no commitment.
+          </p>
+
+          <ul class="contact-sol4__details">
+            <li class="detail-item">
+              <span class="detail-item__label">Email us</span>
+              <a href="mailto:info@sol-4gestion.com" class="detail-item__link">info@sol-4gestion.com</a>
+            </li>
+            <li class="detail-item">
+              <span class="detail-item__label">Call us</span>
+              <a href="tel:+34966715181" class="detail-item__link">+34 966 71 51 81</a>
+            </li>
+            <li class="detail-item">
+              <span class="detail-item__label">Visit us</span>
+              <span class="detail-item__text">C/ Aneto 1, Local 3 · Box 52<br>Benimar I, Benijófar, Spain</span>
+            </li>
+          </ul>
+
+          <div class="contact-sol4__map">
+            <iframe
+              title="Mapa Sol-4"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.43346452296!2d-0.7358482!3d38.0835338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6398f6d7d5d5d5%3A0x6b8f7d5d5d5d5d5!2sCalle%20Aneto%2C%201%2C%2003178%20Benij%C3%B3far%2C%20Alicante!5e0!3m2!1sen!2ses!4v1715095000000!5m2!1sen!2ses"
+              width="100%"
+              height="200"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </aside>
+
+        <!-- Lado derecho: formulario -->
+        <div class="contact-sol4__form-side">
+          <form class="form-sol4" action="#" method="POST">
+
+            <div class="form-sol4__row">
+              <div class="field">
+                <input type="text" id="name" name="name" required placeholder=" " />
+                <label for="name">Your name</label>
+              </div>
+              <div class="field">
+                <input type="email" id="email" name="email" required placeholder=" " />
+                <label for="email">Email address</label>
+              </div>
+            </div>
+
+            <div class="field field--select">
+              <select id="language" name="language" required>
+                <option value="" disabled selected hidden></option>
+                <option value="en">English</option>
+                <option value="es">Spanish / Español</option>
+                <option value="de">German / Deutsch</option>
+              </select>
+              <label for="language">Preferred language</label>
+              <span class="field__arrow" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+
+            <div class="field field--select">
+              <select id="service" name="service" required>
+                <option value="" disabled selected hidden></option>
+                <option value="buy">Buying a property</option>
+                <option value="sell">Selling a property</option>
+                <option value="inherit">Inheritance in Spain</option>
+                <option value="will">Spanish will</option>
+                <option value="business">Business Advisory</option>
+                <option value="other">Other</option>
+              </select>
+              <label for="service">What do you need help with?</label>
+              <span class="field__arrow" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+
+            <div class="field">
+              <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+              <label for="message">Describe your situation briefly…</label>
+            </div>
+
+            <button type="submit" class="form-sol4__submit">
+              Send My Case
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+
+            <p class="form-sol4__micro">
+              We reply within 24 hours, Monday to Friday. Your information stays
+              with the two partners who'll handle your case — never shared, never
+              used for marketing.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 11 · Mapa ================== -->
+<!--
+    Grid 3-col de oficinas. Cada card: iframe Google Maps en cabecera +
+    info panel debajo (badge ciudad, datos contacto, botón ver en maps).
+  -->
+  <section class="oficinas-tbx theme-steel" id="oficinas">
+    <div class="oficinas-tbx__container">
+
+      <header class="oficinas-tbx__head">
+        <h2 class="oficinas-tbx__title text-balance">Tres oficinas en la Región de Murcia</h2>
+        <p class="oficinas-tbx__sub">Atención presencial cuando la necesitas, online cuando no puedes desplazarte.</p>
+      </header>
+
+      <div class="oficinas-tbx__grid">
+
+        <!-- Oficina 1: Alhama -->
+        <article class="oficina-tbx">
+          <div class="oficina-tbx__map">
+            <iframe
+              src="https://maps.google.com/maps?q=Av.+Constantino+López+s/n+30840+Alhama+de+Murcia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Oficina Alhama de Murcia"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <div class="oficina-tbx__info">
+            <div class="oficina-tbx__city-row">
+              <div class="oficina-tbx__badge">
+                <img src="../../../assets/images/tribulex/place-alhama.png" alt="" aria-hidden="true" />
+              </div>
+              <h3 class="oficina-tbx__city">Alhama de Murcia</h3>
+            </div>
+            <ul class="oficina-tbx__details">
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Av. Constantino López, s/n · 30840 Alhama de Murcia</span>
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+                <a href="tel:968636018">968 636 018</a>
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Lun–Vie · 9:00–14:00 h <span class="oficina-tbx__summer">(verano: 9:00–15:00 h)</span></span>
+              </li>
+            </ul>
+            <a href="https://maps.google.com/maps?q=Av.+Constantino+López+s/n+30840+Alhama+de+Murcia" target="_blank" rel="noopener" class="oficina-tbx__btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              Ver en Google Maps
+            </a>
+          </div>
+        </article>
+
+        <!-- Oficina 2: Totana -->
+        <article class="oficina-tbx">
+          <div class="oficina-tbx__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.9842922889857!2d-1.5028070999999996!3d37.766966499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6492dd4315c8b5%3A0x20ff07a6f11a307f!2sTribulex%20Asesores!5e0!3m2!1ses-419!2sus!4v1778598652037!5m2!1ses-419!2sus"
+              title="Oficina Totana"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <div class="oficina-tbx__info">
+            <div class="oficina-tbx__city-row">
+              <div class="oficina-tbx__badge">
+                <img src="../../../assets/images/tribulex/place-totana.png" alt="" aria-hidden="true" />
+              </div>
+              <h3 class="oficina-tbx__city">Totana</h3>
+            </div>
+            <ul class="oficina-tbx__details">
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Calle Sta. Eulalia, 1 · 30850 Totana, Murcia</span>
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Lun–Vie · 9:00–14:00 h</span>
+              </li>
+            </ul>
+            <a href="https://maps.google.com/?q=Calle+Sta.+Eulalia,+1,+30850+Totana,+Murcia" target="_blank" rel="noopener" class="oficina-tbx__btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              Ver en Google Maps
+            </a>
+          </div>
+        </article>
+
+        <!-- Oficina 3: Fuente Álamo -->
+        <article class="oficina-tbx">
+          <div class="oficina-tbx__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.796225939745!2d-1.1724715!3d37.72446070000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6363d36af57509%3A0x9da9467c5ac7ee46!2sTRIBULEX%20ASESORES!5e0!3m2!1ses-419!2sus!4v1778598686912!5m2!1ses-419!2sus"
+              title="Oficina Fuente Álamo"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <div class="oficina-tbx__info">
+            <div class="oficina-tbx__city-row">
+              <div class="oficina-tbx__badge">
+                <img src="../../../assets/images/tribulex/place-fuentealamo.png" alt="" aria-hidden="true" />
+              </div>
+              <h3 class="oficina-tbx__city">Fuente Álamo</h3>
+            </div>
+            <ul class="oficina-tbx__details">
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>C. de la Rbla., 3, Bj · 30320 Fuente Álamo, Murcia</span>
+              </li>
+              <li>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Lun–Vie · 9:00–14:00 h</span>
+              </li>
+            </ul>
+            <a href="https://maps.google.com/?q=C.+de+la+Rbla.,+3,+Bj,+30320+Fuente+Alamo,+Murcia" target="_blank" rel="noopener" class="oficina-tbx__btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              Ver en Google Maps
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 12 · Reviews ================== -->
+<!--
+    Header centrado + badge global de Google con score + grid 3-col de
+    rev-cards (avatar coloreado + meta + estrellas + texto).
+  -->
+  <section class="reviews-tbx theme-steel">
+    <div class="reviews-tbx__container">
+
+      <header class="reviews-tbx__head">
+        <h2 class="reviews-tbx__title text-balance">Lo que dicen nuestros clientes</h2>
+        <p class="reviews-tbx__sub">Más de 25 años acompañando a emprendedores y autónomos en Murcia.</p>
+      </header>
+
+      <!-- Resumen Google -->
+      <div class="reviews-tbx__summary">
+        <svg class="reviews-tbx__glogo" viewBox="0 0 24 24" width="36" height="36" aria-label="Google">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div class="reviews-tbx__score">4.9</div>
+        <div class="reviews-tbx__summary-right">
+          <div class="reviews-tbx__sum-stars">★★★★★</div>
+          <p class="reviews-tbx__count">Basado en <strong>+150 reseñas</strong> en Google</p>
+        </div>
+      </div>
+
+      <!-- Grid de reviews -->
+      <div class="reviews-tbx__grid">
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #4285F4;">MG</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">María García</p>
+              <p class="rev-tbx__when">hace 3 semanas</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Llevamos con Tribulex más de 3 años. El equipo es muy cercano y siempre están disponibles cuando los necesitas. Nos ayudaron con la capitalización del paro cuando emprendimos y fue todo un éxito. Muy recomendables.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #EA4335;">AM</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Antonio Martínez</p>
+              <p class="rev-tbx__when">hace 1 mes</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Me dieron de alta como autónomo con el Plan Emprendedor. Todo rapidísimo y sin complicaciones. Me explicaron las bonificaciones de la tarifa plana que ni sabía que existían. Un servicio excelente de principio a fin.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #34A853;">LS</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Laura Sánchez</p>
+              <p class="rev-tbx__when">hace 2 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Profesionales de verdad. Llevo una pequeña empresa y gestionan contabilidad, nóminas y asesoramiento jurídico bajo el mismo techo. No tener que ir a distintos sitios para cada gestión es una ventaja enorme.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #9C27B0;">CL</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Carlos López</p>
+              <p class="rev-tbx__when">hace 4 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Llevo años con otras gestorías y ninguna se había preocupado por mi negocio como Tribulex. Siempre con soluciones, nunca con excusas. El equipo de la oficina de Alhama es excelente.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #00BCD4;">IF</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Isabel Fernández</p>
+              <p class="rev-tbx__when">hace 5 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">Nos ayudaron a solicitar subvenciones que desconocíamos totalmente. Muy claros en todo el proceso y sin cobrar de más. Totalmente recomendables para cualquier autónomo que empiece.</p>
+        </article>
+
+        <article class="rev-tbx">
+          <div class="rev-tbx__top">
+            <div class="rev-tbx__avatar" style="--av: #F57C00;">JR</div>
+            <div class="rev-tbx__user">
+              <p class="rev-tbx__name">Javier Ruiz</p>
+              <p class="rev-tbx__when">hace 6 meses</p>
+            </div>
+            <svg class="rev-tbx__g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <div class="rev-tbx__stars">★★★★★</div>
+          <p class="rev-tbx__text">El Bono Tecnológico de 250€ del Plan Emprendedor nos vino genial para montar la web y el correo profesional. Un detalle que marca la diferencia respecto a otras asesorías. 100% recomendado.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== 13 · FAQs ================== -->
+<section class="faq-cs theme-indigo section" aria-labelledby="faq-heading">
+    <div class="container faq-cs__inner">
+
+      <header class="faq-cs__header">
+        <h2 id="faq-heading" class="faq-cs__title">Preguntas frecuentes</h2>
+      </header>
+
+      <div class="faq-cs__list">
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Qué trámites gestiona la Gestoría Christian Sánchez?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Gestionamos herencias y cancelaciones de usufructo, transferencias de vehículos, estudios y tramitación de pensiones de jubilación, y toda la gestión fiscal y administrativa para autónomos. Son los servicios en los que llevamos más años trabajando y donde más podemos ayudarte.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Dónde estáis ubicados? ¿Solo atendéis a gente de Marratxí?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Estamos en Marratxí, pero atendemos a personas de toda la zona de Palma y Mallorca. Tenemos clientes que vienen de otras localidades para trámites concretos, especialmente herencias y transferencias. Si tienes dudas sobre si podemos ayudarte desde donde estás, escríbenos y te lo aclaramos.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Hace falta pedir cita o puedo pasarme directamente?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Lo mejor es pedir cita para asegurarte de que te podemos atender con tiempo y sin esperas. Puedes hacerlo desde la web, por WhatsApp o llamando directamente. Para consultas rápidas de transferencias u otros trámites sencillos, a veces es posible atenderte en el momento, pero depende del día.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Cuánto cuesta un trámite?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Depende del tipo de trámite. Las transferencias de vehículos tienen un coste más o menos estándar, pero las herencias, los estudios de pensión o la gestión para autónomos varían según cada caso. Siempre te informamos del precio antes de empezar, sin letra pequeña.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Trabajáis con empresas o solo con particulares?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Trabajamos principalmente con particulares y autónomos. Si tienes una SL o una empresa y necesitas asesoramiento fiscal o algún trámite puntual, consúltanos y te decimos si podemos ayudarte o si conviene derivarte a otro perfil de asesoría.</p>
+          </div>
+        </details>
+
+        <details class="faq-cs__item">
+          <summary class="faq-cs__question">
+            ¿Podéis gestionar trámites aunque yo no sea de Mallorca?
+          </summary>
+          <div class="faq-cs__answer">
+            <p>Sí. Muchos trámites de herencias o transferencias requieren gestiones en Mallorca aunque el heredero o comprador viva en otra comunidad. En esos casos gestionamos todo desde aquí y te mantenemos informado en cada paso.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="faq-cs__cta">
+        <a href="#contact" class="btn btn-primary">Ver todas las preguntas</a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
