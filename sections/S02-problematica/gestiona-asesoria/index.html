@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S02 · Problemática (Services) — Gestiona Asesoría</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-1">
+
+  <!--
+    Variante "Problemática / Para quién es":
+    Header centrado + grid 4-cols de service cards con icono coloreado.
+    La última card está "highlighted" con borde naranja y gradient sutil.
+  -->
+  <section class="services-gest" id="services">
+    <div class="services-gest__container">
+
+      <header class="services-gest__header">
+        <h2 class="services-gest__title text-balance">
+          Nuestros servicios de <span class="services-gest__highlight">asesoría en Huelva</span>
+        </h2>
+        <p class="services-gest__subtitle text-pretty">
+          Te acompañamos de forma directa, sin intermediarios, con un equipo
+          profesional y cercano que ya trabaja con más de 100 empresas.
+        </p>
+      </header>
+
+      <div class="services-gest__grid">
+
+        <!-- Fiscal -->
+        <article class="svc-gest">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/><path d="M7 14v3"/><path d="M11 10v7"/><path d="M15 12v5"/><path d="M19 8v9"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría Fiscal</h3>
+          <p class="svc-gest__desc">Planificación, modelos y defensa ante requerimientos.</p>
+          <a href="#fiscal" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Contable -->
+        <article class="svc-gest">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría Contable</h3>
+          <p class="svc-gest__desc">Registros, balances e informes para tomar decisiones.</p>
+          <a href="#contable" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Laboral -->
+        <article class="svc-gest">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría Laboral</h3>
+          <p class="svc-gest__desc">Contratación, Seguridad Social y relaciones laborales claras.</p>
+          <a href="#laboral" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+        <!-- Empresas Agrícolas — Highlighted -->
+        <article class="svc-gest svc-gest--highlight">
+          <div class="svc-gest__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 4h9l1 2h6l-1 5h-2"/><path d="M9 9h7"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/>
+            </svg>
+          </div>
+          <h3 class="svc-gest__title">Asesoría para empresas agrícolas</h3>
+          <p class="svc-gest__desc">Especialistas en cultivos como fresa y arándano.</p>
+          <a href="#agricola" class="svc-gest__link">
+            Ver más
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
