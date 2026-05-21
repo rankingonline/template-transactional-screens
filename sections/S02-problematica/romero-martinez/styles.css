@@ -1,0 +1,193 @@
+/* =========================================================================
+   S02 · PROBLEMÁTICA · Problems & Solutions — Romero Martínez
+   Grid 3 cols: problem cards (blancas) ↔ connectors (orange) ↔ solution cards (brand).
+   Conectores se encienden cuando hover en cualquier card del par mediante :has().
+   ========================================================================= */
+
+.ps-rm {
+  --rm-accent: #EB6E08;
+  --rm-accent-hover: #d46207;
+  --rm-dark: #04113A;
+
+  background-color: #F5F9FF;
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+}
+
+.ps-rm__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* -------- Grid: 1fr | auto | 1fr ------------------------------------ */
+.ps-rm__grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.ps-rm__column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ps-rm__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  height: 124px;
+}
+
+.ps-rm__title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--rm-dark);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.ps-rm__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--neutral-700);
+  line-height: var(--lh-normal);
+  text-align: center;
+}
+.ps-rm__subtitle strong {
+  color: var(--rm-dark);
+  font-weight: var(--fw-bold);
+}
+
+.ps-rm__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* -------- Card base ------------------------------------------------- */
+.ps-rm__card {
+  min-height: 180px;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease,
+              background-color var(--duration-base) ease;
+}
+
+/* Problem card (light) */
+.ps-rm__card--problem {
+  background-color: var(--neutral-0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.ps-rm__card--problem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15),
+              0 0 25px rgba(235, 110, 8, 0.2);
+}
+.ps-rm__card--problem .ps-rm__card-title,
+.ps-rm__card--problem .ps-rm__card-desc {
+  color: var(--rm-dark);
+}
+
+/* Solution card (brand) */
+.ps-rm__card--solution {
+  background-color: var(--brand-500);
+  box-shadow: 0 6px 16px rgba(38, 64, 145, 0.25);
+}
+.ps-rm__card--solution:hover {
+  transform: translateY(-8px) scale(1.02);
+  background-color: var(--brand-400);
+  box-shadow: 0 16px 40px rgba(38, 64, 145, 0.35),
+              0 0 30px rgba(38, 64, 145, 0.3);
+}
+.ps-rm__card--solution .ps-rm__card-title,
+.ps-rm__card--solution .ps-rm__card-desc {
+  color: var(--color-text-invert);
+}
+
+.ps-rm__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.2;
+}
+
+.ps-rm__card-desc {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* -------- Connector ------------------------------------------------- */
+.ps-rm__connector {
+  display: flex;
+  justify-content: center;
+  padding-top: 170px; /* alinea con la altura del header + gap */
+}
+
+.ps-rm__arrows {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ps-rm__arrow {
+  width: 60px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ps-rm__arrow svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background-color: var(--neutral-0);
+  color: var(--rm-accent);
+  border: 2px solid var(--rm-accent);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--duration-base) ease,
+              color var(--duration-base) ease,
+              transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+
+/* Enciende el arrow correspondiente cuando se hace hover en
+   cualquiera de las dos cards de su fila. */
+.ps-rm__grid:has(.ps-rm__column:first-child .ps-rm__card:nth-child(1):hover) .ps-rm__arrow:nth-child(1) svg,
+.ps-rm__grid:has(.ps-rm__column:last-child  .ps-rm__card:nth-child(1):hover) .ps-rm__arrow:nth-child(1) svg,
+.ps-rm__arrow:nth-child(1):hover svg,
+.ps-rm__grid:has(.ps-rm__column:first-child .ps-rm__card:nth-child(2):hover) .ps-rm__arrow:nth-child(2) svg,
+.ps-rm__grid:has(.ps-rm__column:last-child  .ps-rm__card:nth-child(2):hover) .ps-rm__arrow:nth-child(2) svg,
+.ps-rm__arrow:nth-child(2):hover svg,
+.ps-rm__grid:has(.ps-rm__column:first-child .ps-rm__card:nth-child(3):hover) .ps-rm__arrow:nth-child(3) svg,
+.ps-rm__grid:has(.ps-rm__column:last-child  .ps-rm__card:nth-child(3):hover) .ps-rm__arrow:nth-child(3) svg,
+.ps-rm__arrow:nth-child(3):hover svg {
+  background-color: var(--rm-accent);
+  color: var(--color-text-invert);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(235, 110, 8, 0.4);
+}
+
+/* -------- Responsive --------------------------------------------- */
+@media (max-width: 968px) {
+  .ps-rm__grid { grid-template-columns: 1fr; }
+  .ps-rm__connector {
+    padding-top: 0;
+    transform: rotate(90deg);
+    margin-block: -2rem;
+  }
+  .ps-rm__arrow { height: auto; padding: 1rem; }
+  .ps-rm__arrows { flex-direction: row; gap: 1rem; }
+  .ps-rm__header { height: auto; margin-bottom: 0; }
+}

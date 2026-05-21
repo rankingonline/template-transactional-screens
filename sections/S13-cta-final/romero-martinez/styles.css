@@ -1,0 +1,106 @@
+/* =========================================================================
+   S13 · CTA FINAL · Newsletter Card — Romero Martínez
+   Card con background image + overlay sutil de marca y botón naranja accent.
+   ========================================================================= */
+
+.newsletter-rm {
+  --rm-accent: #EB6E08;
+  --rm-accent-hover: #d46207;
+
+  background-color: #F5F9FF;
+  padding-block: clamp(var(--space-12), 6vw, var(--space-20));
+}
+
+.newsletter-rm__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.newsletter-rm__card {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-16) var(--space-12);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  /* Imagen de fondo */
+  background-image: url('../../../assets/images/romero-martinez/card-news.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--brand-800);
+  isolation: isolate;
+}
+
+/* Overlay sutil que refuerza la legibilidad y se adapta al tema */
+.newsletter-rm__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(110deg,
+    rgb(from var(--brand-900) r g b / 0.5) 0%,
+    rgb(from var(--brand-700) r g b / 0.2) 60%,
+    transparent 100%);
+  pointer-events: none;
+}
+@supports not (color: rgb(from white r g b / 1)) {
+  .newsletter-rm__overlay {
+    background: linear-gradient(110deg, rgba(4,17,58,0.55) 0%, rgba(25,33,140,0.2) 60%, transparent 100%);
+  }
+}
+
+.newsletter-rm__content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.newsletter-rm__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+  font-weight: var(--fw-extra);
+  line-height: 1.2;
+  color: var(--color-text-invert);
+  margin-bottom: 1rem;
+}
+
+.newsletter-rm__highlight {
+  color: var(--rm-accent);
+}
+
+.newsletter-rm__desc {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.newsletter-rm__btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--rm-accent);
+  color: var(--color-text-invert);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(235, 110, 8, 0.4);
+  transition: background-color var(--duration-base) ease,
+              transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+.newsletter-rm__btn:hover {
+  background-color: var(--rm-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 110, 8, 0.5);
+}
+
+/* -------- Responsive --------------------------------------------- */
+@media (max-width: 768px) {
+  .newsletter-rm__card {
+    padding: var(--space-10) var(--space-6);
+  }
+  .newsletter-rm__title { font-size: 1.6rem; }
+}
