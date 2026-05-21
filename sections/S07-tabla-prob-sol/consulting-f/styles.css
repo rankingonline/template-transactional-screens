@@ -1,0 +1,146 @@
+/* =========================================================================
+   S07 · PROBLEMA & SOLUCIÓN — Consulting F
+   Grid 3 cols (1fr · 60px arrow · 1fr) con dos paneles glass:
+   - problema (borde brand-200, mini-cards tonalidad neutra)
+   - solución (borde brand, mini-cards tonalidad brand)
+   Flecha central con pulse-animación horizontal.
+   ========================================================================= */
+
+.ps-cf {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--brand-50);
+  padding-block: clamp(4rem, 6vw, 7rem);
+}
+
+.ps-cf__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* -------- Paneles glass ------------------------------------------- */
+.ps-cf__problem,
+.ps-cf__solution {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+}
+.ps-cf__problem {
+  border: 1px solid var(--brand-200);
+  box-shadow: 0 20px 40px rgba(49, 64, 180, 0.05);
+}
+.ps-cf__solution {
+  border: 1px solid var(--brand-900);
+  box-shadow: 0 20px 40px rgba(4, 18, 123, 0.1);
+}
+
+.ps-cf__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+.ps-cf__title--secondary { color: var(--brand-500); }
+.ps-cf__title--primary   { color: var(--brand-600); margin-bottom: 1rem; }
+
+.ps-cf__intro {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--neutral-700);
+  margin-bottom: 2rem;
+}
+
+.ps-cf__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: auto;
+}
+
+/* -------- Mini cards ---------------------------------------------- */
+.ps-cf__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: background var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+.ps-cf__card svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+.ps-cf__card p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ps-cf__card--problem {
+  background: var(--brand-50);
+  border: 1px solid var(--brand-100);
+}
+.ps-cf__card--problem svg { color: var(--brand-500); }
+.ps-cf__card--problem p { color: var(--neutral-600); }
+.ps-cf__card--problem:hover {
+  background: var(--brand-100);
+  transform: translateX(5px);
+}
+
+.ps-cf__card--solution {
+  background: rgba(4, 18, 123, 0.05);
+  border: 1px solid rgba(4, 18, 123, 0.1);
+}
+.ps-cf__card--solution svg { color: var(--brand-600); }
+.ps-cf__card--solution p {
+  color: var(--neutral-700);
+  font-weight: var(--fw-medium);
+}
+.ps-cf__card--solution:hover {
+  background: rgba(4, 18, 123, 0.1);
+  transform: translateX(5px);
+}
+
+/* -------- Conector (flecha animada) ------------------------------ */
+.ps-cf__connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-900);
+  animation: ps-cf-arrow 2s infinite;
+}
+@keyframes ps-cf-arrow {
+  0%   { transform: translateX(0);   opacity: 0.5; }
+  50%  { transform: translateX(5px); opacity: 1; }
+  100% { transform: translateX(0);   opacity: 0.5; }
+}
+
+/* -------- Responsive ---------------------------------------------- */
+@media (max-width: 900px) {
+  .ps-cf__container { grid-template-columns: 1fr; gap: 1rem; }
+  .ps-cf__problem, .ps-cf__solution { padding: 1.5rem; }
+  .ps-cf__connector {
+    transform: rotate(90deg);
+    margin-block: 1rem;
+    animation: ps-cf-arrow-mobile 2s infinite;
+  }
+  @keyframes ps-cf-arrow-mobile {
+    0%   { transform: rotate(90deg) translateX(0);   opacity: 0.5; }
+    50%  { transform: rotate(90deg) translateX(5px); opacity: 1; }
+    100% { transform: rotate(90deg) translateX(0);   opacity: 0.5; }
+  }
+}

@@ -1,0 +1,157 @@
+/* =========================================================================
+   S10 · MAPA · Location Highlight — Consulting F
+   Glass panel grande con dos columnas flex (text + map). Map con animación
+   shine en diagonal que recorre la superficie cada 6s.
+   ========================================================================= */
+
+.location-cf {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--brand-50);
+  padding-block: clamp(4rem, 6vw, 7rem);
+}
+
+.location-cf__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* -------- Glass card grande -------------------------------------- */
+.location-cf__card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: stretch;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(4, 18, 123, 0.05);
+  transition: transform var(--duration-base) ease,
+              box-shadow var(--duration-base) ease;
+}
+.location-cf__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(4, 18, 123, 0.1);
+}
+
+/* -------- Text column ------------------------------------------- */
+.location-cf__text {
+  flex: 1 1 400px;
+}
+
+.location-cf__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.location-cf__desc {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--neutral-700);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* -------- Lista de items con icon-circle ----------------------- */
+.location-cf__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loc-cf-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--neutral-0);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease;
+}
+.loc-cf-item:hover { transform: translateX(10px); }
+
+.loc-cf-item__circle {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-100);
+  color: var(--brand-600);
+  border-radius: var(--radius-full);
+}
+
+.loc-cf-item__circle--pulse {
+  animation: loc-cf-pulse 2s infinite;
+}
+@keyframes loc-cf-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(49, 64, 180, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(49, 64, 180, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(49, 64, 180, 0); }
+}
+
+.loc-cf-item__text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: var(--fw-medium);
+  color: var(--brand-900);
+}
+
+/* -------- Map column ------------------------------------------- */
+.location-cf__map {
+  position: relative;
+  flex: 1 1 400px;
+  min-height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.location-cf__map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Shine que recorre el mapa */
+.location-cf__shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent);
+  transform: skewX(-25deg);
+  animation: loc-cf-shine 6s infinite;
+  pointer-events: none;
+}
+@keyframes loc-cf-shine {
+  0%, 80% { left: -100%; }
+  100%    { left: 200%; }
+}
+
+/* -------- Responsive ------------------------------------------- */
+@media (max-width: 768px) {
+  .location-cf__card {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .location-cf__map { min-height: 280px; }
+}

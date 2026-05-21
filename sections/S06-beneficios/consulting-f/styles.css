@@ -1,0 +1,184 @@
+/* =========================================================================
+   S06 · BENEFICIOS · Value Proposition — Consulting F
+   Título con gradient clip-text + glow radial detrás · grid 4 cols con
+   iconos 3D que floatean + glow radial atrás · línea ondulada SVG conecta
+   los 4 en desktop.
+   ========================================================================= */
+
+.value-cf {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(4rem, 6vw, 7rem);
+  background: var(--brand-50);
+}
+
+/* Glow radial decorativo de fondo */
+.value-cf__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(49, 64, 180, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.value-cf__container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.value-cf__title {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.value-cf__lead {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--neutral-700);
+}
+.value-cf__lead strong {
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+}
+
+/* -------- Grid de feature cards ----------------------------------- */
+.value-cf__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Línea ondulada SVG entre los iconos (sólo desktop) */
+.value-cf__grid::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 70%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background-image: url('../../../assets/images/consulting-f/wave-connector.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .value-cf__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .value-cf__grid::before { display: none; }
+}
+@media (max-width: 768px) {
+  .value-cf__grid { grid-template-columns: 1fr; }
+  .value-cf__lead { margin-bottom: 2rem; }
+}
+
+/* -------- Feature card -------------------------------------------- */
+.feature-cf {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.feature-cf:hover { transform: translateY(-5px); }
+
+.feature-cf__icon {
+  position: relative;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: feature-cf-float 6s ease-in-out infinite;
+}
+.feature-cf__icon img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(4, 18, 123, 0.4));
+  transition: transform 0.5s ease;
+}
+.feature-cf:hover .feature-cf__icon img { transform: scale(1.1); }
+
+/* Glow radial detrás del icono */
+.feature-cf__icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72%;
+  height: 72%;
+  background: radial-gradient(circle,
+    rgba(49, 64, 180, 0.7) 0%,
+    rgba(49, 64, 180, 0.3) 40%,
+    transparent 70%);
+  filter: blur(35px);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.feature-cf:hover .feature-cf__icon::after {
+  width: 170%;
+  height: 170%;
+  filter: blur(30px);
+  background: radial-gradient(circle,
+    rgba(49, 64, 180, 0.7) 0%,
+    rgba(253, 202, 37, 0.3) 30%,
+    transparent 70%);
+}
+
+@keyframes feature-cf-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.feature-cf__title {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--brand-900);
+  line-height: 1.2;
+}
+
+.feature-cf__desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--neutral-600);
+}

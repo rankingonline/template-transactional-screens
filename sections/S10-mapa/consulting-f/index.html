@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S10 · Mapa (Location Highlight) — Consulting F</title>
+  <link rel="stylesheet" href="../../../assets/css/base.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="font-set-1">
+
+  <!--
+    Glass panel split: izq text + icon-list (con pulse-animation en el primer
+    icono) · der iframe Google Maps con overlay shine animado que pasa cada 6s.
+  -->
+  <section class="location-cf theme-indigo">
+    <div class="location-cf__container">
+      <div class="location-cf__card">
+
+        <div class="location-cf__text">
+          <h2 class="location-cf__title text-balance">¿En qué lugar puedes encontrarnos?</h2>
+          <p class="location-cf__desc">
+            Estamos en Madrid, en el barrio de AZCA. Nuestro despacho está
+            preparado para recibirte si prefieres una reunión presencial, o
+            también trabajamos con empresas en otras provincias de forma
+            100% digital.
+          </p>
+
+          <ul class="location-cf__list">
+            <li class="loc-cf-item">
+              <div class="loc-cf-item__circle loc-cf-item__circle--pulse">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0c-4.4 0-8 3.6-8 8 0 5.4 7 13.4 7.3 13.7.4.4 1 .4 1.4 0C13 21.4 20 13.4 20 8c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/>
+                </svg>
+              </div>
+              <span class="loc-cf-item__text">Av. del General Perón, 16, 28020 Madrid, España</span>
+            </li>
+
+            <li class="loc-cf-item">
+              <div class="loc-cf-item__circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 00-1.02.24l-2.2 2.2a15.07 15.07 0 01-6.59-6.59l2.2-2.2a1 1 0 00.25-1.02A11.4 11.4 0 018.5 4a1 1 0 00-1-1H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z"/>
+                </svg>
+              </div>
+              <span class="loc-cf-item__text">+34 915 36 02 68</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="location-cf__map">
+          <iframe
+            src="https://maps.google.com/maps?q=Av.+del+General+Per%C3%B3n,+16,+Tetu%C3%A1n,+28020+Madrid,+Espa%C3%B1a&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            title="Mapa Consulting F"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+          <div class="location-cf__shine" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
