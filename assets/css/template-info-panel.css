@@ -1,0 +1,333 @@
+/* =========================================================================
+   TEMPLATE INFO PANEL — Float button + slide-in panel (CSS-only)
+   Versión a nivel TEMPLATE (no de sección). Scopeada a .tip-* para no
+   chocar con .ip-* del info-panel de secciones individuales.
+   Resumen: lista qué se puede personalizar en TODO el template.
+   ========================================================================= */
+
+.tip-toggle {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* ============ Floating Action Button ============ */
+.tip-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9998;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.15rem 0.85rem 0.95rem;
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #ffffff;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              background 200ms ease,
+              box-shadow 200ms ease;
+}
+.tip-fab:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #000000, #111827);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+.tip-fab svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tip-toggle:checked ~ .tip-fab {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.85);
+}
+
+/* ============ Backdrop ============ */
+.tip-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(15, 23, 42, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 250ms ease;
+}
+.tip-toggle:checked ~ .tip-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============ Panel ============ */
+.tip-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  width: min(460px, 94vw);
+  height: 100vh;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.18);
+  transform: translateX(100%);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", sans-serif;
+  color: #111827;
+  overflow-y: auto;
+}
+.tip-toggle:checked ~ .tip-panel {
+  transform: translateX(0);
+}
+
+/* ============ Header ============ */
+.tip-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 26px 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 80%, rgba(255,255,255,0));
+  border-bottom: 1px solid #e5e7eb;
+}
+.tip-header__main { flex: 1; min-width: 0; }
+
+.tip-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #f0fdf4;
+  color: #15803d;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.tip-badge--blue { background: #eff6ff; color: #1d4ed8; }
+.tip-badge--purple { background: #faf5ff; color: #7e22ce; }
+
+.tip-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+  margin: 0;
+}
+.tip-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+.tip-close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: #f3f4f6;
+  color: #6b7280;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+.tip-close:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+.tip-close svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+/* ============ Body ============ */
+.tip-body {
+  padding: 10px 26px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tip-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin: 0 0 12px;
+}
+.tip-section h3 svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tip-section p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #374151;
+  margin: 0 0 8px;
+}
+
+/* Bloque "stack" */
+.tip-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  padding: 14px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.tip-stack dt {
+  font-weight: 600;
+  color: #6b7280;
+}
+.tip-stack dd {
+  margin: 0;
+  color: #111827;
+}
+.tip-stack dd code {
+  display: inline-block;
+  padding: 1px 6px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  color: #4338ca;
+}
+
+/* Items checklist */
+.tip-checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tip-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+.tip-checklist li:hover {
+  border-color: #c7d2fe;
+  background: #fafafa;
+}
+.tip-checklist__icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eef2ff;
+  color: #4338ca;
+}
+.tip-checklist__icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tip-checklist__body {
+  flex: 1;
+  min-width: 0;
+}
+.tip-checklist__title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2px;
+  line-height: 1.35;
+}
+.tip-checklist__desc {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+.tip-checklist__desc code {
+  display: inline-block;
+  padding: 0 5px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11.5px;
+  color: #4338ca;
+}
+
+/* Note block */
+.tip-note {
+  padding: 12px 14px;
+  background: #fefce8;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #713f12;
+}
+.tip-note strong { color: #422006; }
+
+.tip-fab:focus-visible,
+.tip-close:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .tip-fab {
+    right: 16px;
+    bottom: 16px;
+    padding: 0.7rem 0.95rem;
+  }
+  .tip-fab span:not(.tip-fab__icon) {
+    display: none;
+  }
+  .tip-header { padding: 18px 20px 14px; }
+  .tip-body { padding: 8px 20px 30px; }
+}
