@@ -5,186 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template C · Landing de campaña (cold traffic)</title>
   <link rel="stylesheet" href="../../assets/css/base.css" />
-  <link rel="stylesheet" href="../../sections/S01-hero/medalva-form/styles.css" />  <!-- 01 · HERO + Form rápido -->
-  <link rel="stylesheet" href="../../sections/S02-problematica/gestiona-asesoria/styles.css" />  <!-- 02 · Problemática breve -->
+  <link rel="stylesheet" href="../../sections/S01-hero/sol4/styles.css" />  <!-- 01 · Hero · Sol-4 -->
+  <link rel="stylesheet" href="../../sections/S06-beneficios/consulting-f/styles.css" />  <!-- 02 · Intro / Value prop · Consulting-F -->
   <link rel="stylesheet" href="../../sections/S06-beneficios/ecom-advisory/styles.css" />  <!-- 03 · Beneficios -->
   <link rel="stylesheet" href="../../sections/S07-tabla-prob-sol/barreda-diaz/styles.css" />  <!-- 04 · Tabla Problema / Solución -->
   <link rel="stylesheet" href="../../sections/S11-reviews/aselegal/styles.css" />  <!-- 05 · Reviews cortas -->
   <link rel="stylesheet" href="../../sections/S12-faqs/christian-sanchez/styles.css" />  <!-- 06 · FAQs reducidas -->
   <link rel="stylesheet" href="../../sections/S13-cta-final/medalva/styles.css" />  <!-- 07 · Cierre / CTA final -->
+  <link rel="stylesheet" href="../../assets/css/template-shell.css" />
+  <link rel="stylesheet" href="./unify.css" />
 </head>
-<body class="font-set-1">
+<body class="font-set-1 tpl-body theme-purple">
 
-  <!-- ================== 01 · HERO + Form rápido ================== -->
-<!--
-    Variante del hero Medalva pensada para Templates con formulario rápido en
-    paralelo (bloque 02 del Template A). Mantiene gradient + orbs + texto a la
-    izquierda. La derecha pasa a ser un form glass de captura corta:
-    nombre / teléfono / email / CTA.
-  -->
-  <section class="herof-medalva theme-crimson">
+  <!-- ============ HEADER ============ -->
+  <header class="t-header">
+    <input type="checkbox" id="t-nav-toggle" />
+    <div class="t-header__inner">
 
-    <div class="herof-medalva__orb herof-medalva__orb--light" aria-hidden="true"></div>
-    <div class="herof-medalva__orb herof-medalva__orb--dark" aria-hidden="true"></div>
+      <a href="#" class="t-header__brand">
+        <span class="t-header__mark">F</span>
+        <span>
+          <span class="t-header__brand-name">Fiscalia.app</span>
+          <span class="t-header__brand-sub">Asesoría online</span>
+        </span>
+      </a>
 
-    <div class="herof-medalva__container">
+      <label for="t-nav-toggle" class="t-header__toggle" title="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </label>
 
-      <div class="herof-medalva__text">
-        <h1 class="herof-medalva__title text-balance">
-          Asesoría fiscal y contable en Sevilla para autónomos y pymes
+      <nav class="t-header__nav">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faqs">FAQs</a>
+      </nav>
+
+      <a href="#contacto" class="t-header__cta">
+        Empieza gratis
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ===================== 01 · Hero · Sol-4 ===================== -->
+  <section class="hero-sol4 theme-purple" id="hero">
+    <video class="hero-sol4__video" autoplay muted loop playsinline>
+      <source src="../../assets/video/sol4/hero.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-sol4__overlay"></div>
+
+    <div class="container">
+      <div class="hero-sol4__content">
+        <h1 class="hero-sol4__title text-balance">
+          Asesoría online para autónomos y pymes. Sin papeleo, sin esperas.
         </h1>
-        <p class="herof-medalva__lead">
-          Documentación en <strong>orden, criterios claros y una forma de
-          trabajar que se entiende</strong>. Cuando hay un trámite urgente o un
-          imprevisto, respondemos.
+        <p class="hero-sol4__subtitle">
+          Fiscal, contable y laboral en una sola plataforma. Respuesta en menos de 24 h.
         </p>
-        <ul class="herof-medalva__bullets" role="list">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            Primera consulta sin coste
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            Respuesta en menos de 24 h
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            Equipo dedicado a tu cuenta
-          </li>
-        </ul>
+        <p class="hero-sol4__body text-pretty">
+          Olvidate de las gestiones presenciales. Subís tus facturas, nosotros
+          presentamos tus modelos y te avisamos cuando hay algo importante.
+          Sin sorpresas ni letra chica.
+        </p>
+        <div class="hero-sol4__ctas">
+          <a href="#contact" class="btn btn-primary btn-lg">Empieza gratis</a>
+          <a href="#beneficios" class="btn hero-sol4__btn-ghost btn-lg">Ver cómo funciona</a>
+        </div>
       </div>
-
-      <aside class="herof-medalva__form-wrap">
-        <div class="herof-medalva__form-frame" aria-hidden="true"></div>
-
-        <form class="herof-medalva__form" novalidate>
-          <p class="herof-medalva__form-eyebrow">Hablamos sin compromiso</p>
-          <h2 class="herof-medalva__form-title">Te llamamos en menos de 24 h</h2>
-
-          <label class="herof-medalva__field">
-            <span>Nombre</span>
-            <input type="text" name="nombre" required placeholder="Tu nombre" />
-          </label>
-
-          <label class="herof-medalva__field">
-            <span>Teléfono</span>
-            <input type="tel" name="telefono" required placeholder="600 000 000" />
-          </label>
-
-          <label class="herof-medalva__field">
-            <span>Email</span>
-            <input type="email" name="email" required placeholder="tu@email.com" />
-          </label>
-
-          <button type="submit" class="herof-medalva__submit">Que me llamen</button>
-
-          <p class="herof-medalva__fineprint">
-            Sin compromiso. Tus datos están protegidos.
-          </p>
-        </form>
-      </aside>
-
     </div>
   </section>
 
-  <!-- ================== 02 · Problemática breve ================== -->
-<!--
-    Variante "Problemática / Para quién es":
-    Header centrado + grid 4-cols de service cards con icono coloreado.
-    La última card está "highlighted" con borde naranja y gradient sutil.
-  -->
-  <section class="services-gest" id="services">
-    <div class="services-gest__container">
+  <!-- ===================== 02 · Intro / Value prop · Consulting-F ===================== -->
+  <section class="value-cf theme-purple" id="servicios">
+    <div class="value-cf__bg" aria-hidden="true"></div>
+    <div class="value-cf__container">
 
-      <header class="services-gest__header">
-        <h2 class="services-gest__title text-balance">
-          Nuestros servicios de <span class="services-gest__highlight">asesoría en Huelva</span>
-        </h2>
-        <p class="services-gest__subtitle text-pretty">
-          Te acompañamos de forma directa, sin intermediarios, con un equipo
-          profesional y cercano que ya trabaja con más de 100 empresas.
-        </p>
-      </header>
+      <h2 class="value-cf__title text-balance">
+        Tu asesoría online con personas detrás, no formularios sin alma
+      </h2>
+      <p class="value-cf__lead text-pretty">
+        <strong>No nos limitamos a presentar modelos</strong>: te acompañamos
+        en cada decisión. Analizamos tu situación, te anticipamos escenarios y
+        respondemos cuando importa.
+      </p>
 
-      <div class="services-gest__grid">
+      <div class="value-cf__grid">
 
-        <!-- Fiscal -->
-        <article class="svc-gest">
-          <div class="svc-gest__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 3v18h18"/><path d="M7 14v3"/><path d="M11 10v7"/><path d="M15 12v5"/><path d="M19 8v9"/>
-            </svg>
+        <article class="feature-cf">
+          <div class="feature-cf__icon">
+            <img src="../../assets/images/consulting-f/icon-handshake.png" alt="Icono Acompañamiento" />
           </div>
-          <h3 class="svc-gest__title">Asesoría Fiscal</h3>
-          <p class="svc-gest__desc">Planificación, modelos y defensa ante requerimientos.</p>
-          <a href="#fiscal" class="svc-gest__link">
-            Ver más
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          <h3 class="feature-cf__title">Acompañamiento real</h3>
+          <p class="feature-cf__desc">Un equipo dedicado y revisiones periódicas, no un chat genérico.</p>
         </article>
 
-        <!-- Contable -->
-        <article class="svc-gest">
-          <div class="svc-gest__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/>
-            </svg>
+        <article class="feature-cf">
+          <div class="feature-cf__icon">
+            <img src="../../assets/images/consulting-f/icon-analysis.png" alt="Icono Análisis" />
           </div>
-          <h3 class="svc-gest__title">Asesoría Contable</h3>
-          <p class="svc-gest__desc">Registros, balances e informes para tomar decisiones.</p>
-          <a href="#contable" class="svc-gest__link">
-            Ver más
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          <h3 class="feature-cf__title">Análisis adaptado</h3>
+          <p class="feature-cf__desc">Soluciones específicas según tu sector y volumen. No plantilla para todos.</p>
         </article>
 
-        <!-- Laboral -->
-        <article class="svc-gest">
-          <div class="svc-gest__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
+        <article class="feature-cf">
+          <div class="feature-cf__icon">
+            <img src="../../assets/images/consulting-f/icon-loyalty.png" alt="Icono Fidelidad" />
           </div>
-          <h3 class="svc-gest__title">Asesoría Laboral</h3>
-          <p class="svc-gest__desc">Contratación, Seguridad Social y relaciones laborales claras.</p>
-          <a href="#laboral" class="svc-gest__link">
-            Ver más
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          <h3 class="feature-cf__title">Relación a largo plazo</h3>
+          <p class="feature-cf__desc">El 98% de nuestros clientes sigue con nosotros año tras año.</p>
         </article>
 
-        <!-- Empresas Agrícolas — Highlighted -->
-        <article class="svc-gest svc-gest--highlight">
-          <div class="svc-gest__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 4h9l1 2h6l-1 5h-2"/><path d="M9 9h7"/><circle cx="7" cy="17" r="3"/><circle cx="17" cy="17" r="3"/>
-            </svg>
+        <article class="feature-cf">
+          <div class="feature-cf__icon">
+            <img src="../../assets/images/consulting-f/icon-globo.png" alt="Icono Soporte Internacional" />
           </div>
-          <h3 class="svc-gest__title">Asesoría para empresas agrícolas</h3>
-          <p class="svc-gest__desc">Especialistas en cultivos como fresa y arándano.</p>
-          <a href="#agricola" class="svc-gest__link">
-            Ver más
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          <h3 class="feature-cf__title">Sin papeleo, 100% online</h3>
+          <p class="feature-cf__desc">Plataforma simple para subir facturas y consultar tu situación en tiempo real.</p>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ================== 03 · Beneficios ================== -->
+  <!-- ===================== 03 · Beneficios ===================== -->
 <!--
     Beneficios / Why us: layout split.
     Izq: storytelling sobre fondo gradient + caja highlight cyan.
     Der: grid 2x2 de glass cards con imagen + texto.
   -->
-  <section class="specialists-eca theme-indigo">
+  <section class="specialists-eca theme-purple">
 
     <!-- Capas decorativas -->
     <div class="specialists-eca__bg" aria-hidden="true"></div>
@@ -247,7 +205,7 @@
     </div>
   </section>
 
-  <!-- ================== 04 · Tabla Problema / Solución ================== -->
+  <!-- ===================== 04 · Tabla Problema / Solución ===================== -->
 <!--
     Dos secciones encadenadas:
     1) Problem Section: bg neutro · barra gradient brand→green arriba · grid
@@ -257,7 +215,7 @@
   -->
   <div class="bd-problem-solution">
 
-    <section class="problem-bd theme-indigo">
+    <section class="problem-bd theme-purple">
       <div class="problem-bd__container">
 
         <header class="bd-intro">
@@ -321,7 +279,7 @@
       </div>
     </section>
 
-    <section class="solution-bd theme-indigo">
+    <section class="solution-bd theme-purple">
       <div class="solution-bd__container">
 
         <header class="bd-intro bd-intro--invert">
@@ -400,13 +358,13 @@
 
   </div>
 
-  <!-- ================== 05 · Reviews cortas ================== -->
+  <!-- ===================== 05 · Reviews cortas ===================== -->
 <!--
     Testimonios estilo Google Reviews:
     Header con título + rating badge (logo Google + score + 5 estrellas).
     Grid de 3 cards: avatar coloreado + nombre + estrellas + G-logo + texto + fecha.
   -->
-  <section class="reviews-asg theme-steel" id="testimonios">
+  <section class="reviews-asg theme-purple" id="testimonios">
     <div class="reviews-asg__wrap">
 
       <header class="reviews-asg__head">
@@ -487,8 +445,8 @@
     </div>
   </section>
 
-  <!-- ================== 06 · FAQs reducidas ================== -->
-<section class="faq-cs theme-indigo section" aria-labelledby="faq-heading">
+  <!-- ===================== 06 · FAQs reducidas ===================== -->
+<section class="faq-cs theme-purple section" aria-labelledby="faq-heading">
     <div class="container faq-cs__inner">
 
       <header class="faq-cs__header">
@@ -560,8 +518,8 @@
     </div>
   </section>
 
-  <!-- ================== 07 · Cierre / CTA final ================== -->
-<section class="cta-medalva theme-crimson">
+  <!-- ===================== 07 · Cierre / CTA final ===================== -->
+<section class="cta-medalva theme-purple">
     <div class="cta-medalva__overlay" aria-hidden="true"></div>
     <div class="cta-medalva__container">
       <h2 class="cta-medalva__title text-balance">Empecemos por el siguiente paso</h2>
@@ -580,6 +538,83 @@
       </a>
     </div>
   </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="t-footer">
+    <div class="t-footer__inner">
+
+      <div class="t-footer__col">
+        <a href="#" class="t-footer__brand">
+          <span class="t-footer__mark">F</span>
+          <span class="t-footer__brand-name">Fiscalia.app</span>
+        </a>
+        <p class="t-footer__tagline">Asesoría 100% online para autónomos y pymes. Sin papeleo, sin esperas, respuesta en menos de 24h.</p>
+        <div class="t-footer__social">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Asesoría fiscal</a></li>
+          <li><a href="#servicios">Asesoría contable</a></li>
+          <li><a href="#servicios">Asesoría laboral</a></li>
+          <li><a href="#servicios">Asesoría jurídica</a></li>
+          <li><a href="#servicios">Constitución de sociedades</a></li>
+        </ul>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#reviews">Casos de éxito</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#trabajo">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Online · servicio en toda España</span>
+          </li>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+34 900 000 000">+34 900 000 000</a>
+          </li>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hola@fiscalia.app">hola@fiscalia.app</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="t-footer__bottom">
+      <div class="t-footer__bottom-inner">
+        <p>© 2026 Fiscalia.app. Todos los derechos reservados.</p>
+        <div class="t-footer__legal">
+          <a href="#aviso-legal">Aviso legal</a>
+          <a href="#privacidad">Política de privacidad</a>
+          <a href="#cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

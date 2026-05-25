@@ -1,0 +1,154 @@
+/* =========================================================================
+   TEMPLATE C · UNIFY · theme-purple + font-set-1 (DM Sans + Inter)
+   Tono moderno, fresh, performance-oriented (ads, landing).
+   --brand-rgb-500 = 126, 77, 179
+   ========================================================================= */
+
+/* ============ Reset spacing del primer bloque (header sticky) ============ */
+.tpl-body > .hero-sol4 {
+  padding-top: 0;
+}
+
+/* ============ Tipografía unificada ============ */
+.tpl-body h1, .tpl-body h2, .tpl-body h3, .tpl-body h4 {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.02em !important;
+}
+.tpl-body p, .tpl-body li, .tpl-body span, .tpl-body a,
+.tpl-body button, .tpl-body label, .tpl-body input,
+.tpl-body select, .tpl-body textarea {
+  font-family: var(--font-body);
+}
+
+/* ===================== S01 · Hero · Sol-4 ===================== */
+.tpl-body .hero-sol4 {
+  min-height: 78vh;
+}
+.tpl-body .hero-sol4__overlay {
+  background: linear-gradient(135deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(126, 77, 179, 0.30) 100%) !important;
+}
+.tpl-body .hero-sol4 .btn-primary {
+  background: var(--brand-500) !important;
+  color: var(--color-text-invert) !important;
+  border-color: var(--brand-500) !important;
+}
+.tpl-body .hero-sol4 .btn-primary:hover {
+  background: var(--brand-700) !important;
+  border-color: var(--brand-700) !important;
+}
+
+/* ===================== S02 · Value prop · Consulting-F (value-cf) =====
+   Feature cards transparentes (sin background blanco). */
+.tpl-body .value-cf {
+  background: var(--neutral-50);
+}
+.tpl-body .value-cf__title {
+  background: linear-gradient(135deg, var(--brand-700), var(--brand-500)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.tpl-body .feature-cf {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+.tpl-body .feature-cf:hover {
+  border-color: var(--brand-300) !important;
+  box-shadow: 0 12px 32px rgba(126, 77, 179, 0.12) !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+.tpl-body .feature-cf__title {
+  color: var(--brand-800) !important;
+}
+
+/* ===================== S06 · Beneficios (specialists-eca) =============
+   Mantiene su gradient oscuro original (brand-900 → brand-500). */
+.tpl-body .specialists-eca {
+  --eca-accent: var(--brand-200);
+}
+.tpl-body .specialists-eca__title,
+.tpl-body .specialists-eca h2,
+.tpl-body .specialists-eca h3 {
+  color: var(--color-text-invert) !important;
+}
+
+/* ===================== S07 · Tabla Prob/Sol (barreda-diaz) ============ */
+.tpl-body .bd-problem-solution {
+  --bd-green:       var(--brand-500);
+  --bd-green-hover: var(--brand-700);
+  --bd-red:         var(--brand-600);
+}
+.tpl-body .problem-bd {
+  background-color: var(--neutral-50) !important;
+}
+.tpl-body .solution-bd {
+  background: linear-gradient(135deg,
+    var(--brand-700) 0%,
+    var(--brand-900) 100%) !important;
+}
+/* Iconos de solution-bd: blancos default, brand al hover */
+.tpl-body .solution-bd__icon {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: var(--color-text-invert) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+.tpl-body .solution-bd__card:hover .solution-bd__icon {
+  background: var(--neutral-0) !important;
+  color: var(--brand-700) !important;
+  border-color: var(--neutral-0);
+}
+
+/* ===================== S11 · Reviews (reviews-asg) =================== */
+.tpl-body .reviews-asg {
+  --asg-cream:  var(--neutral-50);
+  --asg-cream2: var(--surface-warm);
+  --asg-rule:   var(--color-divider);
+  background: var(--neutral-0);
+}
+
+/* ===================== S12 · FAQs (faq-cs) =========================== */
+.tpl-body .faq-cs {
+  --faq-cs-accent: var(--brand-400);
+  background: var(--neutral-50);
+}
+
+/* ===================== S13 · Cierre CTA (cta-medalva) =================
+   El original tiene rgba(170, 23, 69, ...) crimson hardcoded en gradients
+   y overlay. Sobrescribimos a rgba purple. */
+.tpl-body .cta-medalva {
+  background-color: var(--brand-900) !important;
+  background-image:
+    radial-gradient(ellipse at 30% 30%, rgba(126, 77, 179, 0.40), transparent 60%),
+    radial-gradient(ellipse at 70% 70%, rgba(94, 53, 145, 0.50), transparent 60%),
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.06) 1px, transparent 0) !important;
+  background-size: auto, auto, 32px 32px !important;
+}
+.tpl-body .cta-medalva__overlay {
+  background: linear-gradient(135deg,
+    rgba(126, 77, 179, 0.75) 0%,
+    rgba(17, 17, 17, 0.92) 100%) !important;
+}
+.tpl-body .cta-medalva__btn {
+  background-color: var(--brand-500) !important;
+  color: var(--color-text-invert) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+}
+.tpl-body .cta-medalva__btn:hover {
+  background-color: var(--brand-300) !important;
+  color: var(--brand-900) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ============ Ritmo entre secciones ============ */
+.tpl-body > section + section { border-top: 0; }
+
+/* ============ Footer · armonía purple ============ */
+.t-footer {
+  background: linear-gradient(180deg,
+    var(--brand-700) 0%,
+    var(--brand-900) 100%);
+}

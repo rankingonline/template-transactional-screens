@@ -1,0 +1,218 @@
+/* =========================================================================
+   TEMPLATE B · UNIFY · theme-indigo + font-set-2 (Playfair + Inter)
+   Tono editorial/corporate. Override completo de variables internas
+   y hex hardcoded de cada sección.
+   ========================================================================= */
+
+/* ============ Reset spacing del primer bloque (header sticky) ============ */
+.tpl-body > .hero-cs {
+  padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+/* ============ Tipografía editorial unificada ============ */
+.tpl-body h1, .tpl-body h2, .tpl-body h3, .tpl-body h4 {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.015em !important;
+}
+.tpl-body p, .tpl-body li, .tpl-body span, .tpl-body a,
+.tpl-body button, .tpl-body label, .tpl-body input,
+.tpl-body select, .tpl-body textarea {
+  font-family: var(--font-body);
+}
+
+/* ===================== S01 · Hero editorial (hero-cs) ================ */
+.tpl-body .hero-cs {
+  --hero-cs-accent: var(--brand-300);
+  --hero-cs-accent-rgb: 99, 122, 199;
+  background: radial-gradient(ellipse at top left,
+    var(--brand-500) -20%,
+    var(--brand-800) 45%,
+    var(--brand-900) 100%) !important;
+}
+
+/* ===================== S03 · Para quién (services-asg) =============== */
+.tpl-body .services-asg {
+  --asg-cream: var(--neutral-50);
+  --asg-rule:  var(--color-divider);
+  background: var(--neutral-50);
+}
+
+/* ===================== S04 · Qué incluye (services-tbx) ============== */
+.tpl-body .services-tbx {
+  background: var(--neutral-0);
+}
+.tpl-body .services-tbx [class*="__card"] {
+  border-color: var(--color-divider) !important;
+}
+
+/* ===================== S14 · Enfoque (enfoque) =======================
+   Bg gradient indigo + contraste alto en textos (sobre fondo oscuro).
+   El form column mantiene fondo blanco para legibilidad de inputs. */
+.tpl-body .enfoque {
+  background: linear-gradient(135deg,
+    var(--brand-700) 0%,
+    var(--brand-900) 100%) !important;
+  color: var(--color-text-invert);
+}
+.tpl-body .enfoque__eyebrow {
+  color: var(--brand-200) !important;
+}
+.tpl-body .enfoque__title {
+  color: var(--color-text-invert) !important;
+}
+.tpl-body .enfoque__prose {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+.tpl-body .enfoque__pillars {
+  border-left-color: rgba(255, 255, 255, 0.25) !important;
+}
+.tpl-body .enfoque__pillars strong {
+  color: var(--color-text-invert) !important;
+}
+.tpl-body .enfoque__pillars span {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+.tpl-body .enfoque__transition {
+  color: var(--color-text-invert) !important;
+  border-left-color: var(--brand-300) !important;
+}
+/* Form stays light for legibility */
+.tpl-body .enfoque__form {
+  border-top-color: var(--brand-400) !important;
+  background: var(--neutral-0) !important;
+}
+.tpl-body .enfoque__form-title {
+  color: var(--brand-800) !important;
+}
+
+/* ===================== S05 · Proceso (process-sol4) ================== */
+.tpl-body .process-sol4 {
+  background: var(--neutral-0);
+}
+
+/* ===================== S02 · Problemática (ps-rm) ==================== */
+.tpl-body .ps-rm {
+  --rm-accent:       var(--brand-600);
+  --rm-accent-hover: var(--brand-700);
+  --rm-dark:         var(--brand-900);
+  --problem:         var(--brand-700);
+  --solution:        var(--brand-500);
+  background: var(--neutral-50);
+}
+
+/* ===================== S08 · Cross-sell (about-cs) ===================
+   Se respeta el diseño original (bg brand + texto cream + bento grid).
+   Solo remapeamos --about-cs-accent (teal hardcoded → indigo) y --years. */
+.tpl-body .about-cs {
+  --about-cs-accent: var(--brand-300);
+  --years:           var(--brand-200);
+}
+
+/* ===================== S10 · Mapa (location-cf) ====================== */
+.tpl-body .location-cf {
+  background: var(--neutral-0);
+}
+
+/* ===================== S11 · Reviews (reviews-bd) ==================== */
+.tpl-body .reviews-bd {
+  --bd-green: var(--brand-500);
+  --bd-red:   var(--brand-600);
+  background: var(--neutral-50);
+}
+.tpl-body .grev-bd {
+  background: var(--neutral-0) !important;
+  border-color: var(--color-divider) !important;
+}
+
+/* ===================== S12 · FAQs (faq-asg) ========================== */
+.tpl-body .faq-asg {
+  --asg-cream-2: var(--neutral-50);
+  --asg-rule:    var(--color-divider);
+  background: var(--neutral-0);
+}
+
+/* ===================== S13 · Cierre CTA (newsletter-rm) ==============
+   Layout grid 2-col: izquierda content original + derecha stats.
+   Botón en paleta indigo (no naranja hardcoded). */
+.tpl-body .newsletter-rm {
+  --rm-accent:       var(--brand-400);
+  --rm-accent-hover: var(--brand-300);
+  --rm-dark:         var(--brand-900);
+  background: var(--neutral-0) !important;
+}
+.tpl-body .newsletter-rm__card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  background-image: none !important;
+  background: linear-gradient(135deg,
+    var(--brand-700) 0%,
+    var(--brand-900) 100%) !important;
+  box-shadow: 0 18px 50px rgba(43, 67, 145, 0.25) !important;
+}
+.tpl-body .newsletter-rm__overlay { display: none; }
+.tpl-body .newsletter-rm__content { max-width: none; }
+.tpl-body .newsletter-rm__highlight {
+  color: var(--brand-200) !important;
+}
+.tpl-body .newsletter-rm__btn {
+  background-color: var(--brand-200) !important;
+  color: var(--brand-900) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18) !important;
+}
+.tpl-body .newsletter-rm__btn:hover {
+  background-color: var(--neutral-0) !important;
+  color: var(--brand-900) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ----- Columna derecha · stats decorativos ----- */
+.tpl-body .newsletter-rm__visual {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+}
+.tpl-body .newsletter-rm__stat {
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+.tpl-body .newsletter-rm__stat-num {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: var(--fw-extra);
+  color: var(--brand-200);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.tpl-body .newsletter-rm__stat-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .tpl-body .newsletter-rm__card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============ Ritmo entre secciones ============ */
+.tpl-body > section + section { border-top: 0; }
+
+/* ============ Footer · armonía indigo ============ */
+.t-footer {
+  background: linear-gradient(180deg,
+    var(--brand-800) 0%,
+    var(--brand-900) 100%);
+}

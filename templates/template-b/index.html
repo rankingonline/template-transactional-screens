@@ -5,21 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template B · Página de servicio corporativa / autoridad</title>
   <link rel="stylesheet" href="../../assets/css/base.css" />
-  <link rel="stylesheet" href="../../sections/S01-hero/christian-sanchez/styles.css" />  <!-- 01 · HERO -->
+  <link rel="stylesheet" href="../../sections/S01-hero/christian-sanchez/styles.css" />  <!-- 01 · Hero editorial -->
   <link rel="stylesheet" href="../../sections/S03-para-quien/aselegal/styles.css" />  <!-- 02 · Para quién es este servicio -->
   <link rel="stylesheet" href="../../sections/S04-que-incluye/tribulex/styles.css" />  <!-- 03 · Qué incluye / Alcance del servicio -->
   <link rel="stylesheet" href="../../sections/S14-enfoque/standard/styles.css" />  <!-- 04 · Enfoque diferencial + form -->
   <link rel="stylesheet" href="../../sections/S05-proceso/sol4/styles.css" />  <!-- 05 · Proceso de trabajo -->
   <link rel="stylesheet" href="../../sections/S02-problematica/romero-martinez/styles.css" />  <!-- 06 · Problemática contextualizada -->
-  <link rel="stylesheet" href="../../sections/S08-cross-sell/christian-sanchez/styles.css" />  <!-- 07 · Servicios relacionados / Cross-sell -->
+  <link rel="stylesheet" href="../../sections/S08-cross-sell/christian-sanchez/styles.css" />  <!-- 07 · Cross-sell -->
   <link rel="stylesheet" href="../../sections/S10-mapa/consulting-f/styles.css" />  <!-- 08 · Mapa -->
   <link rel="stylesheet" href="../../sections/S11-reviews/barreda-diaz/styles.css" />  <!-- 09 · Reviews -->
   <link rel="stylesheet" href="../../sections/S12-faqs/aselegal/styles.css" />  <!-- 10 · FAQs -->
   <link rel="stylesheet" href="../../sections/S13-cta-final/romero-martinez/styles.css" />  <!-- 11 · Cierre / CTA final -->
+  <link rel="stylesheet" href="../../assets/css/template-shell.css" />
+  <link rel="stylesheet" href="./unify.css" />
 </head>
-<body class="font-set-2">
+<body class="font-set-2 tpl-body theme-indigo">
 
-  <!-- ================== 01 · HERO ================== -->
+  <!-- ============ HEADER ============ -->
+  <header class="t-header">
+    <input type="checkbox" id="t-nav-toggle" />
+    <div class="t-header__inner">
+
+      <a href="#" class="t-header__brand">
+        <span class="t-header__mark">CS</span>
+        <span>
+          <span class="t-header__brand-name">Castilla & Sosa</span>
+          <span class="t-header__brand-sub">Abogados · Madrid</span>
+        </span>
+      </a>
+
+      <label for="t-nav-toggle" class="t-header__toggle" title="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </label>
+
+      <nav class="t-header__nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#enfoque">Enfoque</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="t-header__cta">
+        Solicita una reunión
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ===================== 01 · Hero editorial ===================== -->
 <section class="hero-cs theme-indigo" aria-label="Inicio">
 
     <!-- Fondos sofisticados -->
@@ -85,12 +126,12 @@
 
   </section>
 
-  <!-- ================== 02 · Para quién es este servicio ================== -->
+  <!-- ===================== 02 · Para quién es este servicio ===================== -->
 <!--
     Servicios editoriales en filas separadas por reglas horizontales.
     Cada servicio: número grande + título con pre-label "Para" + desc + pills.
   -->
-  <section class="services-asg theme-steel" id="servicios">
+  <section class="services-asg theme-indigo" id="servicios">
     <div class="services-asg__wrap">
 
       <header class="services-asg__head">
@@ -178,8 +219,8 @@
     </div>
   </section>
 
-  <!-- ================== 03 · Qué incluye / Alcance del servicio ================== -->
-<section class="services-tbx theme-steel" id="servicios">
+  <!-- ===================== 03 · Qué incluye / Alcance del servicio ===================== -->
+<section class="services-tbx theme-indigo" id="servicios">
     <div class="services-tbx__container">
 
       <header class="services-tbx__head">
@@ -229,7 +270,7 @@
     </div>
   </section>
 
-  <!-- ================== 04 · Enfoque diferencial + form ================== -->
+  <!-- ===================== 04 · Enfoque diferencial + form ===================== -->
 <!--
     Bloque pensado para Templates corporativos (Template B · bloque 04).
     Dos columnas equilibradas:
@@ -327,8 +368,8 @@
     </div>
   </section>
 
-  <!-- ================== 05 · Proceso de trabajo ================== -->
-<section class="process-sol4 theme-purple section" id="methodology">
+  <!-- ===================== 05 · Proceso de trabajo ===================== -->
+<section class="process-sol4 theme-indigo section" id="methodology">
     <div class="container">
 
       <header class="process-sol4__header">
@@ -377,7 +418,7 @@
     </div>
   </section>
 
-  <!-- ================== 06 · Problemática contextualizada ================== -->
+  <!-- ===================== 06 · Problemática contextualizada ===================== -->
 <!--
     Grid 3 cols simétrico:
     - Columna 1: 3 problem cards (blancas)
@@ -458,7 +499,7 @@
     </div>
   </section>
 
-  <!-- ================== 07 · Servicios relacionados / Cross-sell ================== -->
+  <!-- ===================== 07 · Cross-sell ===================== -->
 <!--
     Variante "Sobre nosotros (intro)" usada como cross-sell:
     columna de texto + bento grid de 4 cards con pilares (líder, años,
@@ -530,7 +571,7 @@
     </div>
   </section>
 
-  <!-- ================== 08 · Mapa ================== -->
+  <!-- ===================== 08 · Mapa ===================== -->
 <!--
     Glass panel split: izq text + icon-list (con pulse-animation en el primer
     icono) · der iframe Google Maps con overlay shine animado que pasa cada 6s.
@@ -583,7 +624,7 @@
     </div>
   </section>
 
-  <!-- ================== 09 · Reviews ================== -->
+  <!-- ===================== 09 · Reviews ===================== -->
 <!--
     Cards de Google Reviews en un track horizontal con scroll-snap CSS
     (sin JS). El original usaba carrusel JS; aquí se reemplaza por scroll
@@ -679,12 +720,12 @@
     </div>
   </section>
 
-  <!-- ================== 10 · FAQs ================== -->
+  <!-- ===================== 10 · FAQs ===================== -->
 <!--
     FAQ editorial: head sticky a la izquierda + lista vertical a la derecha.
     Cada <details> con summary y chevron que rota 90° en open.
   -->
-  <section class="faq-asg theme-steel" id="faq">
+  <section class="faq-asg theme-indigo" id="faq">
     <div class="faq-asg__wrap">
 
       <header class="faq-asg__head">
@@ -749,25 +790,119 @@
     </div>
   </section>
 
-  <!-- ================== 11 · Cierre / CTA final ================== -->
+  <!-- ===================== 11 · Cierre / CTA final ===================== -->
 <section class="newsletter-rm theme-indigo">
     <div class="newsletter-rm__container">
       <div class="newsletter-rm__card">
         <div class="newsletter-rm__overlay" aria-hidden="true"></div>
+
         <div class="newsletter-rm__content">
           <h2 class="newsletter-rm__title text-balance">
-            Mantente al día de las últimas novedades con
-            <span class="newsletter-rm__highlight">Romero Martínez Asesores</span>
+            Empecemos a trabajar juntos en
+            <span class="newsletter-rm__highlight">Castilla &amp; Sosa Abogados</span>
           </h2>
           <p class="newsletter-rm__desc text-pretty">
-            Descubre cómo podemos ayudarte a optimizar tus impuestos y gestión
-            para impulsar el crecimiento de tu negocio.
+            Agendá una primera conversación sin compromiso. En 30 minutos
+            entendemos tu situación y definimos cómo podemos acompañarte.
           </p>
-          <a href="#contact" class="newsletter-rm__btn">Solicitar información</a>
+          <a href="#contact" class="newsletter-rm__btn">Solicitar reunión</a>
         </div>
+
+        <aside class="newsletter-rm__visual" aria-hidden="true">
+          <div class="newsletter-rm__stat">
+            <span class="newsletter-rm__stat-num">+200</span>
+            <span class="newsletter-rm__stat-label">empresas asesoradas</span>
+          </div>
+          <div class="newsletter-rm__stat">
+            <span class="newsletter-rm__stat-num">15</span>
+            <span class="newsletter-rm__stat-label">años en el mercado</span>
+          </div>
+          <div class="newsletter-rm__stat">
+            <span class="newsletter-rm__stat-num">98%</span>
+            <span class="newsletter-rm__stat-label">tasa de retención</span>
+          </div>
+        </aside>
+
       </div>
     </div>
   </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="t-footer">
+    <div class="t-footer__inner">
+
+      <div class="t-footer__col">
+        <a href="#" class="t-footer__brand">
+          <span class="t-footer__mark">CS</span>
+          <span class="t-footer__brand-name">Castilla & Sosa</span>
+        </a>
+        <p class="t-footer__tagline">Despacho jurídico y de asesoría estratégica para empresas medianas. Rigor técnico, criterio empresarial y cercanía con cada socio.</p>
+        <div class="t-footer__social">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Asesoría fiscal</a></li>
+          <li><a href="#servicios">Asesoría contable</a></li>
+          <li><a href="#servicios">Asesoría laboral</a></li>
+          <li><a href="#servicios">Asesoría jurídica</a></li>
+          <li><a href="#servicios">Constitución de sociedades</a></li>
+        </ul>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#reviews">Casos de éxito</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#trabajo">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Paseo de la Castellana 95, 28046 Madrid</span>
+          </li>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+34 915 000 000">+34 915 000 000</a>
+          </li>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:contacto@castillasosa.es">contacto@castillasosa.es</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="t-footer__bottom">
+      <div class="t-footer__bottom-inner">
+        <p>© 2026 Castilla & Sosa. Todos los derechos reservados.</p>
+        <div class="t-footer__legal">
+          <a href="#aviso-legal">Aviso legal</a>
+          <a href="#privacidad">Política de privacidad</a>
+          <a href="#cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

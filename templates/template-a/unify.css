@@ -1,0 +1,155 @@
+/* =========================================================================
+   TEMPLATE A · UNIFY · theme-forest + font-set-3 (Nunito Sans)
+   Armonía visual completa: un único theme aplicado a 12 bloques distintos.
+   Estrategia:
+   1) Override de variables internas de cada sección → variables --brand-*
+   2) Override de selectores con HEX hardcoded
+   3) Reset visual del primer bloque para acomodar el header sticky
+   ========================================================================= */
+
+/* ============ Reset spacing del primer bloque (header sticky) ============ */
+.tpl-body > .herof-medalva {
+  padding-top: clamp(5rem, 8vw, 7rem);
+  min-height: auto;
+}
+
+/* ============ Tipografía unificada ============ */
+.tpl-body h1, .tpl-body h2, .tpl-body h3, .tpl-body h4 {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.015em !important;
+}
+.tpl-body p, .tpl-body li, .tpl-body span, .tpl-body a,
+.tpl-body button, .tpl-body label, .tpl-body input,
+.tpl-body select, .tpl-body textarea {
+  font-family: var(--font-body);
+}
+
+/* ===================== S01 · Hero (herof-medalva) ===================== */
+.tpl-body .herof-medalva {
+  background: linear-gradient(135deg,
+    var(--brand-500) 0%,
+    var(--brand-700) 25%,
+    var(--brand-800) 50%,
+    var(--brand-600) 75%,
+    var(--brand-500) 100%) !important;
+  background-size: 300% 300% !important;
+}
+/* Neutralizar shadows rgba crimson hardcoded en el form del hero */
+.tpl-body .herof-medalva__submit {
+  box-shadow: 0 10px 25px rgba(34, 89, 65, 0.35) !important;
+}
+.tpl-body .herof-medalva__submit:hover {
+  box-shadow: 0 15px 35px rgba(34, 89, 65, 0.45) !important;
+}
+.tpl-body .herof-medalva__field input:focus {
+  box-shadow: 0 0 0 3px rgba(34, 89, 65, 0.15) !important;
+}
+
+/* ===================== S02 · Problemática (clarity-eca) ============== */
+.tpl-body .clarity-eca {
+  --eca-accent: var(--brand-300);
+  background: var(--surface-warm);
+}
+
+/* ===================== S03 · Para quién (services-medalva) =========== */
+.tpl-body .services-medalva {
+  --highlight: var(--brand-500);
+  background: var(--neutral-0);
+}
+.tpl-body .services-medalva [class*="--featured"],
+.tpl-body .services-medalva [class*="__bg"] {
+  background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-800) 100%) !important;
+}
+/* Card highlight: tenía #5c0720 (rojo) y rgba crimson hardcoded */
+.tpl-body .svc-medalva--highlight {
+  background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-800) 100%) !important;
+  box-shadow: 0 15px 35px rgba(34, 89, 65, 0.25) !important;
+}
+.tpl-body .svc-medalva:hover {
+  box-shadow: 0 20px 40px rgba(34, 89, 65, 0.12) !important;
+  border-color: rgba(34, 89, 65, 0.18) !important;
+}
+.tpl-body .svc-medalva:hover .svc-medalva__num {
+  color: rgba(34, 89, 65, 0.06) !important;
+}
+
+/* ===================== S04 · Qué incluye (services-tbx) ============== */
+.tpl-body .services-tbx {
+  background: var(--neutral-50);
+}
+.tpl-body .services-tbx [style*="#E0ECF7"],
+.tpl-body .services-tbx__card {
+  border-color: var(--color-divider) !important;
+}
+
+/* ===================== S05 · Proceso (methodology-eca) =============== */
+.tpl-body .methodology-eca {
+  --eca-accent: var(--brand-400);
+  background: var(--neutral-0);
+}
+
+/* ===================== S06 · Beneficios (benefits-sol4) ============== */
+.tpl-body .benefits-sol4 {
+  background: var(--surface-warm);
+}
+
+/* ===================== S07 · Tabla Prob/Sol (problems-sgu) =========== */
+.tpl-body .problems-sgu {
+  --sgu-lime:       var(--brand-500);
+  --sgu-lime-tint:  var(--brand-50);
+  --sgu-lime-deep:  var(--brand-800);
+  --sgu-red:        var(--brand-600);
+  --sgu-green-ico:  var(--brand-700);
+  background: var(--neutral-0);
+}
+
+/* ===================== S08 · Cross-sell (commitments-medalva) ======== */
+.tpl-body .commitments-medalva {
+  background: var(--surface-warm);
+}
+.tpl-body .commit-featured {
+  background: linear-gradient(135deg,
+    var(--brand-500) 0%,
+    var(--brand-800) 100%) !important;
+}
+
+/* ===================== S09 · Form contacto (contact-sol4) ============ */
+.tpl-body .contact-sol4 {
+  background: linear-gradient(135deg,
+    var(--brand-700) 0%,
+    var(--brand-800) 50%,
+    var(--brand-900) 100%) !important;
+}
+
+/* ===================== S10 · Mapa (oficinas-tbx) ===================== */
+.tpl-body .oficinas-tbx {
+  background: var(--neutral-50);
+}
+.tpl-body .oficinas-tbx [class*="__card"] {
+  border-color: var(--color-divider) !important;
+}
+
+/* ===================== S11 · Reviews (reviews-tbx) =================== */
+.tpl-body .reviews-tbx {
+  background: var(--neutral-0);
+}
+.tpl-body .reviews-tbx [class*="__card"],
+.tpl-body .grev-tbx {
+  border-color: var(--color-divider) !important;
+}
+
+/* ===================== S12 · FAQs (faq-cs) =========================== */
+.tpl-body .faq-cs {
+  --faq-cs-accent: var(--brand-400);
+  background: var(--surface-warm);
+}
+
+/* ============ Ritmo entre secciones ============ */
+.tpl-body > section + section { border-top: 0; }
+
+/* ============ Footer · armonía con theme ============ */
+.t-footer {
+  background: linear-gradient(180deg,
+    var(--brand-700) 0%,
+    var(--brand-900) 100%);
+}

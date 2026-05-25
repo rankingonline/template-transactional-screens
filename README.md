@@ -163,45 +163,91 @@ Si el cliente necesita ajustes globales (espaciado más generoso, radios más cu
 
 Un template es simplemente un **único `index.html`** que importa los CSS de las secciones elegidas y embebe el `<body>` de cada una en orden.
 
-### 5.1 Estructura mínima
+### 5.1 Anatomía de un template (4 capas)
+
+```
+templates/template-X/
+├── index.html          ← Estructura: header + secciones + footer
+└── unify.css           ← Overrides por sección para armonía visual
+
+assets/css/
+├── base.css            ← Tokens + tipografía + reset + utilities (común a todo)
+└── template-shell.css  ← Header + footer estandarizados (común a los 3 templates)
+```
+
+Cada template aplica **un único `theme-*` y un único `font-set-*`** a todos sus bloques, garantizando armonía visual completa.
+
+### 5.2 Estructura mínima
 
 ```html
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Template · Cliente X</title>
   <link rel="stylesheet" href="../../assets/css/base.css" />
 
   <!-- Un <link> por sección que vayas a usar -->
-  <link rel="stylesheet" href="../../sections/S01-hero/medalva/styles.css" />
+  <link rel="stylesheet" href="../../sections/S01-hero/medalva-form/styles.css" />
   <link rel="stylesheet" href="../../sections/S05-proceso/sol4/styles.css" />
   <!-- … -->
-</head>
-<body class="font-set-3">
 
-  <!-- Pegar el contenido entre <body>…</body> de cada sección, en orden -->
-  <section class="hero-medalva theme-crimson"> … </section>
-  <section class="proceso-sol4 theme-purple"> … </section>
+  <!-- Shell común (header + footer) y unify específico del template -->
+  <link rel="stylesheet" href="../../assets/css/template-shell.css" />
+  <link rel="stylesheet" href="./unify.css" />
+</head>
+
+<!-- 3 clases en el body: font-set + tpl-body + theme único -->
+<body class="font-set-3 tpl-body theme-crimson">
+
+  <!-- HEADER común (importa estilos de template-shell.css) -->
+  <header class="t-header"> … </header>
+
+  <!-- Secciones — TODAS con el mismo theme-X que el body -->
+  <section class="herof-medalva theme-crimson"> … </section>
+  <section class="clarity-eca theme-crimson"> … </section>
   <!-- … -->
+
+  <!-- FOOTER común -->
+  <footer class="t-footer"> … </footer>
 
 </body>
 </html>
 ```
 
-### 5.2 Workflow recomendado
+### 5.3 El archivo `unify.css` (clave para la armonía)
 
-1. **Definí caso de uso, buyer persona y objetivo** (form, llamada, agenda…).
-2. **Elegí grupo + variante** de cada bloque según el documento de copy/SEO. Empezá por el catálogo del dashboard.
-3. **Creá la carpeta** `templates/<nombre>/index.html`.
-4. **Copiá los `<link>` CSS** de las secciones elegidas en el `<head>`.
-5. **Pegá los `<body>` internos** en orden.
-6. **Verificá compatibilidad visual**: cada sección trae su `theme-X` por defecto. Si querés unificar paleta, cambiá todos los `theme-X` por el mismo. Si preferís mantener variedad (como los templates incluidos), dejá cada uno con su tema original.
+Cada sección de la librería trae su propia identidad heredada del cliente original (gradients hardcoded, variables internas como `--eca-accent`, `--rm-accent`, `--bd-green`…). Cuando se mezclan en un template aparecerían colores fuera de paleta.
 
-### 5.3 Composición programática (opcional)
+El `unify.css` resuelve esto sobrescribiendo:
 
-El proyecto incluye un script Python (no versionado) que toma una lista `[(ruta_seccion, label), ...]` y ensambla el template automáticamente. Útil si vas a generar variantes en masa para distintos clientes — ver los 3 templates incluidos como ejemplo.
+- **Variables locales** de cada sección (`--eca-accent`, `--gestiona-primary`, `--sgu-lime`, etc.) mapeándolas a `var(--brand-*)`.
+- **Backgrounds con HEX hardcoded** (gradients de heroes, fondos crema, etc.) mapeándolos al theme.
+- **Variables creme/neutral** que tenían fondos específicos → neutrales de la librería.
+
+Ejemplo de override en `template-a/unify.css`:
+
+```css
+/* La sección clarity-eca usa --eca-accent: var(--teal-300) por defecto.
+   En Template A (theme-crimson) la remapeamos al brand del template */
+.tpl-body .clarity-eca {
+  --eca-accent: var(--brand-300);
+  background: var(--surface-warm);
+}
+```
+
+### 5.4 Workflow para armar un template nuevo
+
+1. **Definí caso de uso**: buyer persona, objetivo de conversión, longitud.
+2. **Elegí theme + font-set único** para todo el template.
+3. **Elegí grupo + variante** de cada bloque desde el catálogo.
+4. **Creá la carpeta** `templates/<nombre>/index.html` + `unify.css` (vacío).
+5. **Importá** `base.css` + un `<link>` por sección + `template-shell.css` + `./unify.css`.
+6. **Body** con 3 clases: `font-set-X tpl-body theme-X`.
+7. **Insertá** header (`<header class="t-header">`) + secciones (forzando el mismo `theme-X` en cada una) + footer (`<footer class="t-footer">`).
+8. **Auditá overrides**: identificá variables internas y HEX hardcoded por sección y mapeáles overrides en `unify.css`.
+
+### 5.5 Composición programática
+
+El proyecto incluye un script Python (no versionado en repo) que automatiza los pasos 5–7: lee la lista `[(ruta_seccion, label), ...]`, reemplaza todas las clases `theme-*` por el theme elegido y ensambla `index.html` con header + bodies + footer. Los 3 templates incluidos fueron generados con este script.
 
 ---
 
@@ -277,11 +323,21 @@ Ver `assets/css/tokens.css`. Los más usados:
 <a id="templates"></a>
 ## 8. Templates incluidos
 
-| Template | Caso de uso | Bloques | Tema | Tipografía |
-|---|---|---|---|---|
-| [Template A](templates/template-a/index.html) | Servicio comercial · conversión | 12 | Crimson (heredado) | Set 3 · Nunito Sans |
-| [Template B](templates/template-b/index.html) | Servicio corporativo · autoridad | 11 | Indigo (heredado) | Set 2 · Playfair + Inter |
-| [Template C](templates/template-c/index.html) | Landing de campaña · cold traffic | 7 | Crimson (heredado) | Set 1 · DM Sans + Inter |
+Cada template aplica **un único theme + un único font-set** a todos sus bloques (armonía visual completa) y trae **header sticky + footer** estandarizados.
+
+| Template | Caso de uso | Brand demo | Bloques | Theme unificado | Tipografía |
+|---|---|---|---|---|---|
+| [Template A](templates/template-a/index.html) | Servicio comercial · conversión | Vértice Asesores | 12 + header/footer | `theme-crimson` | Set 3 · Nunito Sans |
+| [Template B](templates/template-b/index.html) | Servicio corporativo · autoridad | Castilla & Sosa | 11 + header/footer | `theme-indigo` | Set 2 · Playfair + Inter |
+| [Template C](templates/template-c/index.html) | Landing de campaña · cold traffic | Fiscalia.app | 7 + header/footer | `theme-teal` | Set 1 · DM Sans + Inter |
+
+**Personalizar un template para un cliente real:**
+
+1. Clonar la carpeta `templates/template-X/` con el nombre del cliente.
+2. En `index.html`: editar las strings de brand (en header y footer), copy de cada bloque, URLs de redes sociales y datos de contacto.
+3. Para cambiar el theme: reemplazar `theme-X` en `<body>` y en todas las `<section>`. Eso re-mapea automáticamente todas las variables `--brand-*`.
+4. Para cambiar la tipografía: reemplazar `font-set-X` en `<body>`.
+5. `unify.css` rara vez necesita tocarse — solo si el cliente pide colores muy específicos por bloque.
 
 Ver hub navegable: [`templates/index.html`](templates/index.html).
 

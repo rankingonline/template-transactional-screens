@@ -5,29 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template A · Página de servicio comercial (conversión)</title>
   <link rel="stylesheet" href="../../assets/css/base.css" />
-  <link rel="stylesheet" href="../../sections/S01-hero/medalva-form/styles.css" />  <!-- 01 · HERO + Form rápido -->
-  <link rel="stylesheet" href="../../sections/S02-problematica/ecom-advisory/styles.css" />  <!-- 03 · Problemática -->
-  <link rel="stylesheet" href="../../sections/S03-para-quien/medalva/styles.css" />  <!-- 04 · Para quién es este servicio -->
-  <link rel="stylesheet" href="../../sections/S04-que-incluye/tribulex/styles.css" />  <!-- 05 · Qué incluye el servicio -->
-  <link rel="stylesheet" href="../../sections/S05-proceso/ecom-advisory/styles.css" />  <!-- 06 · Proceso de trabajo -->
-  <link rel="stylesheet" href="../../sections/S06-beneficios/sol4/styles.css" />  <!-- 07 · Beneficios / Lo que consigues -->
-  <link rel="stylesheet" href="../../sections/S07-tabla-prob-sol/segu-web/styles.css" />  <!-- 08 · Tabla comparativa Problema / Solución -->
-  <link rel="stylesheet" href="../../sections/S08-cross-sell/medalva/styles.css" />  <!-- 09 · Servicios relacionados / Cross-sell -->
-  <link rel="stylesheet" href="../../sections/S09-contacto/sol4/styles.css" />  <!-- 10 · Formulario de contacto -->
-  <link rel="stylesheet" href="../../sections/S10-mapa/tribulex/styles.css" />  <!-- 11 · Mapa -->
-  <link rel="stylesheet" href="../../sections/S11-reviews/tribulex/styles.css" />  <!-- 12 · Reviews -->
-  <link rel="stylesheet" href="../../sections/S12-faqs/christian-sanchez/styles.css" />  <!-- 13 · FAQs -->
+  <link rel="stylesheet" href="../../sections/S01-hero/medalva-form/styles.css" />  <!-- 01 · Hero + Form rápido -->
+  <link rel="stylesheet" href="../../sections/S02-problematica/ecom-advisory/styles.css" />  <!-- 02 · Problemática -->
+  <link rel="stylesheet" href="../../sections/S03-para-quien/medalva/styles.css" />  <!-- 03 · Para quién es este servicio -->
+  <link rel="stylesheet" href="../../sections/S04-que-incluye/tribulex/styles.css" />  <!-- 04 · Qué incluye el servicio -->
+  <link rel="stylesheet" href="../../sections/S05-proceso/ecom-advisory/styles.css" />  <!-- 05 · Proceso de trabajo -->
+  <link rel="stylesheet" href="../../sections/S06-beneficios/sol4/styles.css" />  <!-- 06 · Beneficios -->
+  <link rel="stylesheet" href="../../sections/S07-tabla-prob-sol/segu-web/styles.css" />  <!-- 07 · Tabla Problema / Solución -->
+  <link rel="stylesheet" href="../../sections/S08-cross-sell/medalva/styles.css" />  <!-- 08 · Cross-sell -->
+  <link rel="stylesheet" href="../../sections/S09-contacto/sol4/styles.css" />  <!-- 09 · Formulario de contacto -->
+  <link rel="stylesheet" href="../../sections/S10-mapa/tribulex/styles.css" />  <!-- 10 · Mapa -->
+  <link rel="stylesheet" href="../../sections/S11-reviews/tribulex/styles.css" />  <!-- 11 · Reviews -->
+  <link rel="stylesheet" href="../../sections/S12-faqs/christian-sanchez/styles.css" />  <!-- 12 · FAQs -->
+  <link rel="stylesheet" href="../../assets/css/template-shell.css" />
+  <link rel="stylesheet" href="./unify.css" />
 </head>
-<body class="font-set-3">
+<body class="font-set-3 tpl-body theme-forest">
 
-  <!-- ================== 01 · HERO + Form rápido ================== -->
+  <!-- ============ HEADER ============ -->
+  <header class="t-header">
+    <input type="checkbox" id="t-nav-toggle" />
+    <div class="t-header__inner">
+
+      <a href="#" class="t-header__brand">
+        <span class="t-header__mark">VA</span>
+        <span>
+          <span class="t-header__brand-name">Vértice Asesores</span>
+          <span class="t-header__brand-sub">Asesoría · Sevilla</span>
+        </span>
+      </a>
+
+      <label for="t-nav-toggle" class="t-header__toggle" title="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </label>
+
+      <nav class="t-header__nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faqs">FAQs</a>
+      </nav>
+
+      <a href="#contacto" class="t-header__cta">
+        Pide tu consulta
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ===================== 01 · Hero + Form rápido ===================== -->
 <!--
     Variante del hero Medalva pensada para Templates con formulario rápido en
     paralelo (bloque 02 del Template A). Mantiene gradient + orbs + texto a la
     izquierda. La derecha pasa a ser un form glass de captura corta:
     nombre / teléfono / email / CTA.
   -->
-  <section class="herof-medalva theme-crimson">
+  <section class="herof-medalva theme-forest">
 
     <div class="herof-medalva__orb herof-medalva__orb--light" aria-hidden="true"></div>
     <div class="herof-medalva__orb herof-medalva__orb--dark" aria-hidden="true"></div>
@@ -98,14 +139,14 @@
     </div>
   </section>
 
-  <!-- ================== 03 · Problemática ================== -->
+  <!-- ===================== 02 · Problemática ===================== -->
 <!--
     Estructura "Problema → Solución" en 3 columnas:
     - Pill (título de columna) flotando arriba
     - Card con dos zonas: problem (gradient brand) + solution (white)
       separadas por una flecha circular blanca/brand
   -->
-  <section class="clarity-eca theme-indigo">
+  <section class="clarity-eca theme-forest">
     <div class="clarity-eca__container">
 
       <header class="clarity-eca__header">
@@ -172,13 +213,13 @@
     </div>
   </section>
 
-  <!-- ================== 04 · Para quién es este servicio ================== -->
+  <!-- ===================== 03 · Para quién es este servicio ===================== -->
 <!--
     Variante "Para quién / Servicios" de Medalva:
     Grid auto-fit de 5 cards. La última (especialistas transporte) está
     destacada con fondo gradient brand y texto invertido.
   -->
-  <section class="services-medalva theme-crimson">
+  <section class="services-medalva theme-forest">
     <div class="services-medalva__container">
 
       <header class="services-medalva__header">
@@ -235,8 +276,8 @@
     </div>
   </section>
 
-  <!-- ================== 05 · Qué incluye el servicio ================== -->
-<section class="services-tbx theme-steel" id="servicios">
+  <!-- ===================== 04 · Qué incluye el servicio ===================== -->
+<section class="services-tbx theme-forest" id="servicios">
     <div class="services-tbx__container">
 
       <header class="services-tbx__head">
@@ -286,12 +327,12 @@
     </div>
   </section>
 
-  <!-- ================== 06 · Proceso de trabajo ================== -->
+  <!-- ===================== 05 · Proceso de trabajo ===================== -->
 <!--
     Methodology: 3 fases conectadas por una línea horizontal de progreso.
     Cada paso: marcador circular (cyan→brand al hover) + card de body con animación fade-in.
   -->
-  <section class="methodology-eca theme-indigo">
+  <section class="methodology-eca theme-forest">
     <div class="methodology-eca__container">
 
       <header class="methodology-eca__header">
@@ -348,14 +389,14 @@
     </div>
   </section>
 
-  <!-- ================== 07 · Beneficios / Lo que consigues ================== -->
+  <!-- ===================== 06 · Beneficios ===================== -->
 <!--
     Variante "Beneficios" del ECOSYSTEM de Sol-4.
     Se queda con las 4 service-cards (que comunican lo que conseguís)
     sin la card hero ni los pills. Para la versión completa (cross-sell)
     ver S08-cross-sell/sol4.
   -->
-  <section class="benefits-sol4 theme-purple section" id="benefits">
+  <section class="benefits-sol4 theme-forest section" id="benefits">
     <div class="container">
 
       <header class="benefits-sol4__header">
@@ -421,13 +462,13 @@
     </div>
   </section>
 
-  <!-- ================== 08 · Tabla comparativa Problema / Solución ================== -->
+  <!-- ===================== 07 · Tabla Problema / Solución ===================== -->
 <!--
     Tabla comparativa Situación frecuente / Cómo lo resolvemos.
     En mobile cada par se apila vertical (cards con border-left rojo/lime).
     En desktop ≥768px: 2 cols con divisor + fondo lime sutil en la col positiva.
   -->
-  <section class="problems-sgu theme-steel">
+  <section class="problems-sgu theme-forest">
     <div class="problems-sgu__container">
 
       <header class="problems-sgu__intro">
@@ -532,12 +573,12 @@
     </div>
   </section>
 
-  <!-- ================== 09 · Servicios relacionados / Cross-sell ================== -->
+  <!-- ===================== 08 · Cross-sell ===================== -->
 <!--
     Cross-sell vía "Compromisos y reconocimientos":
     1 card grande gradient + 3 cards compactas con barra lateral animada.
   -->
-  <section class="commitments-medalva theme-crimson">
+  <section class="commitments-medalva theme-forest">
     <div class="commitments-medalva__container">
 
       <header class="commitments-medalva__header">
@@ -589,8 +630,8 @@
     </div>
   </section>
 
-  <!-- ================== 10 · Formulario de contacto ================== -->
-<section class="contact-sol4 theme-purple" id="contact">
+  <!-- ===================== 09 · Formulario de contacto ===================== -->
+<section class="contact-sol4 theme-forest" id="contact">
     <div class="container">
       <div class="contact-sol4__box">
 
@@ -696,12 +737,12 @@
     </div>
   </section>
 
-  <!-- ================== 11 · Mapa ================== -->
+  <!-- ===================== 10 · Mapa ===================== -->
 <!--
     Grid 3-col de oficinas. Cada card: iframe Google Maps en cabecera +
     info panel debajo (badge ciudad, datos contacto, botón ver en maps).
   -->
-  <section class="oficinas-tbx theme-steel" id="oficinas">
+  <section class="oficinas-tbx theme-forest" id="oficinas">
     <div class="oficinas-tbx__container">
 
       <header class="oficinas-tbx__head">
@@ -821,12 +862,12 @@
     </div>
   </section>
 
-  <!-- ================== 12 · Reviews ================== -->
+  <!-- ===================== 11 · Reviews ===================== -->
 <!--
     Header centrado + badge global de Google con score + grid 3-col de
     rev-cards (avatar coloreado + meta + estrellas + texto).
   -->
-  <section class="reviews-tbx theme-steel">
+  <section class="reviews-tbx theme-forest">
     <div class="reviews-tbx__container">
 
       <header class="reviews-tbx__head">
@@ -964,8 +1005,8 @@
     </div>
   </section>
 
-  <!-- ================== 13 · FAQs ================== -->
-<section class="faq-cs theme-indigo section" aria-labelledby="faq-heading">
+  <!-- ===================== 12 · FAQs ===================== -->
+<section class="faq-cs theme-forest section" aria-labelledby="faq-heading">
     <div class="container faq-cs__inner">
 
       <header class="faq-cs__header">
@@ -1036,6 +1077,83 @@
 
     </div>
   </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="t-footer">
+    <div class="t-footer__inner">
+
+      <div class="t-footer__col">
+        <a href="#" class="t-footer__brand">
+          <span class="t-footer__mark">VA</span>
+          <span class="t-footer__brand-name">Vértice Asesores</span>
+        </a>
+        <p class="t-footer__tagline">Asesoría fiscal, contable y laboral en Sevilla. Acompañamos a autónomos y pymes locales con criterio claro y respuesta rápida.</p>
+        <div class="t-footer__social">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Email">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Asesoría fiscal</a></li>
+          <li><a href="#servicios">Asesoría contable</a></li>
+          <li><a href="#servicios">Asesoría laboral</a></li>
+          <li><a href="#servicios">Asesoría jurídica</a></li>
+          <li><a href="#servicios">Constitución de sociedades</a></li>
+        </ul>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#reviews">Casos de éxito</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#trabajo">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="t-footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>C/ Sierpes 12, 41004 Sevilla</span>
+          </li>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+34 954 000 000">+34 954 000 000</a>
+          </li>
+          <li class="contact">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hola@verticeasesores.es">hola@verticeasesores.es</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="t-footer__bottom">
+      <div class="t-footer__bottom-inner">
+        <p>© 2026 Vértice Asesores. Todos los derechos reservados.</p>
+        <div class="t-footer__legal">
+          <a href="#aviso-legal">Aviso legal</a>
+          <a href="#privacidad">Política de privacidad</a>
+          <a href="#cookies">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
